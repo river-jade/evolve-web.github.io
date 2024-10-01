@@ -47,6 +47,12 @@
         header {
             padding: 1rem 0;
         }
+
+	.header, footer {
+	    max-width: 800px;
+	    margin: 0 auto;
+            text-align: center;
+	}
         
         h1 {
             font-size: 3rem;
@@ -83,13 +89,33 @@
             text-decoration: none;
             font-weight: 300;
             transition: color 0.3s ease;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
         
         nav ul li a:hover {
             color: var(--primary-color);
         }
+
+	.nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         
+	.page-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .content-container {
+            width: 100%;
+            max-width: 800px;
+            padding-top: 20px;
+        }
+
         section {
             margin-bottom: 2rem;
             font-size: 20px;
@@ -158,73 +184,76 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <header class="header">
+        <div class="header">
             <img src="evolve-logo.jpg" alt="Evolve Community Logo" class="logo">
             <h1>Evolve Community</h1>
         </div>
     </header>
-    <nav class="container">
+    <nav>
+	<div class="nav-container">
 	<ul>
 	    <li><a href="#what">What is Evolve?</a></li>
 	    <li><a href="#why">Why Evolve?</a></li>
 	    <li><a href="#vision">Vision of Evolve</a></li>
 	    <li><a href="#principles">Principles of Evolve</a></li>
 	</ul>
+	</div>
     </nav>
-    <main class="main container">
-        <section id="what">
-            <h2>What is Evolve?</h2>
-            <p>Evolve is a concept for a new way for humans to self-organise and relate. It has many aspects, and can be framed differently depending on context.</p>
+    <div class="page-container">
+	<main class="main content-container">
+	    <section id="what">
+		<h2>What is Evolve?</h2>
+		<p>Evolve is a concept for a new way for humans to self-organise and relate. It has many aspects, and can be framed differently depending on context.</p>
 
-                <p>From the simplest, and most familiar perspective, Evolve is a “transformational” festival; a gathering of people on land to connect with themselves and each other in a ritual that breaks them out of the routine of everyday life. </p>
-                
-                <p>Evolve is also a conference. It is a place for people to come together and share knowledge, wisdom, and skills, especially those which help us to collectively grow and evolve.</p>
-                
-                <p>Evolve is a movement. Part of the concept is that Evolve will grow from the first festival into many festivals around the world, allowing as many people as possible to experience, even if only for a few days, being out of “the matrix” and living in a different, richer, more connected way than most of us currently live.</p>
-                
-                <p>Evolve is an experiment in decentralised governance and participatory democracy. We believe in the wisdom of crowds -- the concept that, with the right frameworks and systems in place, large groups can make better decisions for the collective than individuals or small groups (in part because the latter are prone to capture and corruption).</p>
-        </section>
+		    <p>From the simplest, and most familiar perspective, Evolve is a “transformational” festival; a gathering of people on land to connect with themselves and each other in a ritual that breaks them out of the routine of everyday life. </p>
+		    
+		    <p>Evolve is also a conference. It is a place for people to come together and share knowledge, wisdom, and skills, especially those which help us to collectively grow and evolve.</p>
+		    
+		    <p>Evolve is a movement. Part of the concept is that Evolve will grow from the first festival into many festivals around the world, allowing as many people as possible to experience, even if only for a few days, being out of “the matrix” and living in a different, richer, more connected way than most of us currently live.</p>
+		    
+		    <p>Evolve is an experiment in decentralised governance and participatory democracy. We believe in the wisdom of crowds -- the concept that, with the right frameworks and systems in place, large groups can make better decisions for the collective than individuals or small groups (in part because the latter are prone to capture and corruption).</p>
+	    </section>
 
-        <section id="why">
-            <h2>Why Evolve?</h2>
-            <p>We believe that human civilisation (and to a lesser extent, the biosphere itself) is coming to a crossroads. We have reached a situation where our technological power (for example, nuclear weapons, biotech, fossil fuels, AI, nanotechnology) have surpassed our ability to make good decisions, and as such we’re faced with the very real possibility of destruction of our civilisation and perhaps our species itself. This is not to mention the impact we’re already having on countless other species on the planet.</p>
+	    <section id="why">
+		<h2>Why Evolve?</h2>
+		<p>We believe that human civilisation (and to a lesser extent, the biosphere itself) is coming to a crossroads. We have reached a situation where our technological power (for example, nuclear weapons, biotech, fossil fuels, AI, nanotechnology) have surpassed our ability to make good decisions, and as such we’re faced with the very real possibility of destruction of our civilisation and perhaps our species itself. This is not to mention the impact we’re already having on countless other species on the planet.</p>
 
-            <p>One solution to this problem is a top-down technocratic dystopia. This might avoid civilizational collapse, but is likely not a future any of us want for our children / grandchildren.</p>
-            
-            <p>On top of merely avoiding catastrophe, we also dream about a future which is more beautiful, more connected, more kind, and more loving than what we have today. </p>
-            
-            <p>We believe that in order to create such a future, we need grass-roots, decentralised culture change, and better ways to self-govern. As a species, we need to evolve both individually and collectively.</p>
-        </section>
+		<p>One solution to this problem is a top-down technocratic dystopia. This might avoid civilizational collapse, but is likely not a future any of us want for our children / grandchildren.</p>
+		
+		<p>On top of merely avoiding catastrophe, we also dream about a future which is more beautiful, more connected, more kind, and more loving than what we have today. </p>
+		
+		<p>We believe that in order to create such a future, we need grass-roots, decentralised culture change, and better ways to self-govern. As a species, we need to evolve both individually and collectively.</p>
+	    </section>
 
-        <section id="vision">
-            <h2>Vision of Evolve</h2>
+	    <section id="vision">
+		<h2>Vision of Evolve</h2>
 
-            <p>There are multiple layers to the vision for Evolve.</p>
+		<p>There are multiple layers to the vision for Evolve.</p>
 
-            <p>At its most simple, we envisage Evolve becoming a festival that brings people together to celebrate, share, and learn, hopefully improving the lives of hundreds or thousands of people. If this is all that Evolve achieves, this would feel like success.</p>
-            
-            <p>The next level of the vision is the movement. Here we see the Evolve festival propagating itself around the globe, and increasing the number of people impacted by an order of magnitude. These events would work together to support one another and make collective decisions that improve the Evolve ecosystem for all involved.</p>
-            
-            <p>Beyond this, we can imagine Evolve started to seed more permanent intentional communities of people living together, and modelling their communities on Evolve’s principles and ways of doing governance. These communities would be part of the greater web, and would also share support and resources with the events and each other.</p>
-            
-            <p>Our blue-sky vision for Evolve is that it inspires or becomes a new way for humans to organise and govern ourselves and steward the planet; one which is more connective, more attuned, and more alive. We imagine deep culture change that brings humanity more in harmony with each other and with the planet we live on and with.</p>
-        </section>
+		<p>At its most simple, we envisage Evolve becoming a festival that brings people together to celebrate, share, and learn, hopefully improving the lives of hundreds or thousands of people. If this is all that Evolve achieves, this would feel like success.</p>
+		
+		<p>The next level of the vision is the movement. Here we see the Evolve festival propagating itself around the globe, and increasing the number of people impacted by an order of magnitude. These events would work together to support one another and make collective decisions that improve the Evolve ecosystem for all involved.</p>
+		
+		<p>Beyond this, we can imagine Evolve started to seed more permanent intentional communities of people living together, and modelling their communities on Evolve’s principles and ways of doing governance. These communities would be part of the greater web, and would also share support and resources with the events and each other.</p>
+		
+		<p>Our blue-sky vision for Evolve is that it inspires or becomes a new way for humans to organise and govern ourselves and steward the planet; one which is more connective, more attuned, and more alive. We imagine deep culture change that brings humanity more in harmony with each other and with the planet we live on and with.</p>
+	    </section>
 
-        <section id="principles">
-            <h2>Principles of Evolve</h2>
-            <ul>
-                <li><p><b>Love:</b> the will to extend one's self for the purpose of nurturing one's own or another's spiritual growth. We believe that love (in the prior sense, as opposed to the distorted version sold by popular culture — dependency, control, obsession, desire, lust) is our collective purpose.</p></li>
-                <li><p><b>Decentralisation:</b> One of the primary challenges of modern society is that we have tended towards centralised organisation (e.g., governments, the military, Hollywood, corporations). The primary advantage of centralised organisation is that it’s efficient, but its disadvantages are myriad: corruption (power corrupts), ossification, and extreme power/wealth imbalance. Modern technology (blockchain) provides a way to have decentralised organisation which is much more efficient and scalable than in the past.</p></li>
-                <li><p><b>Learning and growth:</b> Modern civilisation is obsessed with learning and growth, but in very narrow dimensions, specifically scientific learning and economic growth. These are useful, but limited. Evolve widens the lens (as do many other transformative festivals) to support the full gamut of learning and growth. Part of this will happen through workshops gifted by attendees, and part through spontaneous sharing and play.</p></li>
-                <li><p><b>Gifting and generosity:</b> The mythology of capitalism tells us that everyone is selfish and looking out only for their own self-interest. Real-life human and animal behaviour belie this belief. Evolve encourages generosity of spirit and the joy of sharing our gifts with each other.</p></li>
-                <li><p><b>Play: </b>Is both an integral part of a joyful and well-lived life, and also one of the best vehicles for true learning and growth. Humans who do not play are prone to becoming captured by ideology or despondence. This can become self-perpetuating, as ideologies and despondence are often antithetical to play. Play also builds connection.</p></li>
-                <li><p><b>Connection: </b>We are all interconnected, all humans, all living and non-living things. We are all interdependent. Part of what makes us different as human beings is our ability to temporarily forget this. Our unbalanced belief in our own egoic separateness has led us to do all sorts of (potentially irreparable) damage to the ecosystem in which we live. The way back from this precipice lies in remembering our interconnectedness and interdependence. This can be facilitated by spending unstructured time with others, in play, and in nature.</p></li>
-                <li><p><b>Sustainability: </b>Sustainability is a fundamental principle for Evolve. We believe that the lack of sustainability is one of the core problems in our existing culture. To move away from the modern concepts of time as a strictly linear construct, Evolve embraces more ancient ways of seeing time as, at least in part, a cyclic phenomenon. We do not see the world as a set of "resources" to be consumed and excreted in the quest for endless material growth. Instead, we see our role in the larger ecosystem as one of giving and receiving, inhaling and exhaling. Thus, Evolve strives to minimise waste and prioritises syntropy with a vision of thriving future generations of all living beings.</p></li>
-            </ul>
-        </section>
-    </main>
-
+	    <section id="principles">
+		<h2>Principles of Evolve</h2>
+		<ul>
+		    <li><p><b>Love:</b> the will to extend one's self for the purpose of nurturing one's own or another's spiritual growth. We believe that love (in the prior sense, as opposed to the distorted version sold by popular culture — dependency, control, obsession, desire, lust) is our collective purpose.</p></li>
+		    <li><p><b>Decentralisation:</b> One of the primary challenges of modern society is that we have tended towards centralised organisation (e.g., governments, the military, Hollywood, corporations). The primary advantage of centralised organisation is that it’s efficient, but its disadvantages are myriad: corruption (power corrupts), ossification, and extreme power/wealth imbalance. Modern technology (blockchain) provides a way to have decentralised organisation which is much more efficient and scalable than in the past.</p></li>
+		    <li><p><b>Learning and growth:</b> Modern civilisation is obsessed with learning and growth, but in very narrow dimensions, specifically scientific learning and economic growth. These are useful, but limited. Evolve widens the lens (as do many other transformative festivals) to support the full gamut of learning and growth. Part of this will happen through workshops gifted by attendees, and part through spontaneous sharing and play.</p></li>
+		    <li><p><b>Gifting and generosity:</b> The mythology of capitalism tells us that everyone is selfish and looking out only for their own self-interest. Real-life human and animal behaviour belie this belief. Evolve encourages generosity of spirit and the joy of sharing our gifts with each other.</p></li>
+		    <li><p><b>Play: </b>Is both an integral part of a joyful and well-lived life, and also one of the best vehicles for true learning and growth. Humans who do not play are prone to becoming captured by ideology or despondence. This can become self-perpetuating, as ideologies and despondence are often antithetical to play. Play also builds connection.</p></li>
+		    <li><p><b>Connection: </b>We are all interconnected, all humans, all living and non-living things. We are all interdependent. Part of what makes us different as human beings is our ability to temporarily forget this. Our unbalanced belief in our own egoic separateness has led us to do all sorts of (potentially irreparable) damage to the ecosystem in which we live. The way back from this precipice lies in remembering our interconnectedness and interdependence. This can be facilitated by spending unstructured time with others, in play, and in nature.</p></li>
+		    <li><p><b>Sustainability: </b>Sustainability is a fundamental principle for Evolve. We believe that the lack of sustainability is one of the core problems in our existing culture. To move away from the modern concepts of time as a strictly linear construct, Evolve embraces more ancient ways of seeing time as, at least in part, a cyclic phenomenon. We do not see the world as a set of "resources" to be consumed and excreted in the quest for endless material growth. Instead, we see our role in the larger ecosystem as one of giving and receiving, inhaling and exhaling. Thus, Evolve strives to minimise waste and prioritises syntropy with a vision of thriving future generations of all living beings.</p></li>
+		</ul>
+	    </section>
+	</main>
+    </div>
     <footer>
         <div class="container">
             <p>Contact us: <a href=mailto:contact@evolvecommunity.world>contact@evolvecommunity.world</a></p>
