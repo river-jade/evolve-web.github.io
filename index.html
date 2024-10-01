@@ -29,6 +29,7 @@
             line-height: 1.6;
             color: var(--primary-color);
             background-color: var(--background-color);
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -45,7 +46,6 @@
 
         header {
             padding: 1rem 0;
-            border-bottom: 1px solid var(--accent-color);
         }
         
         h1 {
@@ -56,6 +56,17 @@
         
         nav {
             margin-top: 1rem;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        nav::after {
+            content: '';
+            display: block;
+            height: 5px;
         }
         
         nav ul {
@@ -72,7 +83,7 @@
             text-decoration: none;
             font-weight: 300;
             transition: color 0.3s ease;
-	    font-size: 1.5rem;
+            font-size: 1.5rem;
         }
         
         nav ul li a:hover {
@@ -81,9 +92,12 @@
         
         section {
             margin-bottom: 2rem;
-	    font-size: 20px;
-	    max-width: 680px;
+            font-size: 20px;
+            max-width: 680px;
         }
+
+
+        html { scroll-padding-top: 50px; }
         
         h2 {
             font-size: 1.8rem;
@@ -148,17 +162,16 @@
         <div class="container">
             <img src="evolve-logo.jpg" alt="Evolve Community Logo" class="logo">
             <h1>Evolve Community</h1>
-            <nav>
-                <ul>
-                    <li><a href="#what">What is Evolve?</a></li>
-                    <li><a href="#why">Why Evolve?</a></li>
-                    <li><a href="#vision">Vision of Evolve</a></li>
-                    <li><a href="#principles">Principles of Evolve</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
-
+    <nav class="container">
+	<ul>
+	    <li><a href="#what">What is Evolve?</a></li>
+	    <li><a href="#why">Why Evolve?</a></li>
+	    <li><a href="#vision">Vision of Evolve</a></li>
+	    <li><a href="#principles">Principles of Evolve</a></li>
+	</ul>
+    </nav>
     <main class="main container">
         <section id="what">
             <h2>What is Evolve?</h2>
