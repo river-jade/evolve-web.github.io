@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/CustomMDX'
 import { formatDate, getPageMarkdown } from 'app/lib/utils'
 import { baseUrl, authorName } from 'app/metadata'
+import { Banner } from 'app/components/Banner'
+import { cx } from 'app/lib/cx'
 
 export async function generateStaticParams() {
   let posts = getPageMarkdown()
@@ -44,29 +46,29 @@ export function generateMetadata({ params }) {
 }
 
 export default function Page({ params }) {
-  let post = getPageMarkdown().find((post) => post.slug === params.slug)
+  let page = getPageMarkdown().find((post) => post.slug === params.slug)
 
-  if (!post) {
+  if (!page) {
     notFound()
   }
 
   return (
-    <section>
+    <div className="Page flex flex-col gap-6">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/${post.slug}`,
+            '@type': 'WebPage',
+            headline: page.metadata.title,
+            datePublished: page.metadata.publishedAt,
+            dateModified: page.metadata.publishedAt,
+            description: page.metadata.summary,
+            image: page.metadata.image
+              ? `${baseUrl}${page.metadata.image}`
+              : `/og?title=${encodeURIComponent(page.metadata.title)}`,
+            url: `${baseUrl}/${page.slug}`,
             author: {
               '@type': 'Person',
               name: authorName,
@@ -74,15 +76,11 @@ export default function Page({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">{post.metadata.title}</h1>
+      <Banner title={page.metadata.title} />
 
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">{formatDate(post.metadata.publishedAt)}</p>
-      </div>
-
-      <article className="prose">
-        <CustomMDX source={post.content} />
-      </article>
-    </section>
+      <section className={cx(`prose max-w-xl mx-auto`, page.metadata.className)}>
+        <CustomMDX source={page.content} />
+      </section>
+    </div>
   )
 }

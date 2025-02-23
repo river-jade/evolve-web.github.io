@@ -8,6 +8,7 @@ type Metadata = {
   image?: string
   shortTitle?: string
   order?: number
+  className?: string
 }
 
 /**
