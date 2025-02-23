@@ -6,6 +6,8 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  shortTitle?: string
+  order?: number
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -20,7 +22,7 @@ function parseFrontmatter(fileContent: string) {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    metadata[key.trim()] = value
   })
 
   return { metadata: metadata as Metadata, content }
@@ -51,6 +53,14 @@ function getMDXData(dir) {
 
 export function getPageMarkdown() {
   return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages'))
+}
+
+export function getPageLinks() {
+  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages')).map((page) => ({
+    title: page.metadata.title,
+    href: `/${page.slug}`,
+    metadata: page.metadata,
+  }))
 }
 
 export function formatDate(date: string, includeRelative = false) {
@@ -88,3 +98,6 @@ export function formatDate(date: string, includeRelative = false) {
 
   return `${fullDate} (${formattedDate})`
 }
+
+export const DEFAULT_ORDER = 100
+export const sortByOrder = (a, b) => (a.metadata.order ?? DEFAULT_ORDER) - (b.metadata.order ?? DEFAULT_ORDER)
