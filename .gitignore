@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+# created by pnpm, serves as a store for hard links to the global
+# content-addressable store
+~
+
 # testing
 /coverage
 
