@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/Footer'
 import { baseUrl } from './sitemap'
+import { cx } from './lib/cx'
 
 const title = 'Evolve Community'
 const description = `Evolve is a "transformational" festival; a gathering of people on
@@ -40,8 +41,6 @@ export const metadata: Metadata = {
     },
   },
 }
-
-const cx = (...classes) => classes.filter(Boolean).join(' ')
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
