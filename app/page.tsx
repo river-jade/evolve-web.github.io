@@ -12,6 +12,8 @@ export default function Page() {
         early error detection ensures cleaner code, and my preference for dark
         mode, which eases long coding sessions by reducing eye strain.`}
       </p>
+
+      <BlogPosts />
     </section>
   )
 }
