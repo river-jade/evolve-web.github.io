@@ -5,7 +5,7 @@ import Script from 'next/script'
 export const MailChimpVendorForm = () => {
   return (
     // Hack: dedent, cos MC form is remotely styled for now
-    <div className="-mx-[20px]">
+    <div className="MailchimpForm">
       <div dangerouslySetInnerHTML={{ __html: mailchimpMarkup }} />
       <Script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" strategy="beforeInteractive" />
       <Script
