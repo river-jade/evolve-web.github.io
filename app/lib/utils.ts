@@ -10,6 +10,9 @@ type Metadata = {
   order?: number
 }
 
+/**
+ * Parses frontmatter and content from a markdown string
+ */
 function parseFrontmatter(fileContent: string) {
   let frontmatterRegex = /---\s*([\s\S]*?)\s*---/
   let match = frontmatterRegex.exec(fileContent)
@@ -28,41 +31,70 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content }
 }
 
-function getMDXFiles(dir) {
+/**
+ * Gets all MDX files from a directory
+ */
+function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
 }
 
-function readMDXFile(filePath) {
+/**
+ * Reads and parses an MDX file
+ */
+function readMDXFile(filePath: string) {
   let rawContent = fs.readFileSync(filePath, 'utf-8')
   return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir) {
-  let mdxFiles = getMDXFiles(dir)
-  return mdxFiles.map((file) => {
-    let { metadata, content } = readMDXFile(path.join(dir, file))
-    let slug = path.basename(file, path.extname(file))
+export type MDXData = {
+  metadata: Metadata
+  slug: string
+  content: string
+}
 
-    return {
-      metadata,
-      slug,
-      content,
-    }
+/**
+ * Gets parsed data from all MDX files in a directory
+ */
+export function getMDXData(dir: string) {
+  let mdxFiles = getMDXFiles(dir)
+  return mdxFiles.map((fileName) => {
+    let { metadata, content } = readMDXFile(path.join(dir, fileName))
+    let slug = path.basename(fileName, path.extname(fileName))
+    const data: MDXData = { metadata, slug, content }
+    return data
   })
 }
 
-export function getPageMarkdown() {
+/**
+ * Gets parsed markdown data from the pages directory
+ */
+export function getPageMarkdown(): MDXData[] {
   return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages'))
 }
 
-export function getPageLinks() {
-  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages')).map((page) => ({
-    title: page.metadata.title,
-    href: `/${page.slug}`,
-    metadata: page.metadata,
-  }))
+export type NavLink = {
+  title: string
+  href: string
+  metadata: Metadata
 }
 
+/**
+ * Gets navigation links from MDX files in the pages directory
+ */
+export function getPageLinks() {
+  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages')).map(
+    (page): NavLink =>
+      ({
+        title: page.metadata.title,
+        href: `/${page.slug}`,
+        metadata: page.metadata,
+      } satisfies NavLink),
+  )
+}
+
+/**
+ * Formats a date string with optional relative time
+ */
 export function formatDate(date: string, includeRelative = false) {
   let currentDate = new Date()
   if (!date.includes('T')) {
@@ -100,4 +132,5 @@ export function formatDate(date: string, includeRelative = false) {
 }
 
 export const DEFAULT_ORDER = 100
-export const sortByOrder = (a, b) => (a.metadata.order ?? DEFAULT_ORDER) - (b.metadata.order ?? DEFAULT_ORDER)
+export const sortByOrder = (a: NavLink, b: NavLink) =>
+  (a.metadata.order ?? DEFAULT_ORDER) - (b.metadata.order ?? DEFAULT_ORDER)
