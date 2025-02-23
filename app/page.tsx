@@ -7,7 +7,9 @@ export default function Page() {
   const homepage = pages?.find((post) => post.slug === 'homepage') ?? { content: 'No content' }
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="prose">
+      <h1>Evolve Community</h1>
+
       <CustomMDX source={homepage.content} />
     </section>
   )

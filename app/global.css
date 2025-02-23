@@ -6,6 +6,12 @@
 }
 
 :root {
+  --primary-color: #000;
+  --secondary-color: #666;
+  --background-color: #ffffff;
+  --accent-color: #e0e0e0;
+
+  /* super syntax highlighting */
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
   --sh-sign: #8996a3;
@@ -30,7 +36,8 @@
 }
 
 html {
-  min-width: 360px;
+  font-size: 20px;
+  /* min-width: 360px; */
 }
 
 .prose .anchor {
@@ -88,31 +95,36 @@ html {
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-3xl font-bold text-neutral-700 tracking-tight mt-6 mb-2;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-2xl font-extrabold text-neutral-700 tracking-tight mt-6 mb-2;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-bold text-neutral-700 tracking-tight mt-6 mb-2;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply text-lg font-bold text-neutral-700 tracking-tight mt-6 mb-2;
 }
 
 .prose strong {
-  @apply font-medium;
+  @apply font-extrabold;
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc;
 }
 
 .prose ol {
   @apply list-decimal pl-6;
+}
+
+.prose ul li,
+.prose ol li {
+  @apply mb-2;
 }
 
 .prose > :first-child {
