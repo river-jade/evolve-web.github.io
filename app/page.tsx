@@ -1,21 +1,22 @@
 import { CustomMDX } from './components/CustomMDX'
 import { getMDXData } from './lib/utils'
 import path from 'path'
-import Image from 'next/image'
+import { Navbar } from './components/Navbar'
+import { Banner } from './components/Banner'
 
 export default function Page() {
   let pages = getMDXData(path.join(process.cwd(), 'app'))
   const homepage = pages?.find((post) => post.slug === 'homepage') ?? { content: 'No content' }
 
   return (
-    <section className="prose">
-      <div className="banner flex justify-center items-center">
-        <Image src="/images/evolve-logo.jpg" alt="Evolve Logo" width={200} height={200} />
-      </div>
+    <div className="flex flex-col gap-6">
+      <Banner title="Evolve Community" />
 
-      <h1>Evolve Community</h1>
+      <Navbar />
 
-      <CustomMDX source={homepage.content} />
-    </section>
+      <section className="prose max-w-xl mx-auto">
+        <CustomMDX source={homepage.content} />
+      </section>
+    </div>
   )
 }

@@ -95,7 +95,7 @@ html {
 }
 
 .prose h1 {
-  @apply text-3xl font-bold text-neutral-700 tracking-tight mt-6 mb-2;
+  @apply text-4xl font-extrabold text-neutral-700 tracking-tight mt-6 mb-2;
 }
 
 .prose h2 {
@@ -118,6 +118,11 @@ html {
   @apply list-disc;
 }
 
+/* override */
+.prose.list-none ul {
+  @apply list-none;
+}
+
 .prose ol {
   @apply list-decimal pl-6;
 }
@@ -129,8 +134,8 @@ html {
 
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
+  /* margin-top: 1.25em !important; */
+  /* margin-bottom: 1.25em !important; */
 }
 
 pre::-webkit-scrollbar {
