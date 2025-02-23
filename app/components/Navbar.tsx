@@ -22,11 +22,8 @@ export function Navbar({ links = navItems }: { links?: Record<string, { name: st
   return (
     <aside className="NavBar tracking-tight relative">
       <div className="lg:sticky lg:top-20 border-b-1 border-gray-200">
-        <nav
-          className="flex flex-row items-start relative max-w-xl mx-auto px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-          id="nav"
-        >
-          <ul className="flex flex-row space-x-0 -ml-3">
+        <nav id="nav" className="relative max-w-xl mx-auto px-0 pb-0 fade md:overflow-auto scroll-pr-6">
+          <ul className="flex flex-col md:flex-row space-x-0 -ml-3">
             {Object.entries(links).map(([path, { name }]) => {
               return (
                 <li key={path}>
