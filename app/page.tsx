@@ -1,4 +1,4 @@
-import { PageList } from 'app/components/posts'
+import { PageList } from 'app/components/PageList'
 
 export default function Page() {
   return (
