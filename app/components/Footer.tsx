@@ -1,3 +1,4 @@
+import { contactEmail } from 'app/metadata'
 import { MailChimpVendorForm } from './MailchimpForm.vendor'
 
 function ArrowIcon() {
@@ -13,31 +14,17 @@ function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <footer className="mb-16">
+    <footer className="flex flex-col gap-2 max-w-xl w-full mx-auto mt-12 mb-4 pt-6 border-t-1 border-gray-200">
       <p>
         Contact us:{' '}
-        <a href="mailto:contact@evolvecommunity.world" className="underline decoration-dotted text-blue-600">
-          contact@evolvecommunity.world
+        <a href={`mailto:${contactEmail}`} className="underline decoration-dotted text-blue-600">
+          {contactEmail}
         </a>
       </p>
 
       <MailChimpVendorForm />
 
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="/rss"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
-          </a>
-        </li>
-      </ul>
-
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
+      <p className="mt-8 text-neutral-600 dark:text-neutral-300 text-xs">
         © {new Date().getFullYear()} Evolve Community. All rights reserved.
       </p>
     </footer>

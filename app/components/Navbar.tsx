@@ -7,29 +7,32 @@ const navItems: Record<string, { name: string }> = {
   },
   ...getPageLinks()
     .sort(sortByOrder)
-    .reduce((acc, page) => {
-      acc[page.href] = {
-        name: page.metadata.shortTitle || page.title,
-      }
-      return acc
-    }, {}),
+    .reduce(
+      (acc, page) => ({
+        ...acc,
+        [page.href]: {
+          name: page.metadata.shortTitle || page.title,
+        },
+      }),
+      {},
+    ),
 }
 
-export function Navbar() {
+export function Navbar({ links = navItems }: { links?: Record<string, { name: string }> }) {
   return (
-    <aside className="NavBar -ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+    <aside className="NavBar tracking-tight relative">
+      <div className="lg:sticky lg:top-20 border-b-1 border-gray-200">
         <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="flex flex-row items-start relative max-w-xl mx-auto px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
           id="nav"
         >
-          <ul className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
+          <ul className="flex flex-row space-x-0 -ml-3">
+            {Object.entries(links).map(([path, { name }]) => {
               return (
                 <li key={path}>
                   <Link
                     href={path}
-                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-3"
                   >
                     {name}
                   </Link>
