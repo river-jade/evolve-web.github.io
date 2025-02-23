@@ -1,8 +1,10 @@
+import type { DefaultTemplateString } from 'next/dist/lib/metadata/types/metadata-types'
+import { getPageMarkdown } from 'app/lib/utils'
+import { metadata } from 'app/layout'
 import { baseUrl } from 'app/sitemap'
-import { getBlogPosts } from 'app/lib/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
+  let allBlogs = await getPageMarkdown()
 
   const itemsXml = allBlogs
     .sort((a, b) => {
@@ -25,9 +27,9 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>My Portfolio</title>
+        <title>${(metadata.title as DefaultTemplateString).default}</title>
         <link>${baseUrl}</link>
-        <description>This is my portfolio RSS feed</description>
+        <description>${metadata.description}</description>
         ${itemsXml}
     </channel>
   </rss>`

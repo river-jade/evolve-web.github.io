@@ -1,8 +1,8 @@
-import { formatDate, getBlogPosts } from 'app/lib/utils'
+import { formatDate, getPageMarkdown } from 'app/lib/utils'
 import Link from 'next/link'
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts()
+export function PageList() {
+  let allBlogs = getPageMarkdown()
 
   return (
     <div>
