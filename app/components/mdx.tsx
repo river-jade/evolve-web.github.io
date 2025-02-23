@@ -5,9 +5,7 @@ import { highlight } from 'sugar-high'
 import React from 'react'
 
 function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ))
+  let headers = data.headers.map((header, index) => <th key={index}>{header}</th>)
   let rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
@@ -77,7 +75,7 @@ function createHeading(level) {
           className: 'anchor',
         }),
       ],
-      children
+      children,
     )
   }
 
@@ -100,10 +98,5 @@ let components = {
 }
 
 export function CustomMDX(props) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  )
+  return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
 }

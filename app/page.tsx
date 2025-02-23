@@ -13,5 +13,5 @@ export default function Page() {
         mode, which eases long coding sessions by reducing eye strain.`}
       </p>
     </section>
-  );
+  )
 }
