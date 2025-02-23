@@ -1,11 +1,47 @@
+'use client'
+
+import Script from 'next/script'
+
 export const MailChimpVendorForm = () => {
-  return <div dangerouslySetInnerHTML={{ __html: mcMarkup }} />
+  return (
+    <>
+      <div dangerouslySetInnerHTML={{ __html: mailchimpMarkup }} />
+      <Script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js" strategy="beforeInteractive" />
+      <Script
+        id="mailchimp-config"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function($) {
+              window.fnames = new Array();
+              window.ftypes = new Array();
+              fnames[0] = "EMAIL"; ftypes[0] = "email";
+              fnames[1] = "FNAME"; ftypes[1] = "text";
+              fnames[2] = "LNAME"; ftypes[2] = "text";
+              fnames[3] = "MMERGE3"; ftypes[3] = "text";
+              fnames[4] = "MMERGE4"; ftypes[4] = "text";
+              fnames[5] = "MMERGE5"; ftypes[5] = "text";
+              fnames[6] = "MMERGE6"; ftypes[6] = "text";
+              fnames[7] = "MMERGE7"; ftypes[7] = "date";
+              fnames[8] = "MMERGE8"; ftypes[8] = "date";
+              fnames[9] = "MMERGE9"; ftypes[9] = "number";
+              fnames[10] = "MMERGE10"; ftypes[10] = "number";
+              fnames[11] = "MMERGE11"; ftypes[11] = "number";
+            }(jQuery));
+            var $mcj = jQuery.noConflict(true);
+          `,
+        }}
+      />
+    </>
+  )
 }
 
-const mcMarkup = `
+const mailchimpMarkup = `
 <link href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-  #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+  #mc_embed_signup{
+    background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;
+  }
 </style>
 
 <div id="mc_embed_shell">
@@ -17,6 +53,7 @@ const mcMarkup = `
       name="mc-embedded-subscribe-form"
       class="validate"
       target="_blank"
+      novalidate="novalidate"
     >
       <div id="mc_embed_signup_scroll">
         <h2>Subscribe</h2>
@@ -24,15 +61,15 @@ const mcMarkup = `
           <span class="asterisk">*</span> indicates required
         </div>
         <div class="mc-field-group">
-          <label for="mce-EMAIL"
-            >Email Address <span class="asterisk">*</span></label
-          ><input
+          <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+          <input
             type="email"
             name="EMAIL"
             class="required email"
             id="mce-EMAIL"
             required=""
             value=""
+            aria-required="true"
           />
         </div>
         <div id="mce-responses" class="clear foot">
@@ -95,40 +132,5 @@ const mcMarkup = `
       </div>
     </form>
   </div>
-  <script
-    type="text/javascript"
-    src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-  ></script>
-  <script type="text/javascript">
-    (function ($) {
-      window.fnames = new Array();
-      window.ftypes = new Array();
-      fnames[0] = "EMAIL";
-      ftypes[0] = "email";
-      fnames[1] = "FNAME";
-      ftypes[1] = "text";
-      fnames[2] = "LNAME";
-      ftypes[2] = "text";
-      fnames[3] = "MMERGE3";
-      ftypes[3] = "text";
-      fnames[4] = "MMERGE4";
-      ftypes[4] = "text";
-      fnames[5] = "MMERGE5";
-      ftypes[5] = "text";
-      fnames[6] = "MMERGE6";
-      ftypes[6] = "text";
-      fnames[7] = "MMERGE7";
-      ftypes[7] = "date";
-      fnames[8] = "MMERGE8";
-      ftypes[8] = "date";
-      fnames[9] = "MMERGE9";
-      ftypes[9] = "number";
-      fnames[10] = "MMERGE10";
-      ftypes[10] = "number";
-      fnames[11] = "MMERGE11";
-      ftypes[11] = "number";
-    })(jQuery);
-    var $mcj = jQuery.noConflict(true);
-  </script>
 </div>
 `
