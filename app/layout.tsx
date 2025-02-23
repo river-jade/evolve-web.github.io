@@ -14,7 +14,10 @@ export const metadata = _metadata
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={cx('text-black bg-white dark:text-white dark:bg-black', poppinsFont.className)}>
+    <html
+      lang="en"
+      className={cx('text-black bg-white dark:text-neutral-200 dark:bg-neutral-900', poppinsFont.className)}
+    >
       <body className="antialiased mt-8 mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           {children}
