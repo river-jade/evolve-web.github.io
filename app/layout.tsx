@@ -1,49 +1,17 @@
 import './global.css'
-import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { Navbar } from './components/Navbar'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/Footer'
-import { baseUrl } from './sitemap'
 import { cx } from './lib/cx'
+import { metadata as _metadata } from './metadata'
 
 // https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#google-fonts
 // https://fonts.google.com/specimen/Poppins
 const poppinsFont = Poppins({ subsets: ['latin'], weight: '400' })
 
-const title = 'Evolve Community'
-const description = `Evolve is a "transformational" festival; a gathering of people on
-    land to connect with themselves and each other in a ritual that
-    breaks them out of the routine of everyday life.`
-
-export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  title: {
-    default: title,
-    template: `%s | ${title}`,
-  },
-  description,
-  openGraph: {
-    title,
-    description,
-    url: baseUrl,
-    siteName: title,
-    locale: 'en_AU',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-}
+export const metadata = _metadata
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

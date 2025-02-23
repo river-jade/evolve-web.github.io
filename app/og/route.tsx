@@ -1,10 +1,9 @@
-import { metadata } from 'app/layout'
-import type { DefaultTemplateString } from 'next/dist/lib/metadata/types/metadata-types'
+import { title as defaultTitle } from 'app/metadata'
 import { ImageResponse } from 'next/og'
 
 export function GET(request: Request) {
   let url = new URL(request.url)
-  let title = url.searchParams.get('title') || (metadata.title as DefaultTemplateString).default
+  let title = url.searchParams.get('title') || defaultTitle
 
   return new ImageResponse(
     (

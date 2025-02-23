@@ -1,7 +1,5 @@
-import type { DefaultTemplateString } from 'next/dist/lib/metadata/types/metadata-types'
 import { getPageMarkdown } from 'app/lib/utils'
-import { metadata } from 'app/layout'
-import { baseUrl } from 'app/sitemap'
+import { title, description, baseUrl } from 'app/metadata'
 
 export async function GET() {
   let allBlogs = await getPageMarkdown()
@@ -27,9 +25,9 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>${(metadata.title as DefaultTemplateString).default}</title>
+        <title>${title}</title>
         <link>${baseUrl}</link>
-        <description>${metadata.description}</description>
+        <description>${description}</description>
         ${itemsXml}
     </channel>
   </rss>`

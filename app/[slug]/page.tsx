@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/CustomMDX'
 import { formatDate, getPageMarkdown } from 'app/lib/utils'
-import { baseUrl } from 'app/sitemap'
+import { baseUrl, authorName } from 'app/metadata'
 
 export async function generateStaticParams() {
   let posts = getPageMarkdown()
@@ -69,7 +69,7 @@ export default function Page({ params }) {
             url: `${baseUrl}/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: authorName,
             },
           }),
         }}

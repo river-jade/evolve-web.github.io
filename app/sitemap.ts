@@ -1,7 +1,5 @@
 import { getPageMarkdown } from 'app/lib/utils'
-
-export const baseUrl = 'https://evolvecommunity.world'
-
+import { baseUrl } from 'app/metadata'
 export default async function sitemap() {
   let pages = getPageMarkdown().map((page) => ({
     url: `${baseUrl}/${page.slug}`,
