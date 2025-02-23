@@ -1,8 +1,10 @@
+import { metadata } from 'app/layout'
+import type { DefaultTemplateString } from 'next/dist/lib/metadata/types/metadata-types'
 import { ImageResponse } from 'next/og'
 
 export function GET(request: Request) {
   let url = new URL(request.url)
-  let title = url.searchParams.get('title') || 'Next.js Portfolio Starter'
+  let title = url.searchParams.get('title') || (metadata.title as DefaultTemplateString).default
 
   return new ImageResponse(
     (

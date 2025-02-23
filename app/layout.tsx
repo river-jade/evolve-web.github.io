@@ -8,19 +8,24 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/Footer'
 import { baseUrl } from './sitemap'
 
+const title = 'Evolve Community'
+const description = `Evolve is a "transformational" festival; a gathering of people on
+    land to connect with themselves and each other in a ritual that
+    breaks them out of the routine of everyday life.`
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: title,
+    template: `%s | ${title}`,
   },
-  description: 'This is my portfolio.',
+  description,
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title,
+    description,
     url: baseUrl,
-    siteName: 'My Portfolio',
-    locale: 'en_US',
+    siteName: title,
+    locale: 'en_AU',
     type: 'website',
   },
   robots: {
