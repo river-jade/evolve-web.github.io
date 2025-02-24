@@ -5,17 +5,7 @@ const navItems: Record<string, { name: string }> = {
   '/': {
     name: 'Home',
   },
-  ...getPageLinks()
-    .sort(sortByOrder)
-    .reduce(
-      (acc, page) => ({
-        ...acc,
-        [page.href]: {
-          name: page.metadata.shortTitle || page.title,
-        },
-      }),
-      {},
-    ),
+  ...getPageLinks(),
 }
 
 export function Navbar({ links = navItems }: { links?: Record<string, { name: string }> }) {

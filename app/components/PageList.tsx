@@ -1,4 +1,4 @@
-import { formatDate, getPageMarkdown, sortByOrder } from 'app/lib/utils'
+import { getPageMarkdown, sortByOrder } from 'app/lib/utils'
 import Link from 'next/link'
 
 export function PageList() {

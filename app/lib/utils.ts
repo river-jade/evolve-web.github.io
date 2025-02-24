@@ -73,24 +73,21 @@ export function getPageMarkdown(): MDXData[] {
   return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages'))
 }
 
-export type NavLink = {
-  title: string
-  href: string
-  metadata: Metadata
-}
-
 /**
  * Gets navigation links from MDX files in the pages directory
  */
 export function getPageLinks() {
-  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages')).map(
-    (page): NavLink =>
-      ({
-        title: page.metadata.title,
-        href: `/${page.slug}`,
-        metadata: page.metadata,
-      } satisfies NavLink),
-  )
+  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages'))
+    .sort(sortByOrder)
+    .reduce(
+      (acc, page) => ({
+        ...acc,
+        [`/${page.slug}`]: {
+          name: page.metadata.shortTitle || page.metadata.title || page.slug,
+        },
+      }),
+      {},
+    )
 }
 
 /**
@@ -133,5 +130,5 @@ export function formatDate(date: string, includeRelative = false) {
 }
 
 export const DEFAULT_ORDER = 100
-export const sortByOrder = (a: NavLink, b: NavLink) =>
+export const sortByOrder = (a: MDXData, b: MDXData) =>
   (a.metadata.order ?? DEFAULT_ORDER) - (b.metadata.order ?? DEFAULT_ORDER)
