@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getPageLinks } from 'app/lib/utils'
 import { cx } from 'app/lib/cx'
+import { ScrollConfig } from './ScrollConfig/ScrollConfig'
 
 const navItems: Record<string, { name: string }> = {
   '/': {
@@ -25,8 +26,9 @@ export function Navbar({
 }) {
   const LinkComponent = linkComponent ?? Link
   return (
-    // FIXME target content is covered by sticky navbar
     <aside className="NavBar md:sticky md:top-0 tracking-tight relative">
+      <ScrollConfig navbarSelector=".NavBar" navbarExtraOffsetPx={10} />
+
       <div className="py-2 bg-white dark:bg-neutral-900 border-b-1 border-gray-200">
         <nav
           id="nav"
