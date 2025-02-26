@@ -33,7 +33,7 @@ export default function Footer() {
 
       <MailChimpVendorForm />
 
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300 text-xs">
+      <p className="mt-8 text-neutral-600 text-xs">
         © {new Date().getFullYear()} Evolve Community. All rights reserved.
       </p>
     </footer>

@@ -20,7 +20,7 @@ export const FestivalPromo = () => {
         />
 
         <div className="flex flex-col gap-4 w-full max-w-xl mx-auto z-20 py-6">
-          <h2 className="text-4xl font-extrabold text-neutral-700 dark:text-neutral-400">
+          <h2 className="text-4xl font-extrabold text-neutral-700">
             Evolve Festival 2025
           </h2>
 

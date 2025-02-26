@@ -29,7 +29,7 @@ export function Navbar({
     <aside className="NavBar md:sticky md:top-0 tracking-tight relative">
       <ScrollConfig navbarSelector=".NavBar" navbarExtraOffsetPx={10} />
 
-      <div className="py-2 bg-white dark:bg-neutral-900 border-b-1 border-gray-200">
+      <div className="py-2 bg-white border-b-1 border-gray-200">
         <nav
           id="nav"
           className="max-w-xl mx-auto px-0 pb-0 fade md:overflow-auto scroll-pr-6"
@@ -42,7 +42,7 @@ export function Navbar({
                     href={path}
                     className={cx(`
                       flex align-middle py-1 px-3
-                      hover:text-neutral-800 dark:hover:text-neutral-200 whitespace-nowrap
+                      hover:text-neutral-800 whitespace-nowrap
                       hover:underline transition-all
                       ${path === '/' ? 'font-bold' : ''}
                     `)}
