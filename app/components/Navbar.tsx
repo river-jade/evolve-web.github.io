@@ -25,6 +25,7 @@ export function Navbar({
 }) {
   const LinkComponent = linkComponent ?? Link
   return (
+    // FIXME target content is covered by sticky navbar
     <aside className="NavBar md:sticky md:top-0 tracking-tight relative">
       <div className="py-2 bg-white dark:bg-neutral-900 border-b-1 border-gray-200">
         <nav
