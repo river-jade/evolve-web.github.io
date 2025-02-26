@@ -47,11 +47,14 @@ export const Workshops = () => (
           ))}
       </ul>
 
-      {namesWithoutDetails && namesWithoutDetails.length ? 
-      (<div className="max-w-xl mx-auto">
-        <h3>And further offerings from:</h3>
-        <p>{namesWithoutDetails.join(', ')}.</p>
-      </div>) : ""}
+      {namesWithoutDetails && namesWithoutDetails.length ? (
+        <div className="max-w-xl mx-auto">
+          <h3>And further offerings from:</h3>
+          <p>{namesWithoutDetails.join(', ')}.</p>
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   </div>
 )

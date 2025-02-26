@@ -51,6 +51,9 @@ html {
   font-size: 20px;
   /* min-width: 360px; */
 
+  /* prevent content causing side-scroll on mobile */
+  word-break: break-word;
+
   /* prefer light mode */
   color-scheme: light dark;
 

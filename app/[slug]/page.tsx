@@ -65,7 +65,7 @@ export default function Page({ params }) {
   const links = getHashLinks(headings)
 
   return (
-    <div className="Page flex flex-col gap-6">
+    <div className="Page relative flex flex-col gap-6">
       <script
         type="application/ld+json"
         suppressHydrationWarning

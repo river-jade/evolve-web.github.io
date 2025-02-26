@@ -13,7 +13,7 @@ export default function Page() {
   const links = getHashLinks(headings)
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="relative flex flex-col gap-6">
       <Banner title="Evolve Community" />
       <FestivalPromo />
       <Navbar links={links} />
