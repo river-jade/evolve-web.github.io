@@ -6,7 +6,7 @@ export const FestivalPromo = () => {
   return (
     <section className="FestivalPromo">
       <Link
-        href="/evolve-festival-2025"
+        href="/mar-2025"
         className={cx(`
           relative flex flex-col
         `)}
