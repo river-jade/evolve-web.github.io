@@ -29,8 +29,8 @@ export const FestivalPromo = () => {
             as a contributor.
             <br />
             <br />
-            Stunning natural surroundings with opportunities for swimming,
-            forest walks, and grounding in nature. Facilities include drinking
+            Stunning natural surroundings with opportunities for 
+            forest walks and grounding in nature. Facilities include drinking
             water, toilets, and showers.
           </p>
 
