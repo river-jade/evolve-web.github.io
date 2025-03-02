@@ -89,11 +89,6 @@
     "image": "lisa-farinosi.jpg"
   },
   {
-    "Name": "Maya Ward",
-    "Workshop name": "Writing with the Earth: Kinship, Embodiment, Belonging",
-    "Details": "Via guided meditations, embodiment processes and stream-of-consciousness writing, we enter into profound presence with the animate world; a transformative altered state process we call co-becoming. "
-  },
-  {
     "Name": "Sarah Wilcox",
     "Workshop name": "Visioning Out Loud",
     "Details": "A creative, playful process of dreaming into our personal and collective goals, speaking from the future as if we have already embodied this reality to our current selves and sharing the steps we took",
@@ -112,9 +107,26 @@
     "image": "sabah-massaoudi.jpg"
   },
   {
+    "Name": "Maya Ward",
+    "Workshop name": "Writing with the Earth: Kinship, Embodiment, Belonging",
+    "Details": "Via guided meditations, embodiment processes and stream-of-consciousness writing, we enter into profound presence with the animate world; a transformative altered state process we call co-becoming. "
+  },
+  {
     "Name": "Jessi",
     "Workshop name": "Meditative Spontaneity",
     "Details": "How to try without trying, how to play with how present you are and how to find your space within your comfort zone within your boundaries, in meditative ways, in connection with others.",
     "image": ""
+  },
+  {
+    "Name": "Anita Harding ",
+    "Workshop name": "Thrive in 2025",
+    "Details": "What to expect in 2025 for me. What’s my Personal year number, understanding the benefits and gifts of each number in the 9 year cycle. Learn how to calculate your year number and thrive in 2025.",
+    "image": ""
+  },
+  {
+    "Name": "Isabelle Xavier",
+    "Workshop name": "Circling: Relational Presence",
+    "Details": "A powerful relational meditation practice, Circling invites us into a collective communion with the present moment. A journey of embodied presence, authentic relating, surrender, and loving awareness.",
+    "image": "isabelle-xavier.jpg"
   }
 ]
