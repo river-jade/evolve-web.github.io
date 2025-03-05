@@ -109,19 +109,19 @@
   {
     "Name": "Maya Ward",
     "Workshop name": "Writing with the Earth: Kinship, Embodiment, Belonging",
-    "Details": "Via guided meditations, embodiment processes and stream-of-consciousness writing, we enter into profound presence with the animate world; a transformative altered state process we call co-becoming. "
+    "Details": "Via guided meditations, embodiment processes and stream-of-consciousness writing, we enter into profound presence with the animate world; a transformative altered state process we call co-becoming. ",
+    "image": "maya-ward.jpg"
   },
   {
     "Name": "Jessi",
     "Workshop name": "Meditative Spontaneity",
-    "Details": "How to try without trying, how to play with how present you are and how to find your space within your comfort zone within your boundaries, in meditative ways, in connection with others.",
-    "image": ""
+    "Details": "How to try without trying, how to play with how present you are and how to find your space within your comfort zone within your boundaries, in meditative ways, in connection with others."
   },
   {
     "Name": "Anita Harding ",
     "Workshop name": "Thrive in 2025",
     "Details": "What to expect in 2025 for me. What’s my Personal year number, understanding the benefits and gifts of each number in the 9 year cycle. Learn how to calculate your year number and thrive in 2025.",
-    "image": ""
+    "image": "anita-harding.jpg"
   },
   {
     "Name": "Isabelle Xavier",
@@ -149,5 +149,17 @@
     "Name": "Kaz T.Anderson",
     "Workshop name": "An Evolutionary Collective (pt 2): A Collective Communication practical experiment",
     "Details": "An experiment to explore an evolving version of NVC (Nonviolent Communication) that embraces collective-speak (soul, our needs) and is compassionate for individual-speak (I, me, my feelings, my needs)"
+  },
+  {
+    "Name": "River Satya and Chloe McKeand",
+    "Workshop name": "Vision for Evolve Community: a fireside chat",
+    "Details": "Join Chloe and River for this podcast style conversation about the short and long-term vision for Evolve community.",
+    "image": "river-satya.jpg"
+  },
+  {
+    "Name": "Chloe, Kate, Ari",
+    "Workshop name": "A Space for Grief",
+    "Details": "We will be creating a gentle ritual container for collective and individual grief to be welcomed, held, expressed and witnessed, possibly around a fire, fostering wholeness and connection.",
+    "image": "chloe-grief.jpg"
   }
 ]
