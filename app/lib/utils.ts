@@ -135,7 +135,7 @@ export const sortByOrder = (a: MDXData, b: MDXData) =>
   (a.metadata.order ?? DEFAULT_ORDER) - (b.metadata.order ?? DEFAULT_ORDER)
 
 export const parseHeadings = (content: string) =>
-  content.match(/(?:## ).*/g)?.map((match) => {
+  content.match(/(?:^|\n)## .*/g)?.map((match) => {
     return match.replace('## ', '').trim()
   }) ?? []
 
