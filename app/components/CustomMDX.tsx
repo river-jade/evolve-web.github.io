@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
+import ImageGallery from './Gallery'
 import React from 'react'
 
 function Table({ data }) {
@@ -97,6 +98,7 @@ let defaultComponents = {
   a: CustomLink,
   code: Code,
   Table,
+  ImageGallery,
 }
 
 export function CustomMDX(props) {
