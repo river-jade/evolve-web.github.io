@@ -6,7 +6,7 @@ export const FestivalPromo = () => {
   return (
     <section className="FestivalPromo">
       <Link
-        href="/mar-2025"
+        href="/mar-2026"
         className={cx(`
           relative flex flex-col
         `)}
@@ -21,7 +21,7 @@ export const FestivalPromo = () => {
 
         <div className="flex flex-col gap-4 w-full max-w-xl mx-auto z-20 py-6">
           <h2 className="text-4xl font-extrabold text-neutral-700">
-            Evolve Festival 2025
+            Evolve Festival 2026
           </h2>
 
           <p className="font-bold">
@@ -29,14 +29,14 @@ export const FestivalPromo = () => {
             as a contributor.
             <br />
             <br />
-            Stunning natural surroundings with opportunities for 
-            forest walks and grounding in nature. Facilities include drinking
-            water, toilets, and showers.
+            Stunning natural surroundings with opportunities for forest walks
+            and grounding in nature. Facilities include drinking water, toilets,
+            and showers.
           </p>
 
           <p className="flex justify-between text-lg font-bold">
-            <span>7th March - 10th March, 2025</span>
-            <span>Bell Park, Lang Lang</span>
+            <span>6th March - 9th March, 2026</span>
+            <span>Gilwell Park, Gembrook</span>
           </p>
         </div>
       </Link>
