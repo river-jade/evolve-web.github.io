@@ -20,12 +20,11 @@ function ArrowIcon() {
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col gap-2 max-w-xl w-full mx-auto mt-12 mb-4 pt-6 border-t-1 border-gray-200">
+    <footer className="prose flex flex-col gap-2 max-w-xl w-full mx-auto mt-12 mb-4 pt-6 border-t-1 border-gray-200">
       <p>
         Contact us:{' '}
         <a
           href={`mailto:${contactEmail}`}
-          className="underline decoration-dotted text-blue-600"
         >
           {contactEmail}
         </a>
