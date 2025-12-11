@@ -8,7 +8,7 @@ import { metadata as _metadata } from './metadata'
 
 // https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#google-fonts
 // https://fonts.google.com/specimen/Poppins
-const poppinsFont = Poppins({ subsets: ['latin'], weight: '400' })
+const poppinsFont = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'] })
 
 export const metadata = _metadata
 
@@ -25,10 +25,16 @@ export default function RootLayout({
         poppinsFont.className,
       )}
     >
-      <body className="antialiased mt-8 mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      {/* CHANGED: Removed mt-8 mx-auto to allow full-width designs */}
+      <body className="antialiased selection:bg-teal-200 selection:text-teal-900">
+        <main className="flex-auto min-w-0 flex flex-col">
           {children}
-          <Footer />
+
+          {/* Constrain the footer so it doesn't look too wide */}
+          <div className="max-w-4xl mx-auto w-full px-6">
+            <Footer />
+          </div>
+
           <Analytics />
           <SpeedInsights />
         </main>
