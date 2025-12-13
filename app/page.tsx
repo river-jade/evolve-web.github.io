@@ -99,7 +99,7 @@ export default function Page() {
       <PrinciplesGrid />
 
       {/* 5. MOMENTS & HISTORY (The Gallery) */}
-      <section className="py-24 px-6 bg-white border-t border-stone-100">
+      <section className="pt-24 pb-0 px-6 bg-white border-t border-stone-100">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 mb-12">
              <div>
