@@ -1,60 +1,60 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { getPageLinks } from 'app/lib/utils'
 import { cx } from 'app/lib/cx'
-import { ScrollConfig } from './ScrollConfig/ScrollConfig'
 
-const navItems: Record<string, { name: string }> = {
-  '/': {
-    name: 'Home',
-  },
-  ...getPageLinks(),
-}
+export function Navbar({ links }: { links?: Record<string, { name: string }> }) {
+  const [isScrolled, setIsScrolled] = useState(false)
 
-const HtmlLink = (
-  props: {
-    href: string
-    children: React.ReactNode
-  } & Record<string, unknown>,
-) => <a {...props} />
+  // Handle scroll effect for transparency
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-export function Navbar({
-  links = navItems,
-  linkComponent,
-}: {
-  links?: Record<string, { name: string }>
-  linkComponent?: typeof Link | typeof HtmlLink
-}) {
-  const LinkComponent = linkComponent ?? Link
   return (
-    <aside className="NavBar md:sticky md:top-0 tracking-tight relative">
-      <ScrollConfig navbarSelector=".NavBar" navbarExtraOffsetPx={10} />
+    <nav
+      className={cx(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md py-3 shadow-sm border-gray-200 text-stone-800'
+          : 'bg-transparent py-6 border-transparent text-white'
+      )}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
-      <div className="py-2 bg-white border-b-1 border-gray-200">
-        <nav
-          id="nav"
-          className="max-w-xl mx-auto px-0 pb-0 fade md:overflow-auto scroll-pr-6"
-        >
-          <ul className="flex flex-col md:flex-row flex-wrap space-x-0 -ml-3">
-            {Object.entries(links).map(([path, { name }]) => {
-              return (
-                <li key={path} className="min-w-content">
-                  <LinkComponent
-                    href={path}
-                    className={cx(`
-                      flex align-middle py-1 px-3
-                      hover:text-neutral-800 whitespace-nowrap
-                      hover:underline transition-all
-                      ${path === '/' ? 'font-bold' : ''}
-                    `)}
-                  >
-                    {name}
-                  </LinkComponent>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+        {/* BRANDING */}
+        <Link href="/" className="flex items-center gap-2 group">
+           {/* Optional: Add Logo Image here if you have one available as a file */}
+           <span className="text-2xl font-extrabold tracking-tighter">
+             EVOLVE
+           </span>
+        </Link>
+
+        {/* DESKTOP NAV */}
+        <div className="hidden md:flex items-center gap-8 font-medium text-sm">
+          <Link href="/mar-2026" className="hover:opacity-70 transition-opacity">Festival 2026</Link>
+          <Link href="/principles" className="hover:opacity-70 transition-opacity">Principles</Link>
+
+          {/* CTA Button */}
+          <Link
+            href="/mar-2026"
+            className={cx(
+              "px-5 py-2 rounded-full font-bold transition-all",
+              isScrolled
+                ? "bg-stone-900 text-white hover:bg-teal-600"
+                : "bg-white text-stone-900 hover:bg-stone-200"
+            )}
+          >
+            Get Tickets
+          </Link>
+        </div>
       </div>
-    </aside>
+    </nav>
   )
 }
