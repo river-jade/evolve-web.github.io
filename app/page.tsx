@@ -1,29 +1,40 @@
-import path from 'path'
-import { CustomMDX } from './components/CustomMDX'
-import { getHashLinks, getMDXData, parseHeadings } from './lib/utils'
+'use client'
+
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { PrinciplesGrid } from './components/PrinciplesGrid'
+import ImageGallery from './components/Gallery' // Assuming you have this component
+import Link from 'next/link'
 
 export default function Page() {
-  let pages = getMDXData(path.join(process.cwd(), 'app'))
-  const homepage = pages?.find((post) => post.slug === 'homepage') ?? {
-    content: 'No content',
-  }
 
-  // We keep the navbar links logic
-  const headings = parseHeadings(homepage.content)
-  const links = getHashLinks(headings)
+  // Hardcoded past events list for the "Moments" section
+  const pastEvents = [
+    { title: "Evolve Festival @ Bell Park", date: "March 2025" },
+    { title: "Vision Conference", date: "October 2025" },
+    { title: "Spring Confest Village", date: "October 2024 & 2025" },
+    { title: "Easter Confest Village", date: "April 2025" },
+  ]
+
+  // Images from the original homepage.mdx
+  const galleryImages = [
+    { src: '/images/spring-confest-2024/image-1.jpg', alt: 'Community gathering'},
+    { src: '/images/spring-confest-2024/image-2.jpg', alt: 'Workshops in nature'},
+    { src: '/images/spring-confest-2024/image-3.jpg', alt: 'Connection'},
+    { src: '/images/spring-confest-2024/image-4.jpg', alt: 'Celebration'},
+    { src: '/images/bell-park-2025/image-1.jpg', alt: 'Bell Park Festival'},
+    { src: '/images/bell-park-2025/image-2.jpg', alt: 'Gathering'},
+    { src: '/images/bell-park-2025/image-3.jpg', alt: 'Nature'},
+    { src: '/images/bell-park-2025/image-4.jpg', alt: 'Tent village'},
+  ]
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. VISUAL HERO */}
+      {/* 1. VISUAL HERO (Includes Navigation) */}
+      <Navbar />
       <Hero />
 
-      {/* 2. NAVIGATION (Sticky below hero) */}
-      <Navbar links={links} />
-
-      {/* 3. THE INTRO (The "Why") */}
+      {/* 2. THE INTRO (The "Why") */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="flex flex-col gap-3">
@@ -50,56 +61,71 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4. UPCOMING EVENTS (Highlighting 2026) */}
+      {/* 3. UPCOMING EVENT SPOTLIGHT */}
       <section id="events" className="py-20 px-6 bg-stone-900 text-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Upcoming Gatherings</h2>
-
-          {/* Main Event Card */}
-          <div className="bg-stone-800 rounded-3xl p-8 md:p-12 border border-stone-700 hover:border-teal-500 transition-colors relative overflow-hidden group">
-               <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                 <div>
-                   <span className="bg-teal-500 text-stone-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Next Major Event</span>
-                   <h3 className="text-3xl md:text-5xl font-bold mt-4 mb-2">Evolve Festival 2026</h3>
-                   <p className="text-xl text-stone-300">March 6th - 9th • Gilwell Park, Gembrook</p>
-                 </div>
-                 <a
-                   href="https://www.trybooking.com/DHISF"
-                   target="_blank"
-                   className="bg-white text-stone-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-teal-400 transition-colors whitespace-nowrap"
-                 >
-                   Get Tickets →
-                 </a>
-               </div>
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="text-teal-400 font-bold tracking-widest uppercase mb-2 text-sm">Join the next gathering</span>
+            <h2 className="text-3xl md:text-5xl font-bold">Evolve Festival 2026</h2>
           </div>
 
-          {/* Smaller list for other events */}
-          <div className="mt-8 grid md:grid-cols-2 gap-6">
-             <div className="bg-stone-800/50 rounded-xl p-6 border border-stone-700">
-               <h4 className="font-bold text-lg text-stone-200">Vision Conference</h4>
-               <p className="text-stone-400">October 2025 • Moora Moora</p>
-             </div>
-             <div className="bg-stone-800/50 rounded-xl p-6 border border-stone-700">
-               <h4 className="font-bold text-lg text-stone-200">Spring Confest Village</h4>
-               <p className="text-stone-400">October 2025</p>
-             </div>
+          <div className="bg-stone-800 rounded-3xl p-8 md:p-12 border border-stone-700 hover:border-teal-500 transition-colors relative overflow-hidden group shadow-2xl">
+               {/* Background accent */}
+               <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+               <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                 <div className="text-center md:text-left">
+                   <h3 className="text-2xl md:text-4xl font-bold mb-2">Gilwell Park, Gembrook</h3>
+                   <p className="text-xl text-stone-400 mb-4">March 6th - 9th, 2026</p>
+                   <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                      <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Camping</span>
+                      <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Workshops</span>
+                      <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Music</span>
+                      <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Ritual</span>
+                   </div>
+                 </div>
+                 <Link
+                   href="/mar-2026"
+                   className="bg-white text-stone-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-teal-400 transition-colors whitespace-nowrap shadow-lg"
+                 >
+                   View Event Details →
+                 </Link>
+               </div>
           </div>
         </div>
       </section>
 
-      {/* 5. PRINCIPLES GRID */}
+      {/* 4. PRINCIPLES GRID */}
       <PrinciplesGrid />
 
-      {/* 6. MANIFESTO (The Full MDX Content) */}
-      <section id="manifesto" className="py-24 px-6 bg-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-stone-400 uppercase mb-2">The Manifesto</h2>
-            <h3 className="text-3xl font-bold text-stone-900">For those who want to go deeper</h3>
-          </div>
+      {/* 5. MOMENTS & HISTORY (The Gallery) */}
+      <section className="py-24 px-6 bg-white border-t border-stone-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+             <div>
+                <h2 className="text-3xl font-bold mb-6 text-stone-800">Moments from the Movement</h2>
+                <p className="text-stone-600 mb-6 leading-relaxed">
+                  Evolve has grown from small village gatherings at Confest into standalone festivals.
+                  Here is a glimpse of the connection, play, and beauty we create together.
+                </p>
+                <div className="bg-stone-50 p-6 rounded-2xl">
+                  <h4 className="font-bold text-stone-900 mb-4">Past Gatherings</h4>
+                  <ul className="space-y-3">
+                    {pastEvents.map((e, i) => (
+                      <li key={i} className="flex justify-between text-sm border-b border-stone-200 pb-2 last:border-0">
+                        <span className="font-medium text-stone-700">{e.title}</span>
+                        <span className="text-stone-500">{e.date}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+             </div>
 
-          <div className="prose prose-lg prose-stone prose-headings:font-bold prose-a:text-teal-600 hover:prose-a:text-teal-500 mx-auto">
-            <CustomMDX source={homepage.content} />
+             {/* Gallery Component */}
+             <div className="bg-stone-100 rounded-2xl p-4">
+                <ImageGallery images={galleryImages} />
+                <p className="text-center text-xs text-stone-400 mt-2">Click images to expand</p>
+             </div>
           </div>
         </div>
       </section>
