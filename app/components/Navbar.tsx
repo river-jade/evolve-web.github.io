@@ -42,7 +42,7 @@ export function Navbar({overlay = false } : {overlay?: boolean}) {
 
           {/* CTA Button */}
           <Link
-            href="/mar-2026"
+            href="https://www.trybooking.com/DHISF"
             className={cx(
               "px-5 py-2 rounded-full font-bold transition-all",
               isTransparent
