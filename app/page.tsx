@@ -10,10 +10,11 @@ export default function Page() {
 
   // Hardcoded past events list for the "Moments" section
   const pastEvents = [
-    { title: "Evolve Festival @ Bell Park", date: "March 2025" },
-    { title: "Vision Conference", date: "October 2025" },
-    { title: "Spring Confest Village", date: "October 2024 & 2025" },
-    { title: "Easter Confest Village", date: "April 2025" },
+    // { title: "Vision Conference", date: "October 2025", slug:"vision-conference-2025" },
+    { title: "Spring Confest Village", date: "October 2025", slug:"spring-confest-2025" },
+    { title: "Easter Confest Village", date: "April 2025", slug:"easter-confest-2025" },
+    { title: "Evolve Festival @ Bell Park", date: "March 2025", slug:"evolve-festival-bell-park-2025" },
+    { title: "Spring Confest Village", date: "October 2024", slug:"spring-confest-2024" },
   ]
 
   // Images from the original homepage.mdx
@@ -31,7 +32,7 @@ export default function Page() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. VISUAL HERO (Includes Navigation) */}
-      <Navbar />
+      <Navbar overlay={true} />
       <Hero />
 
       {/* 2. THE INTRO (The "Why") */}
@@ -112,10 +113,12 @@ export default function Page() {
                   <h4 className="font-bold text-stone-900 mb-4">Past Gatherings</h4>
                   <ul className="space-y-3">
                     {pastEvents.map((e, i) => (
-                      <li key={i} className="flex justify-between text-sm border-b border-stone-200 pb-2 last:border-0">
-                        <span className="font-medium text-stone-700">{e.title}</span>
-                        <span className="text-stone-500">{e.date}</span>
-                      </li>
+                      <Link href={`/${e.slug}`} key={i} className="block hover:bg-stone-100 rounded-lg p-2 transition-colors">
+                        <li key={i} className="flex justify-between text-sm border-b border-stone-200 pb-2 last:border-0">
+                          <span className="font-medium text-stone-700">{e.title}</span>
+                          <span className="text-stone-500">{e.date}</span>
+                        </li>
+                      </Link>
                     ))}
                   </ul>
                 </div>

@@ -2,28 +2,27 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { getPageLinks } from 'app/lib/utils'
 import { cx } from 'app/lib/cx'
 
-export function Navbar({ links }: { links?: Record<string, { name: string }> }) {
+export function Navbar({overlay = false } : {overlay?: boolean}) {
   const [isScrolled, setIsScrolled] = useState(false)
-
   // Handle scroll effect for transparency
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const isTransparent = overlay && !isScrolled
   return (
     <nav
       className={cx(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md py-3 shadow-sm border-gray-200 text-stone-800'
-          : 'bg-transparent py-6 border-transparent text-white'
+        isTransparent
+          ? 'bg-transparent border-transparent text-white py-6' // Hero State
+          : 'bg-white/95 backdrop-blur-md border-stone-200 text-stone-800 py-3 shadow-sm' // Standard/Scrolled State
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -46,9 +45,9 @@ export function Navbar({ links }: { links?: Record<string, { name: string }> }) 
             href="/mar-2026"
             className={cx(
               "px-5 py-2 rounded-full font-bold transition-all",
-              isScrolled
-                ? "bg-stone-900 text-white hover:bg-teal-600"
-                : "bg-white text-stone-900 hover:bg-stone-200"
+              isTransparent
+                ? "bg-white text-stone-900 hover:bg-stone-200"
+                : "bg-stone-900 text-white hover:bg-teal-600"
             )}
           >
             Get Tickets
