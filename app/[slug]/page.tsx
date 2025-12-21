@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/CustomMDX'
-import { getHashLinks, getPageMarkdown, parseHeadings } from 'app/lib/utils'
+import { getPageMarkdown } from 'app/lib/utils'
 import { baseUrl, authorName } from 'app/metadata'
 import { Banner } from 'app/components/Banner'
 import { cx } from 'app/lib/cx'
@@ -61,9 +61,6 @@ export default function Page({ params }) {
     notFound()
   }
 
-  const headings = parseHeadings(page.content)
-  const links = getHashLinks(headings)
-
   return (
     <div className="Page relative flex flex-col gap-6">
       <script
@@ -88,9 +85,11 @@ export default function Page({ params }) {
           }),
         }}
       />
-      <Banner title={page.metadata.title} />
-      <Navbar links={links} />
-
+      <Navbar overlay={false} />
+      {/* Add pt-24 here so the Fixed Navbar doesn't cover the title */}
+      <div className="pt-24">
+          <Banner title={page.metadata.title} />
+      </div>
       <section
         className={cx(`prose max-w-xl mx-auto`, page.metadata.className)}
       >
