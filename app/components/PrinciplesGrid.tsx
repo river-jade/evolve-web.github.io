@@ -44,6 +44,12 @@ export function PrinciplesGrid() {
       slug: "7-agency-and-action",
       desc: "We don't just talk; we act. We use our shared inspiration to generate real-world projects that make a difference."
     },
+    {
+      title: "Honouring the Sacred",
+      icon: "🌌",
+      slug: "8-honouring-the-sacred",
+      desc: "We acknowledge the spiritual dimensions of our work, creating space for reverence, gratitude, and connection to the sacred."
+    }
   ]
 
   return (
