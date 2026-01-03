@@ -86,12 +86,11 @@ export default function Page({ params }) {
         }}
       />
       <Navbar overlay={false} />
-      {/* Add pt-24 here so the Fixed Navbar doesn't cover the title */}
-      <div className="pt-24">
+      <div className="pt-24 px-6">
           <Banner title={page.metadata.title} />
       </div>
       <section
-        className={cx(`prose max-w-xl mx-auto`, page.metadata.className)}
+        className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}
       >
         <CustomMDX source={page.content} components={{ Workshops }} />
       </section>
