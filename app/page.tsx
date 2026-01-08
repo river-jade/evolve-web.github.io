@@ -37,6 +37,14 @@ export default function Page() {
 
       {/* 2. THE INTRO (The "Why") */}
       <section className="py-24 px-6 bg-white">
+        <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 mb-20">
+          <p className="text-xl md:text-2xl font-medium text-stone-800 leading-relaxed">
+            Evolve is a festival and a social movement, bringing people together to share knowledge, wisdom, and community to support culture change for a better world.
+          </p>
+          <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light">
+            It is both a response to the global metacrisis, and an invitation to co-create the more beautiful world our hearts know is possible.
+          </p>
+        </div>
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="flex flex-col gap-3">
             <span className="text-4xl mb-2">🎉</span>
