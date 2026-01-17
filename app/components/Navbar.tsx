@@ -38,7 +38,7 @@ export function Navbar({overlay = false } : {overlay?: boolean}) {
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8 font-medium text-sm">
           <Link href="/mar-2026" className="hover:opacity-70 transition-opacity">Festival 2026</Link>
-          <Link href="/principles" className="hover:opacity-70 transition-opacity">Principles</Link>
+          <Link href="/values" className="hover:opacity-70 transition-opacity">Our Values</Link>
 
           {/* CTA Button */}
           <Link

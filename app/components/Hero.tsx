@@ -36,7 +36,7 @@ export function Hero() {
             Explore Festival 2026
           </Link>
           <Link
-            href="/principles"
+            href="/values"
             className="px-8 py-4 bg-black/30 hover:bg-black/50 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-full text-lg transition-all"
           >
             Our Vision

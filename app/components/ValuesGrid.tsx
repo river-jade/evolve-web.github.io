@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-export function PrinciplesGrid() {
-  const principles = [
+export function ValuesGrid() {
+  const values = [
     {
       title: "Learning & Evolution",
       icon: "🌱",
@@ -56,16 +56,16 @@ export function PrinciplesGrid() {
     <section className="py-20 px-6 bg-stone-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Our Core Principles</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Our Core Values</h2>
           <p className="text-stone-600 max-w-2xl mx-auto text-lg">
-            Evolve is built on a foundation of eight key principles. Click below to explore them in depth.
+            Evolve is built on a foundation of eight key values. Click below to explore them in depth.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {principles.map((p, i) => (
+          {values.map((p, i) => (
             <Link
-              href={`/principles#${p.slug}`}
+              href={`/values#${p.slug}`}
               key={i}
               className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-stone-100 flex flex-col gap-4 transform hover:-translate-y-1"
             >
