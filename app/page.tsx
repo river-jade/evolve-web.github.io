@@ -2,7 +2,7 @@
 
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
-import { PrinciplesGrid } from './components/PrinciplesGrid'
+import { ValuesGrid } from './components/ValuesGrid'
 import ImageGallery from './components/Gallery' // Assuming you have this component
 import Link from 'next/link'
 
@@ -104,8 +104,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4. PRINCIPLES GRID */}
-      <PrinciplesGrid />
+      {/* 4. VALUES GRID */}
+      <ValuesGrid />
 
       {/* 5. MOMENTS & HISTORY (The Gallery) */}
       <section className="pt-24 pb-0 px-6 bg-white border-t border-stone-100">
