@@ -16,6 +16,11 @@ const nextConfig = {
         destination: 'https://world.us10.list-manage.com/subscribe?u=2f59f4888aeaef053a48ad2bc&id=100146c012',
         permanent: true,
       },
+      {
+        source: '/fb-event',
+        destination: 'https://www.facebook.com/events/860183339903891',
+        permanent: true,
+      },
     ]
   },
 }
