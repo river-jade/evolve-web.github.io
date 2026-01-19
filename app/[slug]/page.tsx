@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/CustomMDX'
+import { Banner } from 'app/components/Banner'
+import { FAQ } from 'app/components/FAQ'
+import { Navbar } from 'app/components/Navbar'
+import { Workshops } from 'app/components/Workshops'
 import { getPageMarkdown } from 'app/lib/utils'
 import { baseUrl, authorName } from 'app/metadata'
-import { Banner } from 'app/components/Banner'
 import { cx } from 'app/lib/cx'
-import { Workshops } from 'app/components/Workshops'
-import { Navbar } from 'app/components/Navbar'
 
 export async function generateStaticParams() {
   let posts = getPageMarkdown()
@@ -92,7 +93,7 @@ export default function Page({ params }) {
       <section
         className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}
       >
-        <CustomMDX source={page.content} components={{ Workshops }} />
+        <CustomMDX source={page.content} components={{ Workshops, FAQ }} />
       </section>
     </div>
   )
