@@ -30,7 +30,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
         </span>
       </button>
       {isOpen && (
-        <div className="pb-4 pr-12 text-gray-600 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="pb-4 pr-12 text-gray-600 animate-in fade-in slide-in-from-top-2 duration-200 whitespace-pre-line">
           {answer}
         </div>
       )}
