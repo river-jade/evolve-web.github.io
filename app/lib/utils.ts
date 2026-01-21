@@ -1,4 +1,3 @@
-import { slugify } from 'app/components/CustomMDX'
 import fs from 'fs'
 import path from 'path'
 
@@ -10,6 +9,17 @@ type Metadata = {
   shortTitle?: string
   order?: number
   className?: string
+}
+
+export function slugify(str) {
+  return str
+    .toString()
+    .toLowerCase()
+    .trim() // Remove whitespace from both ends of a string
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
 }
 
 /**
