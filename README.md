@@ -1,5 +1,9 @@
 # Evolve Website
 
+To build a new JSON file for workshops, run:
+pnpm run -s import 2026 > app/data/workshops-2026.json
+
+With the appropriate year provided. CSV should be in ./data.csv
 
 
 ## Boilerplate

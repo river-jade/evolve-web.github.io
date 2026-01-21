@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "import": "node scripts/import-workshops.js",
+    "import": "node scripts/import-workshops.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
