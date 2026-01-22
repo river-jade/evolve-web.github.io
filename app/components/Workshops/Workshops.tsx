@@ -22,7 +22,11 @@ export const Workshops = ({ year }: { year: string }) => {
 
       <div className="flex flex-col gap-2 w-4/5">
         <h3 className="m-0! text-xl font-bold">{workshop_name}</h3>
-        <h4 className="m-0! text-lg font-bold">{facilitator.name}</h4>
+        <Link href={`/facilitators/${facilitator.slug}?year=${year}`} className="group active:opacity-60 transition-opacity">
+          <h4 className="m-0! text-lg font-bold text-gray-900 group-hover:text-orange-600 underline decoration-orange-300 decoration-2 underline-offset-4">
+            {facilitator.name}
+          </h4>
+        </Link>
         {details && <p className="m-0! whitespace-pre-wrap">{details}</p>}
       </div>
     </li>
