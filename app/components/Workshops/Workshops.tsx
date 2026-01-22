@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ALL_WORKSHOPS, Workshop } from '@/lib/data'
+import { slugify } from '@/lib/utils'
 
 export const Workshops = ({ year }: { year: string }) => {
   const workshops = ALL_WORKSHOPS[year] || []
@@ -27,34 +28,15 @@ export const Workshops = ({ year }: { year: string }) => {
     </li>
   )
 
-  const workshopIds = workshops.map(({ id }) => id)
-  const namesWithoutDetails = workshops
-    .filter(({ id }) => !workshopIds.includes(id))
-    .map(({ workshop_name }) => workshop_name)
 
   return (<div className="Workshops align-full my-12">
     <div className="w-full max-w-screen-xl mx-auto px-4">
       <ul className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {workshops
-          .filter(({ details }) => details)
-          .map((workshop) => (
-            <Workshop key={workshop.id} {...workshop} />
-          ))}
-        {workshops
-          .filter(({ details }) => !details)
-          .map((workshop) => (
-            <Workshop key={workshop.id} {...workshop} />
-          ))}
+        {[
+          ...workshops.filter(({ details }) => details),
+          ...workshops.filter(({ details }) => !details)
+        ].map(workshop => <Workshop key={slugify(workshop.workshop_name)} {...workshop} />)}
       </ul>
-
-      {namesWithoutDetails && namesWithoutDetails.length ? (
-        <div className="max-w-xl mx-auto">
-          <h3>And further offerings from:</h3>
-          <p>{namesWithoutDetails.join(', ')}.</p>
-        </div>
-      ) : (
-        ''
-      )}
     </div>
   </div>
   )
