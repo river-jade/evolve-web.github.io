@@ -28,7 +28,7 @@ export function generateMetadata({ params }) {
     image,
   } = post.metadata
   let ogImage = image
-    ? image
+    ? (image.startsWith('/') ? `${baseUrl}${image}` : image) // Auto-fix relative paths
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
