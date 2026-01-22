@@ -5,49 +5,49 @@ export function ValuesGrid() {
     {
       title: "Learning & Evolution",
       icon: "🌱",
-      slug: "1-learning-growing-and-evolving-together",
+      slug: "learning-growing-and-evolving-together",
       desc: "We support each other’s development as individuals while cultivating a cultural transformation together."
     },
     {
       title: "Ecological Wellbeing",
       icon: "🌿",
-      slug: "2-ecological-wellbeing-and-interconnectedness",
+      slug: "ecological-wellbeing-and-interconnectedness",
       desc: "We recognize we are nature. We design for regeneration, listening to the wisdom of the land and ecosystems."
     },
     {
       title: "Belonging & Contribution",
       icon: "🤝",
-      slug: "3-belonging-and-meaningful-contribution",
+      slug: "belonging-and-meaningful-contribution",
       desc: "Everyone has a place. We create safe spaces where people feel seen, valued, and free to express their gifts."
     },
     {
       title: "Celebration & Play",
       icon: "🔥",
-      slug: "4-celebration-creativity-and-play",
+      slug: "celebration-creativity-and-play",
       desc: "Joy and creativity sustain us. We harness the power of play to build trust and open space for emergence."
     },
     {
       title: "Collective Sensemaking",
       icon: "🧠",
-      slug: "5-synthesis-and-collective-sensemaking",
+      slug: "synthesis-and-collective-sensemaking",
       desc: "We seek truth together—integrating diverse perspectives to let collective intelligence emerge."
     },
     {
       title: "Collective Governance",
       icon: "⚖️",
-      slug: "6-collective-governance-and-decision-making",
+      slug: "collective-governance-and-decision-making",
       desc: "We aim for fair power distribution, minimising centralisation and maximising trust and accountability."
     },
     {
       title: "Agency & Action",
       icon: "🚀",
-      slug: "7-agency-and-action",
+      slug: "agency-and-action",
       desc: "We don't just talk; we act. We use our shared inspiration to generate real-world projects that make a difference."
     },
     {
       title: "Honouring the Sacred",
       icon: "🌌",
-      slug: "8-honouring-the-sacred",
+      slug: "honouring-the-sacred",
       desc: "We acknowledge the spiritual dimensions of our work, creating space for reverence, gratitude, and connection to the sacred."
     }
   ]
