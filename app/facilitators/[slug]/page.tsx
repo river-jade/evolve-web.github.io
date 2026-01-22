@@ -14,7 +14,7 @@ export default function Page({ params, searchParams }: { params: { slug: string 
   if (!facilitator) return notFound()
 
   const imageSrc = facilitator.image_url ||
-    (facilitator.image ? `/images/${facilitator.image}` : '/images/evolve-logo.jpg')
+    (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-logo.jpg')
 
   const returnYear = searchParams.year || facilitator.workshops.at(-1)?.year || '2025'
   return (

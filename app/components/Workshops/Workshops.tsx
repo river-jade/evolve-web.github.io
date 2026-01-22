@@ -11,7 +11,7 @@ export const Workshops = ({ year }: { year: string }) => {
       <div className="w-1/5">
         <Link href={`/facilitators/${facilitator.slug}?year=${year}`}>
           <Image
-            src={facilitator.image_url || (facilitator.image ? `/images/${facilitator.image}` : '/images/evolve-logo.jpg')}
+            src={facilitator.image_url || (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-logo.jpg')}
             alt={`${facilitator.name} - Facilitator`}
             className="aspect-square object-cover rounded-full overflow-hidden hover:scale-105 transition-transform"
             width={200}
