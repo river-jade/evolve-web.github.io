@@ -47,7 +47,9 @@ function parseFrontmatter(fileContent: string) {
  * Gets all MDX files from a directory
  */
 function getMDXFiles(dir: string) {
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
+  return fs.readdirSync(dir, { recursive: true })
+    .filter((file) => path.extname(file as string) === '.mdx')
+    .map(file => file as string)
 }
 
 /**
@@ -68,10 +70,12 @@ export type MDXData = {
  * Gets parsed data from all MDX files in a directory
  */
 export function getMDXData(dir: string) {
-  let mdxFiles = getMDXFiles(dir)
+  const mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((fileName) => {
-    let { metadata, content } = readMDXFile(path.join(dir, fileName))
-    let slug = path.basename(fileName, path.extname(fileName))
+    const { metadata, content } = readMDXFile(path.join(dir, fileName))
+    const parsed = path.parse(fileName)
+    const slug = path.join(parsed.dir, parsed.name)
+    
     const data: MDXData = { metadata, slug, content }
     return data
   })
@@ -81,14 +85,14 @@ export function getMDXData(dir: string) {
  * Gets parsed markdown data from the pages directory
  */
 export function getPageMarkdown(): MDXData[] {
-  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages'))
+  return getMDXData(path.join(process.cwd(), 'app', '[...slug]', 'pages'))
 }
 
 /**
  * Gets navigation links from MDX files in the pages directory
  */
 export function getPageLinks() {
-  return getMDXData(path.join(process.cwd(), 'app', '[slug]', 'pages'))
+  return getMDXData(path.join(process.cwd(), 'app', '[...slug]', 'pages'))
     .sort(sortByOrder)
     .reduce(
       (acc, page) => ({

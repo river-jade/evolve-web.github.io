@@ -11,12 +11,13 @@ import { cx } from 'app/lib/cx'
 export async function generateStaticParams() {
   let posts = getPageMarkdown()
   return posts.map((post) => ({
-    slug: post.slug,
+    slug: post.slug.split('/'),
   }))
 }
 
 export function generateMetadata({ params }) {
-  let post = getPageMarkdown().find((post) => post.slug === params.slug)
+  const fullPath = params.slug.join('/');
+  let post = getPageMarkdown().find((post) => post.slug === fullPath)
   if (!post) {
     return
   }
@@ -55,8 +56,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Page({ params }) {
-  let page = getPageMarkdown().find((post) => post.slug === params.slug)
+export default function Page({ params }: { params: { slug: string[] } }) {
+  const fullPath = params.slug.join('/');
+  let page = getPageMarkdown().find((post) => post.slug === fullPath)
 
   if (!page) {
     notFound()

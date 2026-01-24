@@ -11,10 +11,10 @@ export default function Page() {
   // Hardcoded past events list for the "Moments" section
   const pastEvents = [
     // { title: "Vision Conference", date: "October 2025", slug:"vision-conference-2025" },
-    { title: "Spring Confest Village", date: "October 2025", slug:"spring-confest-2025" },
-    { title: "Easter Confest Village", date: "April 2025", slug:"easter-confest-2025" },
-    { title: "Evolve Festival @ Bell Park", date: "March 2025", slug:"evolve-festival-bell-park-2025" },
-    { title: "Spring Confest Village", date: "October 2024", slug:"spring-confest-2024" },
+    { title: "Spring Confest Village", date: "October 2025", slug:"past-events/spring-confest-2025" },
+    { title: "Easter Confest Village", date: "April 2025", slug:"past-events/easter-confest-2025" },
+    { title: "Evolve Festival @ Bell Park", date: "March 2025", slug:"past-events/evolve-festival-bell-park-2025" },
+    { title: "Spring Confest Village", date: "October 2024", slug:"past-events/spring-confest-2024" },
   ]
 
   // Images from the original homepage.mdx
