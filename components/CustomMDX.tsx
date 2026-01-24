@@ -4,7 +4,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import ImageGallery from './Gallery'
 import React from 'react'
-import { slugify } from '@/lib/utils'
+import { slugify } from 'lib/utils'
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (

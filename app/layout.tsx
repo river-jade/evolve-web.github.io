@@ -2,8 +2,8 @@ import './global.css'
 import { Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/Footer'
-import { cx } from './lib/cx'
+import Footer from 'components/Footer'
+import { cx } from 'lib/cx'
 import { metadata as _metadata } from './metadata'
 
 // https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#google-fonts

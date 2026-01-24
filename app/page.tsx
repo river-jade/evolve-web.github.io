@@ -1,9 +1,9 @@
 'use client'
 
-import { Navbar } from './components/Navbar'
-import { Hero } from './components/Hero'
-import { ValuesGrid } from './components/ValuesGrid'
-import ImageGallery from './components/Gallery' // Assuming you have this component
+import { Navbar } from 'components/Navbar'
+import { Hero } from 'components/Hero'
+import { ValuesGrid } from 'components/ValuesGrid'
+import ImageGallery from 'components/Gallery'
 import Link from 'next/link'
 
 export default function Page() {

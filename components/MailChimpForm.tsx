@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import jsonp from 'jsonp'
-import { cx } from 'app/lib/cx'
+import { cx } from 'lib/cx'
 
 // Mailchimp URL
 // u=2f59f4888aeaef053a48ad2bc (User ID)

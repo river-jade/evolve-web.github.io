@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ALL_WORKSHOPS, Workshop } from '@/lib/data'
-import { slugify } from '@/lib/utils'
+import { ALL_WORKSHOPS, Workshop } from 'lib/data'
+import { slugify } from 'lib/utils'
 
 export const Workshops = ({ year }: { year: string }) => {
   const workshops = ALL_WORKSHOPS[year] || []

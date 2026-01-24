@@ -1,4 +1,4 @@
-import { getPageMarkdown } from 'app/lib/utils'
+import { getPageMarkdown } from 'lib/utils'
 import { title, description, baseUrl } from 'app/metadata'
 
 export async function GET() {

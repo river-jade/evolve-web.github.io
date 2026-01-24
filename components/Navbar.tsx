@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { cx } from 'app/lib/cx'
+import { cx } from 'lib/cx'
 
 export function Navbar({overlay = false } : {overlay?: boolean}) {
   const [isScrolled, setIsScrolled] = useState(false)

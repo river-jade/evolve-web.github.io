@@ -1,6 +1,6 @@
 // src/lib/data.ts
-import data2025 from '@/data/workshops-2025.json'
-import data2026 from '@/data/workshops-2026.json'
+import data2025 from 'data/workshops-2025.json'
+import data2026 from 'data/workshops-2026.json'
 import { slugify } from './utils'
 // Add new years here as they come
 

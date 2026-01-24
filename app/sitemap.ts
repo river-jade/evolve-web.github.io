@@ -1,5 +1,5 @@
-import { getPageMarkdown } from 'app/lib/utils'
-import { baseUrl } from 'app/metadata'
+import { getPageMarkdown } from 'lib/utils'
+import { baseUrl } from '@/metadata'
 export default async function sitemap() {
   let pages = getPageMarkdown().map((page) => ({
     url: `${baseUrl}/${page.slug}`,

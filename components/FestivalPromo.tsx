@@ -1,4 +1,4 @@
-import { cx } from 'app/lib/cx'
+import { cx } from 'lib/cx'
 import Image from 'next/image'
 import Link from 'next/link'
 
