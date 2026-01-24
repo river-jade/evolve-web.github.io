@@ -7,6 +7,7 @@ import { Workshops } from 'app/components/Workshops'
 import { getPageMarkdown } from 'app/lib/utils'
 import { baseUrl, authorName } from 'app/metadata'
 import { cx } from 'app/lib/cx'
+import Link from 'next/link'
 
 export async function generateStaticParams() {
   let posts = getPageMarkdown()
@@ -95,7 +96,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       <section
         className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}
       >
-        <CustomMDX source={page.content} components={{ Workshops, FAQ }} />
+        <CustomMDX source={page.content} components={{ Workshops, FAQ, Link }} />
       </section>
     </div>
   )
