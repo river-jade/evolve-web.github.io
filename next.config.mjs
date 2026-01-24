@@ -21,6 +21,11 @@ const nextConfig = {
         destination: 'https://www.facebook.com/events/860183339903891',
         permanent: true,
       },
+      {
+        source: '/workshop-descriptions-2026',
+        destination: '/workshops/2026',
+        permanent: true,
+      }
     ]
   },
   images: {
