@@ -1,14 +1,20 @@
 import csv from 'csvtojson';
-import {slugify} from '../app/lib/utils.ts';
+import {slugify} from '../lib/utils.ts';
 
-const year = process.argv[2];
+const import_file = process.argv[2];
+const year = process.argv[3];
 
+const usage = "Usage: node scripts/import-workshops.js <import_file> <year>";
+if (!import_file) {
+  console.error(`❌ Error: Please provide an import file. ${usage}`);
+  process.exit(1);
+}
 if (!year) {
-  console.error("❌ Error: Please provide a year. Usage: node scripts/import-workshops.js 2025");
+  console.error(`❌ Error: Please provide a year. ${usage}`);
   process.exit(1);
 }
 csv()
-  .fromFile('./data.csv')
+  .fromFile(import_file)
   .then((jsonObj) => {
     const exportList = jsonObj.filter(workshop => workshop["I'm happy for you to post my workshop / picture / bio to the Facebook event"] === "Yes")
       .map(workshop => {
