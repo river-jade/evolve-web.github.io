@@ -18,17 +18,22 @@ csv()
   .then((jsonObj) => {
     const exportList = jsonObj.filter(workshop => workshop["I'm happy for you to post my workshop / picture / bio to the Facebook event"] === "Yes")
       .map(workshop => {
-        const photoField = workshop["Facilitator or workshop photo"];
-        const driveId = photoField?.match(/id=([^&]+)/)?.[1];
-        const url = `https://drive.google.com/uc?export=view&id=${driveId}`
-        const thumbnail = `https://drive.google.com/thumbnail?id=${driveId}`
+        const photoField = workshop["Facilitator or workshop photo"]
+
+        let url = null;
+        let thumbnail = null;
+        if (photoField) {
+          const driveId = photoField?.match(/id=([^&]+)/)?.[1]
+          url = `https://drive.google.com/uc?export=view&id=${driveId}`
+          thumbnail = `https://drive.google.com/thumbnail?id=${driveId}`
+        }
         const name = workshop["Facilitator name(s)"].trim()
         return {
           facilitator_name: name,
           workshop_name: workshop["Workshop title"].trim(),
           details: workshop["Description of the workshop"].trim(),
-          thumbnail_url: thumbnail,
-          image_url: url,
+          thumbnail_url: thumbnail || null,
+          image_url: url || null,
           bio: workshop["Facilitator Bio(s)"].trim(),
           slug: slugify(name)
         }
