@@ -142,5 +142,23 @@
     "image_url": "https://drive.google.com/uc?export=view&id=13sXI8bm8PiTyygR4y3ywjxLYQWdh4xZj",
     "bio": "Shanti is an experienced facilitator of meditation and qi gong workshops, and is the author of the book 'The Peaceful Place - The Amazingly Simple Guide to Finding Peace Within\"",
     "slug": "shanti"
+  },
+  {
+    "facilitator_name": "DJ Bronzewing (aka Aeron)",
+    "workshop_name": "Dance journey",
+    "details": "Moving meditation, facilitated by heartful music, to move your body however it wants to move ❤️",
+    "thumbnail_url": "https://drive.google.com/thumbnail?id=undefined",
+    "image_url": "https://drive.google.com/uc?export=view&id=undefined",
+    "bio": "Aeron has been dancing for decades, and several years ago, moved towards DJ'ing and facilitating ecstatic dance journeys. If the music has heart, soul, bass and beats, he's into it ❤️",
+    "slug": "dj-bronzewing-aka-aeron"
+  },
+  {
+    "facilitator_name": "Chelsea McNab",
+    "workshop_name": "Community, Climate & Food Security",
+    "details": "Join this workshop to explore our shared understanding of Food systems and community, the effects of climate change and your place in it- community is how we adapt.",
+    "thumbnail_url": "https://drive.google.com/thumbnail?id=1jj66VJns0VdI3_8ttzXpAsqS-EazxZzI",
+    "image_url": "https://drive.google.com/uc?export=view&id=1jj66VJns0VdI3_8ttzXpAsqS-EazxZzI",
+    "bio": "Chelsea McNab - Executive Officer of Yarra Valley ECOSS (Community Environment Hub), member of Moora Moora Cooperative Community of 25 years, Sustainability Officer managing Food Systems and Food Security projects for Yarra Ranges Council, mother of 3, farmer and activist.",
+    "slug": "chelsea-mcnab"
   }
 ]
