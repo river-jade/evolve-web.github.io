@@ -21,6 +21,7 @@ export type Workshop = {
     workshop_name: string
     details: string
     year: string
+    workshop_slug: string
 }
 
 type FacilitatorEntry = {
@@ -51,6 +52,7 @@ const processWorkshops = (data: RawWorkshop[], year): Workshop[] => {
         workshop_name: item.workshop_name,
         details: item.details,
         year: year,
+        workshop_slug: slugify(item.workshop_name)
     }))
 }
 
