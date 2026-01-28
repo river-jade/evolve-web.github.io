@@ -16,7 +16,7 @@ if (!year) {
 csv()
   .fromFile(import_file)
   .then((jsonObj) => {
-    const exportList = jsonObj.filter(workshop => workshop["I'm happy for you to post my workshop / picture / bio to the Facebook event"] === "Yes")
+    const exportList = jsonObj.filter(workshop => workshop["I'm happy for you to post my workshop / picture / bio to the Facebook event / Evolve website"] === "Yes")
       .map(workshop => {
         const photoField = workshop["Facilitator or workshop photo"]
 
