@@ -1,5 +1,6 @@
 import csv from 'csvtojson';
-import {slugify} from '../lib/utils.ts';
+import { slugify } from '../lib/utils';
+import fs from 'fs';
 
 const import_file = process.argv[2];
 const year = process.argv[3];
@@ -20,14 +21,12 @@ csv()
       .map(workshop => {
         const photoField = workshop["Facilitator or workshop photo"]
 
-        let url = null;
-        let thumbnail = null;
-        if (photoField) {
-          const driveId = photoField?.match(/id=([^&]+)/)?.[1]
-          url = `https://drive.google.com/uc?export=view&id=${driveId}`
-          thumbnail = `https://drive.google.com/thumbnail?id=${driveId}`
-        }
+        const driveId = photoField?.match(/id=([^&]+)/)?.[1];
+        const url = driveId ? `https://drive.google.com/uc?export=view&id=${driveId}` : null;
+        const thumbnail = driveId ? `https://drive.google.com/thumbnail?id=${driveId}` : null;
+
         const name = workshop["Facilitator name(s)"].trim()
+
         return {
           facilitator_name: name,
           workshop_name: workshop["Workshop title"].trim(),
@@ -39,5 +38,6 @@ csv()
         }
       })
       .filter(({ workshop_name }) => !!workshop_name)
-    console.log(JSON.stringify(exportList, null, 2))
+    fs.writeFileSync(`data/workshops-${year}.json`, JSON.stringify(exportList, null, 2))
+    console.log(`✅ Successfully imported ${exportList.length} workshops for ${year} from ${import_file}`)
   });

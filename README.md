@@ -1,7 +1,7 @@
 # Evolve Website
 
 To build a new JSON file for workshops, run:
-pnpm run -s import <path_to_csv> <year> > data/workshops-<year>.json
+pnpm run -s import <path_to_csv> <year>
 
 With the appropriate csv file and year provided.
 
