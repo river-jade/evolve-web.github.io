@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'components/CustomMDX'
 import { Banner } from 'components/Banner'
-import { FAQ } from 'components/FAQ'
 import { Navbar } from 'components/Navbar'
 import { Workshops } from 'components/Workshops'
 import { getPageMarkdown } from 'lib/utils'
@@ -97,7 +96,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       <section
         className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}
       >
-        <CustomMDX source={page.content} components={{ Workshops, FAQ, Link, Expandable }} />
+        <CustomMDX source={page.content} components={{ Workshops, Link, Expandable }} />
       </section>
     </div>
   )
