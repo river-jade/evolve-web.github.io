@@ -10,9 +10,9 @@ const Expandable = ({ title, children }) => {
       {/* 1. The Heading Area (Clickable) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-4 text-left focus:outline-none group"
+        className="w-full flex items-center justify-between py-3 text-left focus:outline-none group"
       >
-        <span className={`text-lg font-bold transition-colors duration-300 ${isOpen ? 'text-teal-600' : 'text-gray-800'}`}>
+        <span className={`text-lg transition-colors duration-300 ${isOpen ? 'text-teal-600' : 'text-gray-800'}`}>
           {title}
         </span>
         
@@ -32,7 +32,12 @@ const Expandable = ({ title, children }) => {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="pb-4 text-gray-600 leading-relaxed">
+          {/* 
+          [&_p]: This translates to "Select any <p> tag inside this div." 
+          :!my-0: The ! forces !important to override the Tailwind Typography defaults. The mt-0 sets top margins to zero.
+          :!p-0: Ensures no padding is interfering either. 
+          */}
+          <div className="text-gray-600 leading-relaxed mt-0 [&_p]:!mt-0 [&_p]:!p-0">
             {children}
           </div>
         </div>
