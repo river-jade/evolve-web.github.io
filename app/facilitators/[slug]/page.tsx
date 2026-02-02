@@ -39,7 +39,7 @@ export default function Page({ params, searchParams }: { params: { slug: string 
 
         <div className="flex-1 min-w-0">
           <h1 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
-            {facilitator.name}
+              {facilitator.name}
           </h1>
 
           <div className="flex flex-col gap-3 mb-8">
@@ -49,10 +49,10 @@ export default function Page({ params, searchParams }: { params: { slug: string 
                   <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wide whitespace-nowrap shrink-0">
                     {w.year}
                   </span>
+                  <span className="font-medium text-gray-700">
+                    {w.title}
+                  </span>
                 </Link>
-                <span className="font-medium text-gray-700">
-                  {w.title}
-                </span>
               </div>
             ))}
           </div>
