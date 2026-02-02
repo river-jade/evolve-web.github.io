@@ -21,7 +21,7 @@ export default function Page({ params, searchParams }: { params: { slug: string 
     <main className="max-w-5xl mx-auto px-6 py-12">
       <Link
         href={`/workshops/${returnYear}`}
-        className="inline-block text-sm font-bold tracking-wider text-gray-500 hover:text-orange-600 mb-10 transition-colors uppercase"
+        className="inline-block text-sm font-bold tracking-wider text-gray-500 hover:text-teal-600 mb-10 transition-colors uppercase"
       >
         ← Back to {returnYear} Workshops
       </Link>
@@ -45,8 +45,8 @@ export default function Page({ params, searchParams }: { params: { slug: string 
           <div className="flex flex-col gap-3 mb-8">
             {facilitator.workshops.map((w: any) => (
               <div key={w.title} className="flex items-center gap-3 text-lg">
-                <Link href={`/workshops/${w.year}`}>
-                  <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wide whitespace-nowrap shrink-0">
+                <Link href={`/workshops/${w.year}#${w.slug}`} className="flex items-center">
+                  <span className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wide whitespace-nowrap shrink-0 mr-2">
                     {w.year}
                   </span>
                   <span className="font-medium text-gray-700">

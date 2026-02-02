@@ -35,6 +35,7 @@ type FacilitatorEntry = {
         title: string
         year: string
         details: string
+        slug: string
     }[]
 }
 
@@ -86,7 +87,8 @@ export function getAllFacilitators(): Record<string, FacilitatorEntry> {
         acc[slug].workshops.push({
             title: workshop.workshop_name,
             year: workshop.year,
-            details: workshop.details
+            details: workshop.details,
+            slug: workshop.workshop_slug
         })
 
         return acc

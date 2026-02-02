@@ -30,7 +30,7 @@ export const Workshops = ({ year }: { year: string }) => {
           href={`/facilitators/${facilitator.slug}?year=${year}`}
           className="group active:opacity-60 transition-opacity"
         >
-          <h4 className="m-0! text-lg font-bold text-gray-900 group-hover:text-orange-600 underline decoration-orange-300 decoration-2 underline-offset-4">
+          <h4 className="m-0! text-lg font-bold text-gray-900 group-hover:text-teal-600 underline decoration-teal-300 decoration-2 underline-offset-4">
             {facilitator.name}
           </h4>
         </Link>
