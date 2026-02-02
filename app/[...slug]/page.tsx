@@ -8,6 +8,7 @@ import Expandable from 'components/Expandable'
 import Link from 'next/link'
 import Navbar from 'components/Navbar'
 import Workshops from 'components/Workshops'
+import Schedule from 'components/Schedule'
 
 export async function generateStaticParams() {
   let posts = getPageMarkdown()
@@ -98,7 +99,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
       <section
         className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}
       >
-        <CustomMDX source={page.content} components={{ Workshops, Link, Expandable }} />
+        <CustomMDX source={page.content} components={{ Workshops, Link, Expandable, Schedule }} />
       </section>
     </div>
   )

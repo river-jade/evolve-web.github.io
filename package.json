@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "import": "npx tsx scripts/import-workshops.ts",
+    "import-workshops": "npx tsx scripts/import-workshops.ts",
+    "import-schedule": "npx tsx scripts/import-schedule.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

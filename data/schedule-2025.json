@@ -1,0 +1,702 @@
+[
+  {
+    "id": "2025-The Grove-09:00-1",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Vinyasa Yoga",
+    "facilitator": "Lisa",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-10:00-2",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Opening circle",
+    "facilitator": null,
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-10:30-3",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "Laughing Yoga",
+    "facilitator": "Ana Strawberry",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-11:30-4",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "11:30",
+    "end_time": "12:30",
+    "title": "Counteracting power concentration in governance models",
+    "facilitator": "Gabriel",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-12:30-5",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Grove-14:00-6",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Introduction to Family Constellations",
+    "facilitator": "Victoria",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-16:00-8",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Grove-16:30-9",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "A Space for Grief",
+    "facilitator": "Chloe, Kate, and Ari",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-18:30-11",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-07:00-0",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "07:00",
+    "end_time": "09:00",
+    "title": "Meditation, Sacred Tea and Discussion",
+    "facilitator": "Ian",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-10:00-2",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-10:30-3",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "An Evolutionary Collective (pt 1): navigating trauma culture and community as medicine.",
+    "facilitator": "Kaz",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-11:30-4",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "11:30",
+    "end_time": "12:30",
+    "title": "An Evolutionary Collective (pt 2): A Collective Communication practical experiment",
+    "facilitator": "Kaz",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-12:30-5",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-14:00-6",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Rewilding and deep nature connection",
+    "facilitator": "Claire Dunn",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-15:00-7",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "15:00",
+    "end_time": "16:00",
+    "title": "Authentic Connection Gathering",
+    "facilitator": "Kat Daymond",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-16:00-8",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-16:30-9",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "16:30",
+    "end_time": "17:30",
+    "title": "Meditative Spontaneity",
+    "facilitator": "Jessi",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-18:30-11",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-09:00-1",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Zen flow: Dance and movement",
+    "facilitator": "Sabah",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-10:00-2",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-10:30-3",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "The Inner Beloved",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-11:30-4",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "11:30",
+    "end_time": "12:30",
+    "title": "Biodanza: the dance of life",
+    "facilitator": "Josanna",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-12:30-5",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-14:00-6",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Your Future Priorities",
+    "facilitator": "Chris Stewart",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-16:00-8",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-16:30-9",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Music of the Plants Intro and Soundbath",
+    "facilitator": "Regina Orchard",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-18:30-11",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-09:00-1",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Weaving Workshop",
+    "facilitator": "Jack",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-10:00-2",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-10:30-3",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Aligning to your purpose",
+    "facilitator": "Katy Mixter",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-12:30-5",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-14:00-6",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Shamanic Acupuncture + Spinal Energetics Activation",
+    "facilitator": "Belle Taylor",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-16:00-8",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-16:30-9",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Circling: Relational Presence",
+    "facilitator": "Isabelle Xavier",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-18:30-11",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Grove-08:00-0",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "title": "Qigong for heart-opening, healing and awakening",
+    "facilitator": "Shanti",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-09:00-1",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Vinyasa Yoga",
+    "facilitator": "Lisa",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-10:00-2",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Grove-10:30-3",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Living in community",
+    "facilitator": "Chelsea",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-12:30-5",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Grove-14:00-6",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Energy healing & guided meditation",
+    "facilitator": "Chris Stewart",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-15:00-7",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "15:00",
+    "end_time": "16:00",
+    "title": "Meditative Spontaneity",
+    "facilitator": "Jessi",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-16:00-8",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Grove-16:30-9",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Meditation dance journey",
+    "facilitator": "DJ SoundGuy (Aeron Saks)",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Grove-18:30-11",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-08:00-0",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "08:00",
+    "end_time": "09:00",
+    "title": "Meditation, Sacred Tea and Discussion",
+    "facilitator": "Ian",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-10:00-2",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-10:30-3",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Writing with the Earth: Kinship, Embodiment, Belonging",
+    "facilitator": "Maya Ward",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-12:30-5",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-14:00-6",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Loving Anger",
+    "facilitator": "Stacia Karina Beazley",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-16:00-8",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Glen-16:30-9",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "16:30",
+    "end_time": "17:30",
+    "title": "Evolve and envision",
+    "facilitator": "Katy Mixter",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Glen-18:30-11",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-10:00-2",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-10:30-3",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "The Inner Beloved",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-11:30-4",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "11:30",
+    "end_time": "12:30",
+    "title": "Visioning Out Loud",
+    "facilitator": "Sarah Wilcox",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-12:30-5",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-14:00-6",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Feeling Into Plant Consciousness, Messages and Music",
+    "facilitator": "Regina Orchard",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-16:00-8",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Hall-16:30-9",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "16:30",
+    "end_time": "17:30",
+    "title": "Improvised Singing",
+    "facilitator": "Victoria",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Hall-18:30-11",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-10:00-2",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-10:30-3",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Why are we here? What can we do?",
+    "facilitator": "Craig, Kate, Alexander and Chloe",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-12:30-5",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-14:00-6",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Thrive in 2025",
+    "facilitator": "Anita Harding",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-15:00-7",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "15:00",
+    "end_time": "16:00",
+    "title": "Vision for Evolve Community (a fireside chat)",
+    "facilitator": "River & Chloe",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-16:00-8",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2025-The Den-16:30-9",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Circling: Relational Presence",
+    "facilitator": "Isabelle Xavier",
+    "type": "workshop"
+  },
+  {
+    "id": "2025-The Den-18:30-11",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  }
+]

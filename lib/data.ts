@@ -1,8 +1,22 @@
 // src/lib/data.ts
 import data2025 from 'data/workshops-2025.json'
 import data2026 from 'data/workshops-2026.json'
-import { slugify } from './utils'
+
+import schedule2025 from 'data/schedule-2025.json'
 // Add new years here as they come
+
+import { slugify } from './utils'
+
+export type ScheduleEvent = {
+  id: string
+  day: string
+  venue: string
+  start_time: string
+  end_time: string
+  title: string
+  facilitator?: string
+  type: 'workshop' | 'break'
+}
 
 type RawWorkshop = {
     slug?: string
@@ -57,13 +71,6 @@ const processWorkshops = (data: RawWorkshop[], year): Workshop[] => {
     }))
 }
 
-export const ALL_WORKSHOPS = {
-    '2025': processWorkshops(data2025 as unknown as RawWorkshop[], '2025'),
-    '2026': processWorkshops(data2026 as unknown as RawWorkshop[], '2026'),
-}
-
-const ALL_FACILITATORS = getAllFacilitators();
-
 export function getAllFacilitators(): Record<string, FacilitatorEntry> {
     return Object.values(ALL_WORKSHOPS).flat().reduce((acc, workshop) => {
         const facilitator = workshop.facilitator
@@ -97,4 +104,16 @@ export function getAllFacilitators(): Record<string, FacilitatorEntry> {
 
 export function getFacilitatorBySlug(slug: string): FacilitatorEntry | null {
     return ALL_FACILITATORS[slug];
+}
+
+export const ALL_WORKSHOPS = {
+    '2025': processWorkshops(data2025 as unknown as RawWorkshop[], '2025'),
+    '2026': processWorkshops(data2026 as unknown as RawWorkshop[], '2026'),
+}
+
+const ALL_FACILITATORS = getAllFacilitators();
+
+export const ALL_SCHEDULES: Record<string, ScheduleEvent[]> = {
+    '2025': schedule2025 as ScheduleEvent[],
+    // '2026': schedule2026 as ScheduleEvent[],
 }
