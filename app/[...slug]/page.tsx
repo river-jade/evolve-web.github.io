@@ -1,13 +1,13 @@
 import { notFound } from 'next/navigation'
-import { CustomMDX } from 'components/CustomMDX'
-import { Banner } from 'components/Banner'
-import { Navbar } from 'components/Navbar'
-import { Workshops } from 'components/Workshops'
 import { getPageMarkdown } from 'lib/utils'
 import { baseUrl, authorName } from '@/metadata'
 import { cx } from 'lib/cx'
-import Link from 'next/link'
+import Banner from 'components/Banner'
+import CustomMDX from 'components/CustomMDX'
 import Expandable from 'components/Expandable'
+import Link from 'next/link'
+import Navbar from 'components/Navbar'
+import Workshops from 'components/Workshops'
 
 export async function generateStaticParams() {
   let posts = getPageMarkdown()

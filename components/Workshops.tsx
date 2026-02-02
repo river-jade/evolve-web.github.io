@@ -51,3 +51,5 @@ export const Workshops = ({ year }: { year: string }) => {
   </div>
   )
 }
+
+export default Workshops

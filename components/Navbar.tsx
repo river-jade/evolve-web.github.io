@@ -58,3 +58,5 @@ export function Navbar({overlay = false } : {overlay?: boolean}) {
     </nav>
   )
 }
+
+export default Navbar

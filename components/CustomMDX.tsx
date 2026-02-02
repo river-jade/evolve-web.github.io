@@ -99,3 +99,5 @@ export function CustomMDX(props) {
     />
   )
 }
+
+export default CustomMDX

@@ -1,12 +1,21 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const Expandable = ({ title, children }) => {
+const Expandable = ({ title, id, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === `#${id}`) {
+      setIsOpen(true);
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView();
+      }, 100);
+    }
+  }, [id]);
+
   return (
-    <div className="border-b border-gray-200 last:border-0">
+    <div className="border-b border-gray-200 last:border-0 scroll-mt-24" id={id}>
       {/* 1. The Heading Area (Clickable) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -15,21 +24,20 @@ const Expandable = ({ title, children }) => {
         <span className={`text-lg transition-colors duration-300 ${isOpen ? 'text-teal-600' : 'text-gray-800'}`}>
           {title}
         </span>
-        
+
         {/* 2. The Custom Icon (Animated Rotation) */}
         <span className={`transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
           {/* Simple Chevron SVG */}
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </span>
       </button>
 
       {/* 3. The Smooth Animation Wrapper (Grid Trick) */}
       <div
-        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
+        className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+          }`}
       >
         <div className="overflow-hidden">
           {/* 

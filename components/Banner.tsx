@@ -12,3 +12,5 @@ export const Banner = ({ title }: { title: string }) => {
     </div>
   )
 }
+
+export default Banner
