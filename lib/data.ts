@@ -8,14 +8,14 @@ import schedule2025 from 'data/schedule-2025.json'
 import { slugify } from './utils'
 
 export type ScheduleEvent = {
-  id: string
-  day: string
-  venue: string
-  start_time: string
-  end_time: string
-  title: string
-  facilitator?: string
-  type: 'workshop' | 'break'
+    id: string
+    day: string
+    venue: string
+    start_time: string
+    end_time: string
+    title: string
+    facilitator?: string
+    type: 'workshop' | 'break'
 }
 
 type RawWorkshop = {
@@ -38,7 +38,7 @@ export type Workshop = {
     workshop_slug: string
 }
 
-type FacilitatorEntry = {
+export type FacilitatorEntry = {
     name: string
     slug: string
     image?: string // local image filename
@@ -81,7 +81,8 @@ export function getAllFacilitators(): Record<string, FacilitatorEntry> {
         }
 
         // Update bio / image etc with the latest version if available.
-        acc[slug] = {...acc[slug], 
+        acc[slug] = {
+            ...acc[slug],
             image_url: facilitator.image_url || acc[slug].image_url,
             thumbnail_url: facilitator.thumbnail_url || acc[slug].thumbnail_url,
             image: facilitator.image || acc[slug].image,

@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import type { ScheduleEvent, Workshop } from 'lib/data'
+import type { ScheduleEvent, Workshop, FacilitatorEntry } from 'lib/data'
+import Modal from './Modal'
 
 type Props = {
   events: ScheduleEvent[]
@@ -16,7 +17,21 @@ const findWorkshop = (title: string, workshops: Workshop[]) => {
 }
 
 // --- Helper: Reusable Event Card Component ---
-const EventCard = ({ event, workshops, year, isMobile = false }: { event: ScheduleEvent, workshops: Workshop[], year: string, isMobile?: boolean }) => {
+const EventCard = ({
+  event,
+  workshops,
+  year,
+  isMobile = false,
+  onWorkshopClick,
+  onFacilitatorClick
+}: {
+  event: ScheduleEvent,
+  workshops: Workshop[],
+  year: string,
+  isMobile?: boolean,
+  onWorkshopClick: (w: Workshop) => void
+  onFacilitatorClick: (f: FacilitatorEntry) => void
+}) => {
   const isBreak = event.type === 'break'
   const linked = !isBreak ? findWorkshop(event.title, workshops) : null
 
@@ -40,10 +55,17 @@ const EventCard = ({ event, workshops, year, isMobile = false }: { event: Schedu
     <div className={containerClass}>
       <div>
         {isMobile && <div className="text-xs font-bold uppercase tracking-wider text-teal-800/60 mb-1">{event.venue}</div>}
-        
+
         {/* Title */}
         {linked ? (
-          <Link href={`/workshops/${year}#${linked.workshop_slug}`} className={`${titleClass} hover:text-teal-600`}>
+          <Link
+            href={`/workshops/${year}#${linked.workshop_slug}`}
+            onClick={(e) => {
+              e.preventDefault()
+              onWorkshopClick(linked)
+            }}
+            className={`${titleClass} hover:text-teal-600`}
+          >
             {event.title}
           </Link>
         ) : (
@@ -55,7 +77,15 @@ const EventCard = ({ event, workshops, year, isMobile = false }: { event: Schedu
           <div className="text-sm text-gray-600 mt-1">
             <span className="opacity-70 text-xs">with </span>
             {linked ? (
-              <Link href={`/facilitators/${linked.facilitator.slug}?year=${year}`} className="font-medium text-teal-700 hover:underline">
+              <Link
+                href={`/facilitators/${linked.facilitator.slug}?year=${year}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  onFacilitatorClick(linked.facilitator)
+                }}
+                className="font-medium text-teal-700 hover:underline"
+              >
                 {linked.facilitator.name}
               </Link>
             ) : (
@@ -83,14 +113,16 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
   // 1. Setup State
   const days = useMemo(() => Array.from(new Set(events.map(e => e.day))), [events])
   const [activeDay, setActiveDay] = useState(days[0])
+  const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null)
+  const [selectedFacilitator, setSelectedFacilitator] = useState<FacilitatorEntry | null>(null)
 
   // 2. Pre-calculate Data
   const { venues, times, gridLookup } = useMemo(() => {
     const daily = events.filter(e => e.day === activeDay)
-    
+
     const v = Array.from(new Set(daily.map(e => e.venue)))
       .filter(venue => isNaN(Number(venue)) && venue.trim().length > 0)
-    
+
     const t = Array.from(new Set(daily.map(e => e.start_time))).sort()
 
     const lookup: Record<string, ScheduleEvent> = {}
@@ -103,7 +135,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
   return (
     <div className="ScheduleGrid align-full w-full my-8 px-4 md:px-6">
-      
+
       {/* Day Tabs */}
       {days.length > 1 && (
         <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
@@ -111,11 +143,10 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
             <button
               key={day}
               onClick={() => setActiveDay(day)}
-              className={`px-6 py-2 rounded-full font-bold transition-all ${
-                activeDay === day 
-                  ? 'bg-teal-600 text-white shadow-md transform scale-105' 
-                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
-              }`}
+              className={`px-6 py-2 rounded-full font-bold transition-all ${activeDay === day
+                ? 'bg-teal-600 text-white shadow-md transform scale-105'
+                : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                }`}
             >
               {day}
             </button>
@@ -129,7 +160,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
           const eventsAtTime = venues
             .map(v => gridLookup[`${time}:${v}`])
             .filter(Boolean)
-          
+
           if (!eventsAtTime.length) return null
 
           // Check for Common Break
@@ -147,20 +178,22 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
           return (
             <div key={time} className="relative">
               <div className="sticky top-0 z-10 py-2 bg-white/95 backdrop-blur-sm border-b border-teal-100 mb-3">
-                 <span className="inline-block bg-teal-600 text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm">
-                   {time}
-                 </span>
+                <span className="inline-block bg-teal-600 text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm">
+                  {time}
+                </span>
               </div>
 
               <div className="space-y-3 pl-2">
                 {eventsAtTime.map(event => (
-                   <EventCard 
-                     key={event.id} 
-                     event={event} 
-                     workshops={workshops} 
-                     year={year} 
-                     isMobile={true} 
-                   />
+                  <EventCard
+                    key={event.id}
+                    event={event}
+                    workshops={workshops}
+                    year={year}
+                    isMobile={true}
+                    onWorkshopClick={setSelectedWorkshop}
+                    onFacilitatorClick={setSelectedFacilitator}
+                  />
                 ))}
               </div>
             </div>
@@ -170,10 +203,10 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
       {/* --- DESKTOP VIEW (Horizontal Grid) --- */}
       <div className="hidden md:block overflow-x-auto pb-12 border border-stone-100 rounded-xl shadow-sm bg-white">
-        <div 
+        <div
           className="grid gap-0"
-          style={{ 
-            gridTemplateColumns: `100px repeat(${venues.length}, minmax(200px, 1fr))` 
+          style={{
+            gridTemplateColumns: `100px repeat(${venues.length}, minmax(200px, 1fr))`
           }}
         >
           {/* Header Row */}
@@ -197,15 +230,17 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
               {/* Venue Cells */}
               {venues.map(venue => {
                 const event = gridLookup[`${time}:${venue}`]
-                
+
                 if (!event) return <div key={`${time}-${venue}`} className="border-t border-l border-stone-50 bg-stone-50/10" />
 
                 return (
                   <div key={event.id} className="border-t border-l border-stone-100 p-1">
-                    <EventCard 
-                      event={event} 
-                      workshops={workshops} 
-                      year={year} 
+                    <EventCard
+                      event={event}
+                      workshops={workshops}
+                      year={year}
+                      onWorkshopClick={setSelectedWorkshop}
+                      onFacilitatorClick={setSelectedFacilitator}
                     />
                   </div>
                 )
@@ -214,6 +249,107 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
           ))}
         </div>
       </div>
+
+      {/* --- MODALS --- */}
+
+      {/* Workshop Modal */}
+      <Modal
+        isOpen={!!selectedWorkshop}
+        onClose={() => setSelectedWorkshop(null)}
+        title={selectedWorkshop?.workshop_name}
+      >
+        {selectedWorkshop && (
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-1">Hosted by</h3>
+              <button
+                onClick={() => {
+                  setSelectedWorkshop(null)
+                  // Small timeout to allow transition if needed, or just switch immediately
+                  setTimeout(() => setSelectedFacilitator(selectedWorkshop.facilitator), 50)
+                }}
+                className="text-lg font-bold text-gray-800 hover:text-teal-700 hover:underline flex items-center gap-2"
+              >
+                {selectedWorkshop.facilitator.image && (
+                  <img src={`/images/facilitator-images/${selectedWorkshop.facilitator.image}`} alt="" className="w-8 h-8 rounded-full object-cover bg-stone-100" />
+                )}
+                {selectedWorkshop.facilitator.name}
+              </button>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-2">About the Workshop</h3>
+              <div className="prose prose-stone leading-relaxed text-gray-700">
+                {selectedWorkshop.details}
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-stone-100 flex justify-end">
+              <Link
+                href={`/workshops/${year}#${selectedWorkshop.workshop_slug}`}
+                className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
+              >
+                View workshops page <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        )}
+      </Modal>
+
+      {/* Facilitator Modal */}
+      <Modal
+        isOpen={!!selectedFacilitator}
+        onClose={() => setSelectedFacilitator(null)}
+        title={selectedFacilitator?.name}
+      >
+        {selectedFacilitator && (
+          <div className="space-y-6">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              {selectedFacilitator.image && (
+                <div className="w-full md:w-1/3 shrink-0">
+                  <img
+                    src={`/images/facilitator-images/${selectedFacilitator.image}`}
+                    alt={selectedFacilitator.name}
+                    className="w-full aspect-square object-cover rounded-xl shadow-md bg-stone-100"
+                  />
+                </div>
+              )}
+              <div className="flex-1">
+                <div className="prose prose-stone text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">
+                  {selectedFacilitator.bio}
+                </div>
+              </div>
+            </div>
+
+            {/* Other Workshops by this person */}
+            {selectedFacilitator.workshops && selectedFacilitator.workshops.length > 0 && (
+              <div className="pt-4 border-t border-stone-100">
+                <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-3">Workshops at Evolve</h3>
+                <ul className="space-y-2">
+                  {selectedFacilitator.workshops.map(w => (
+                    <li key={w.slug}>
+                      <span className="font-medium text-gray-900 block">{w.title}</span>
+                      {/* Link to specific workshop in modal? Or just text for now? 
+                                        Let's keep it simple: text. 
+                                    */}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="pt-2 flex justify-end">
+              <Link
+                href={`/facilitators/${selectedFacilitator.slug}?year=${year}`}
+                className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
+              >
+                View full profile <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        )}
+      </Modal>
+
     </div>
   )
 }
