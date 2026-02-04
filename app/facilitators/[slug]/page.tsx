@@ -8,7 +8,7 @@ export async function generateStaticParams() {
   return Object.keys(facilitators).map((slug) => ({ slug }))
 }
 
-export default async function Page({ params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ year?: string }> }) {
+export default async function Page({ params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ year?: string, from?: string }> }) {
   const resolvedParams = await params;
   const resolvedSearchParams = await searchParams;
   const facilitator = getFacilitatorBySlug(resolvedParams.slug)
@@ -19,13 +19,18 @@ export default async function Page({ params, searchParams }: { params: Promise<{
     (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-logo.jpg')
 
   const returnYear = resolvedSearchParams.year || facilitator.workshops.at(-1)?.year || '2025'
+
+  const fromSchedule = resolvedSearchParams.from === 'schedule'
+  const backLink = fromSchedule ? `/schedule/${returnYear}` : `/workshops/${returnYear}`
+  const backText = fromSchedule ? `← Back to ${returnYear} Schedule` : `← Back to ${returnYear} Workshops`
+
   return (
     <main className="max-w-5xl mx-auto px-6 py-12">
       <Link
-        href={`/workshops/${returnYear}`}
+        href={backLink}
         className="inline-block text-sm font-bold tracking-wider text-gray-500 hover:text-teal-600 mb-10 transition-colors uppercase"
       >
-        ← Back to {returnYear} Workshops
+        {backText}
       </Link>
       <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
         <div className="w-full md:w-96 shrink-0 bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
@@ -42,7 +47,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
 
         <div className="flex-1 min-w-0">
           <h1 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
-              {facilitator.name}
+            {facilitator.name}
           </h1>
 
           <div className="flex flex-col gap-3 mb-8">

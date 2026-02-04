@@ -78,7 +78,7 @@ const EventCard = ({
             <span className="opacity-70 text-xs">with </span>
             {linked ? (
               <Link
-                href={`/facilitators/${linked.facilitator.slug}?year=${year}`}
+                href={`/facilitators/${linked.facilitator.slug}?year=${year}&from=schedule`}
                 onClick={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
@@ -340,7 +340,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
             <div className="pt-2 flex justify-end">
               <Link
-                href={`/facilitators/${selectedFacilitator.slug}?year=${year}`}
+                href={`/facilitators/${selectedFacilitator.slug}?year=${year}&from=schedule`}
                 className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
               >
                 View full profile <span aria-hidden="true">&rarr;</span>

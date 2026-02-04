@@ -11,12 +11,12 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
 
   const triggerFlash = (slug: string) => {
     if (timerRef.current) clearTimeout(timerRef.current)
-    
+
     setHighlightedSlug(slug) // Turn ON (Instant)
 
     // Wait 1/2 second, then Turn OFF (Trigger CSS fade)
     timerRef.current = setTimeout(() => {
-      setHighlightedSlug(null) 
+      setHighlightedSlug(null)
     }, 500)
   }
 
@@ -44,7 +44,7 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
                 This sits on top. It appears instantly, then fades out slowly (2s) when isHighlighted becomes false.
                 It does not block mouse events, so the card hover underneath still works snappily.
             */}
-            <div 
+            <div
               className={`
                 absolute inset-0 bg-teal-50 ring-2 ring-teal-500 ring-inset rounded-2xl pointer-events-none z-0
                 transition-opacity ease-linear
@@ -63,7 +63,7 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
                 />
               </Link>
             </div>
-            
+
             <div className="relative z-10 flex flex-col gap-2 w-4/5">
               <Link
                 href={`#${workshop_slug}`}
@@ -73,7 +73,7 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
                   {workshop_name}
                 </h3>
               </Link>
-              
+
               <Link
                 key={facilitator.slug}
                 href={`/facilitators/${facilitator.slug}?year=${year}`}
@@ -83,7 +83,7 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
                   {facilitator.name}
                 </h4>
               </Link>
-              
+
               {details && <p className="m-0! whitespace-pre-wrap text-stone-600">{details}</p>}
             </div>
           </li>
