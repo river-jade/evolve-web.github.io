@@ -8,15 +8,17 @@ export async function generateStaticParams() {
   return Object.keys(facilitators).map((slug) => ({ slug }))
 }
 
-export default function Page({ params, searchParams }: { params: { slug: string }, searchParams: { year?: string } }) {
-  const facilitator = getFacilitatorBySlug(params.slug)
+export default async function Page({ params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ year?: string }> }) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  const facilitator = getFacilitatorBySlug(resolvedParams.slug)
 
   if (!facilitator) return notFound()
 
   const imageSrc = facilitator.image_url ||
     (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-logo.jpg')
 
-  const returnYear = searchParams.year || facilitator.workshops.at(-1)?.year || '2025'
+  const returnYear = resolvedSearchParams.year || facilitator.workshops.at(-1)?.year || '2025'
   return (
     <main className="max-w-5xl mx-auto px-6 py-12">
       <Link

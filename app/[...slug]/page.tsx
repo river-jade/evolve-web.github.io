@@ -16,8 +16,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }) {
-  const fullPath = params.slug.join('/');
+export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
+  const resolvedParams = await params;
+  const fullPath = resolvedParams.slug.join('/');
   let post = getPageMarkdown().find((post) => post.slug === fullPath)
   if (!post) {
     return
@@ -57,8 +58,9 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Page({ params }: { params: { slug: string[] } }) {
-  const fullPath = params.slug.join('/');
+export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
+  const resolvedParams = await params;
+  const fullPath = resolvedParams.slug.join('/');
   let page = getPageMarkdown().find((post) => post.slug === fullPath)
 
   if (!page) {
