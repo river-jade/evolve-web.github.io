@@ -6,6 +6,8 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import type { ScheduleEvent, Workshop, FacilitatorEntry } from 'lib/data'
 import Modal from './Modal'
 
+const PLACEHOLDER_IMAGE = '/images/evolve-logo.jpg'
+
 type Props = {
   events: ScheduleEvent[]
   workshops: Workshop[]
@@ -289,9 +291,11 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
                 }}
                 className="text-lg font-bold text-gray-800 hover:text-teal-700 hover:underline flex items-center gap-2"
               >
-                {selectedWorkshop.facilitator.image && (
-                  <img src={`/images/facilitator-images/${selectedWorkshop.facilitator.image}`} alt="" className="w-8 h-8 rounded-full object-cover bg-stone-100" />
-                )}
+                <img
+                  src={selectedWorkshop.facilitator.image ? `/images/facilitator-images/${selectedWorkshop.facilitator.image}` : PLACEHOLDER_IMAGE}
+                  alt=""
+                  className="w-8 h-8 rounded-full object-cover bg-stone-100"
+                />
                 {selectedWorkshop.facilitator.name}
               </button>
             </div>
@@ -315,19 +319,21 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
         {selectedFacilitator && (
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              {selectedFacilitator.image && (
-                <div className="w-full md:w-1/3 shrink-0">
-                  <img
-                    src={`/images/facilitator-images/${selectedFacilitator.image}`}
-                    alt={selectedFacilitator.name}
-                    className="w-full aspect-square object-cover rounded-xl shadow-md bg-stone-100"
-                  />
-                </div>
-              )}
+              <div className="w-full md:w-1/3 shrink-0">
+                <img
+                  src={selectedFacilitator.image ? `/images/facilitator-images/${selectedFacilitator.image}` : PLACEHOLDER_IMAGE}
+                  alt={selectedFacilitator.name}
+                  className="w-full aspect-square object-cover rounded-xl shadow-md bg-stone-100"
+                />
+              </div>
               <div className="flex-1">
-                <div className="prose prose-stone text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">
-                  {selectedFacilitator.bio}
-                </div>
+                {selectedFacilitator.bio ? (
+                  <div className="prose prose-stone text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">
+                    {selectedFacilitator.bio}
+                  </div>
+                ) : (
+                  <p className="text-stone-500 italic">No bio provided.</p>
+                )}
               </div>
             </div>
 

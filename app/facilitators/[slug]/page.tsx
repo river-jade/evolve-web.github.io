@@ -76,7 +76,7 @@ export default async function Page({ params, searchParams }:
           </div>
 
           <div className="prose prose-lg text-gray-700 leading-relaxed whitespace-pre-wrap">
-            {facilitator.bio}
+            {facilitator.bio || <p className="italic text-gray-500">No bio provided.</p>}
           </div>
         </div>
       </div>
