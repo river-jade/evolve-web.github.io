@@ -36,6 +36,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
             height={800}
             priority
             className="w-full h-auto" // Natural height, no cropping
+            unoptimized
           />
         </div>
 
