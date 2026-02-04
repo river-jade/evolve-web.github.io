@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import type { ScheduleEvent, Workshop, FacilitatorEntry } from 'lib/data'
 import Modal from './Modal'
 
@@ -23,7 +24,8 @@ const EventCard = ({
   year,
   isMobile = false,
   onWorkshopClick,
-  onFacilitatorClick
+  onFacilitatorClick,
+  activeDay
 }: {
   event: ScheduleEvent,
   workshops: Workshop[],
@@ -31,6 +33,7 @@ const EventCard = ({
   isMobile?: boolean,
   onWorkshopClick: (w: Workshop) => void
   onFacilitatorClick: (f: FacilitatorEntry) => void
+  activeDay: string
 }) => {
   const isBreak = event.type === 'break'
   const linked = !isBreak ? findWorkshop(event.title, workshops) : null
@@ -78,7 +81,7 @@ const EventCard = ({
             <span className="opacity-70 text-xs">with </span>
             {linked ? (
               <Link
-                href={`/facilitators/${linked.facilitator.slug}?year=${year}&from=schedule`}
+                href={`/facilitators/${linked.facilitator.slug}?year=${year}&from=schedule&day=${activeDay}`}
                 onClick={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
@@ -111,8 +114,22 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
   }
 
   // 1. Setup State
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
   const days = useMemo(() => Array.from(new Set(events.map(e => e.day))), [events])
-  const [activeDay, setActiveDay] = useState(days[0])
+
+  // Get active day from URL or default to first day
+  const dayParam = searchParams.get('day')
+  const activeDay = (dayParam && days.includes(dayParam)) ? dayParam : days[0]
+
+  const setActiveDay = (day: string) => {
+    const params = new URLSearchParams(searchParams)
+    params.set('day', day)
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false })
+  }
+
   const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null)
   const [selectedFacilitator, setSelectedFacilitator] = useState<FacilitatorEntry | null>(null)
 
@@ -193,6 +210,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
                     isMobile={true}
                     onWorkshopClick={setSelectedWorkshop}
                     onFacilitatorClick={setSelectedFacilitator}
+                    activeDay={activeDay}
                   />
                 ))}
               </div>
@@ -241,6 +259,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
                       year={year}
                       onWorkshopClick={setSelectedWorkshop}
                       onFacilitatorClick={setSelectedFacilitator}
+                      activeDay={activeDay}
                     />
                   </div>
                 )
@@ -282,15 +301,6 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
               <div className="prose prose-stone leading-relaxed text-gray-700">
                 {selectedWorkshop.details}
               </div>
-            </div>
-
-            <div className="pt-4 border-t border-stone-100 flex justify-end">
-              <Link
-                href={`/workshops/${year}#${selectedWorkshop.workshop_slug}`}
-                className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
-              >
-                View workshops page <span aria-hidden="true">&rarr;</span>
-              </Link>
             </div>
           </div>
         )}
@@ -340,7 +350,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
             <div className="pt-2 flex justify-end">
               <Link
-                href={`/facilitators/${selectedFacilitator.slug}?year=${year}&from=schedule`}
+                href={`/facilitators/${selectedFacilitator.slug}?year=${year}&from=schedule&day=${activeDay}`}
                 className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
               >
                 View full profile <span aria-hidden="true">&rarr;</span>

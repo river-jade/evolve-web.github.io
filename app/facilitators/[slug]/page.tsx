@@ -8,7 +8,11 @@ export async function generateStaticParams() {
   return Object.keys(facilitators).map((slug) => ({ slug }))
 }
 
-export default async function Page({ params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ year?: string, from?: string }> }) {
+export default async function Page({ params, searchParams }:
+  {
+    params: Promise<{ slug: string }>,
+    searchParams: Promise<{ year?: string, from?: string, day?: string }>
+  }) {
   const resolvedParams = await params;
   const resolvedSearchParams = await searchParams;
   const facilitator = getFacilitatorBySlug(resolvedParams.slug)
@@ -21,7 +25,13 @@ export default async function Page({ params, searchParams }: { params: Promise<{
   const returnYear = resolvedSearchParams.year || facilitator.workshops.at(-1)?.year || '2025'
 
   const fromSchedule = resolvedSearchParams.from === 'schedule'
-  const backLink = fromSchedule ? `/schedule/${returnYear}` : `/workshops/${returnYear}`
+  const dayParam = resolvedSearchParams.day
+
+  let backLink = fromSchedule ? `/schedule/${returnYear}` : `/workshops/${returnYear}`
+  if (fromSchedule && dayParam) {
+    backLink += `?day=${dayParam}`
+  }
+
   const backText = fromSchedule ? `← Back to ${returnYear} Schedule` : `← Back to ${returnYear} Workshops`
 
   return (
