@@ -1,0 +1,652 @@
+[
+  {
+    "id": "2026-The Grove-10:00-2",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Opening circle",
+    "facilitator": null,
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Grove-12:30-5",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Grove-14:00-6",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Dance Journey",
+    "facilitator": "DJ Bronzewing",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Grove-16:00-8",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Grove-16:30-9",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Women's Pleasure Movement",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Grove-18:30-11",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-09:00-1",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Harmony & Resonance",
+    "facilitator": "Ben Mooney",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-10:00-2",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-10:30-3",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Coming Home (to Self)",
+    "facilitator": "Helen La Fontaine",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-12:30-5",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-15:00-7",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "15:00",
+    "end_time": "16:00",
+    "title": "Somatic Enquiry",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-16:00-8",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-18:30-11",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-10:00-2",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-10:30-3",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "From Me to We: What's the solution to Tyrannical Power Structures?",
+    "facilitator": "Carter McNabb",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-12:30-5",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-14:00-6",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Learn the language of intimacy, authenticity and relationship repair",
+    "facilitator": "Carter McNabb",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-16:00-8",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-16:30-9",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Exploring Your Future Options",
+    "facilitator": "Chris Stewart",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-18:30-11",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-09:00-1",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Morning Yoga",
+    "facilitator": "Lisa Farinosi",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-10:00-2",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-10:30-3",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "Shamanism, Power, and Politics: A Conversational Exploration",
+    "facilitator": "Sabah",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-12:30-5",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-14:00-6",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Tree Holding Qi Gong",
+    "facilitator": "Jamie Joseph",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-16:00-8",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-16:30-9",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Sound activation by NectarOfSounds",
+    "facilitator": "Ali Hammoud",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-18:30-11",
+    "day": "Saturday",
+    "venue": "The Den",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-10:00-2",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-12:30-5",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-14:00-6",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Deep Ecology and Ecosophia documentaries",
+    "facilitator": "Peter C Downey",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Hall-16:00-8",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-18:30-11",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Grove-10:00-2",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Grove-10:30-3",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "The Alchemy of Inner Union",
+    "facilitator": "Klaudia Ozga",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Grove-12:30-5",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Grove-16:00-8",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Grove-18:30-11",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-08:00-0",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "08:00",
+    "end_time": "10:00",
+    "title": "Rebirthing Breathwork Mastery",
+    "facilitator": "Jessica Ball",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-10:00-2",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-10:30-3",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "The Ecology of Humour",
+    "facilitator": "Thomas Langley",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-12:30-5",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-14:00-6",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Somatic Enquiry",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-16:00-8",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Glen-16:30-9",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Energy Healing & Meditation",
+    "facilitator": "Chris Stewart",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Glen-18:30-11",
+    "day": "Sunday",
+    "venue": "The Glen",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-10:00-2",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-10:30-3",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "Dissolving Hierarchical Roles and Inflexible Poles",
+    "facilitator": "Carter McNabb",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-12:30-5",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-14:00-6",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Community, Climate & Food Security",
+    "facilitator": "Chelsea MacNab",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-16:00-8",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-16:30-9",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Co-creating Communal Safety at Evolve",
+    "facilitator": "Tien Sieh",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-18:30-11",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-10:00-2",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-10:30-3",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "Non-Duality - Sharing and Meditation",
+    "facilitator": "Shanti",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-12:30-5",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-14:00-6",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Tree Holding Qi Gong",
+    "facilitator": "Jamie Joseph",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-16:00-8",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Den-16:30-9",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Feeling in to Elderhood",
+    "facilitator": "Aisha Jakszewicz",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Den-18:30-11",
+    "day": "Sunday",
+    "venue": "The Den",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-10:00-2",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-12:30-5",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-16:00-8",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Hall-16:30-9",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Deep Ecology and Ecosophia documentaries",
+    "facilitator": "Peter C Downey",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Hall-18:30-11",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "18:30",
+    "end_time": "Close",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  }
+]

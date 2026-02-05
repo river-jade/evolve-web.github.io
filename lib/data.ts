@@ -3,6 +3,7 @@ import data2025 from 'data/workshops-2025.json'
 import data2026 from 'data/workshops-2026.json'
 
 import schedule2025 from 'data/schedule-2025.json'
+import schedule2026 from 'data/schedule-2026.json'
 // Add new years here as they come
 
 import { slugify } from './utils'
@@ -116,5 +117,5 @@ const ALL_FACILITATORS = getAllFacilitators();
 
 export const ALL_SCHEDULES: Record<string, ScheduleEvent[]> = {
     '2025': schedule2025 as ScheduleEvent[],
-    // '2026': schedule2026 as ScheduleEvent[],
+    '2026': schedule2026 as ScheduleEvent[],
 }
