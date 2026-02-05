@@ -7,7 +7,12 @@ export const description = `Evolve is a "transformational" festival; a gathering
     land to connect with themselves and each other in a ritual that
     breaks them out of the routine of everyday life.`
 
-export const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://evolvecommunity.world'
+export const baseUrl =
+  process.env.VERCEL_ENV === 'production'
+    ? 'https://evolvecommunity.world'
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'https://evolvecommunity.world'
 
 export const contactEmail = 'contact@evolvecommunity.world'
 
