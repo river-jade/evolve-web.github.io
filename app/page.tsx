@@ -47,7 +47,7 @@ export default function Page() {
         </div>
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="flex flex-col gap-3">
-            <span className="text-4xl mb-2">🎉</span>
+            <span className="text-4xl mb-2">🤝</span>
             <h3 className="text-xl font-bold">Community</h3>
             <p className="text-stone-600 leading-relaxed">
               A tribe of open hearts and minds, dedicated to deep connection, safety, and mutual support.
@@ -61,7 +61,7 @@ export default function Page() {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <span className="text-4xl mb-2">🧪</span>
+            <span className="text-4xl mb-2">🌱</span>
             <h3 className="text-xl font-bold">Movement</h3>
             <p className="text-stone-600 leading-relaxed">
               Growing from a festival into a global network of changemakers co-creating a better world.
