@@ -54,7 +54,7 @@
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -120,14 +120,34 @@
     "type": "break"
   },
   {
+    "id": "2026-The Glen-16:30-9",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Feeling Our Way Through : Anger & Fear as Collective Intelligence",
+    "facilitator": "Stacia Karina Beazley",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Glen-18:30-11",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-07:00-0",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "07:00",
+    "end_time": "10:00",
+    "title": "Morning Meditative Meander",
+    "facilitator": "Johanna",
+    "type": "workshop"
   },
   {
     "id": "2026-The Knoll-10:00-2",
@@ -140,16 +160,6 @@
     "type": "break"
   },
   {
-    "id": "2026-The Knoll-10:30-3",
-    "day": "Saturday",
-    "venue": "The Knoll",
-    "start_time": "10:30",
-    "end_time": "11:30",
-    "title": "From Me to We: What's the solution to Tyrannical Power Structures?",
-    "facilitator": "Carter McNabb",
-    "type": "workshop"
-  },
-  {
     "id": "2026-The Knoll-12:30-5",
     "day": "Saturday",
     "venue": "The Knoll",
@@ -158,16 +168,6 @@
     "title": "Lunch",
     "facilitator": null,
     "type": "break"
-  },
-  {
-    "id": "2026-The Knoll-14:00-6",
-    "day": "Saturday",
-    "venue": "The Knoll",
-    "start_time": "14:00",
-    "end_time": "16:00",
-    "title": "Learn the language of intimacy, authenticity and relationship repair",
-    "facilitator": "Carter McNabb",
-    "type": "workshop"
   },
   {
     "id": "2026-The Knoll-16:00-8",
@@ -194,7 +194,7 @@
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -274,7 +274,7 @@
     "day": "Saturday",
     "venue": "The Den",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -324,7 +324,7 @@
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -374,10 +374,20 @@
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Grove-20:00-12",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "20:00",
+    "end_time": "22:00",
+    "title": "Open Mic",
+    "facilitator": null,
+    "type": "workshop"
   },
   {
     "id": "2026-The Glen-08:00-0",
@@ -454,7 +464,7 @@
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -468,16 +478,6 @@
     "title": "Break",
     "facilitator": null,
     "type": "break"
-  },
-  {
-    "id": "2026-The Knoll-10:30-3",
-    "day": "Sunday",
-    "venue": "The Knoll",
-    "start_time": "10:30",
-    "end_time": "11:30",
-    "title": "Dissolving Hierarchical Roles and Inflexible Poles",
-    "facilitator": "Carter McNabb",
-    "type": "workshop"
   },
   {
     "id": "2026-The Knoll-12:30-5",
@@ -524,7 +524,7 @@
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -594,7 +594,7 @@
     "day": "Sunday",
     "venue": "The Den",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
@@ -644,7 +644,7 @@
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "18:30",
-    "end_time": "Close",
+    "end_time": "20:00",
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
