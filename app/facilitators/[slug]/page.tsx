@@ -70,6 +70,7 @@ export default async function Page({ params, searchParams }:
                   <span className="font-medium text-gray-700">
                     {w.title}
                   </span>
+                  <span className="ml-2 text-stone-400 md:hidden" aria-hidden="true">→</span>
                 </Link>
               </div>
             ))}
