@@ -170,6 +170,16 @@
     "type": "break"
   },
   {
+    "id": "2026-The Knoll-14:00-6",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Exploring Your Future Options",
+    "facilitator": "Chris Stewart",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Knoll-16:00-8",
     "day": "Saturday",
     "venue": "The Knoll",
@@ -185,8 +195,8 @@
     "venue": "The Knoll",
     "start_time": "16:30",
     "end_time": "18:30",
-    "title": "Exploring Your Future Options",
-    "facilitator": "Chris Stewart",
+    "title": "Contact Improv For Ecstatic Dancers",
+    "facilitator": "Johanna",
     "type": "workshop"
   },
   {
