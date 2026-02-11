@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { cx } from 'lib/cx'
 
-export function Navbar({overlay = false } : {overlay?: boolean}) {
+export function Navbar({ overlay = false }: { overlay?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false)
   // Handle scroll effect for transparency
   useEffect(() => {
@@ -29,17 +29,17 @@ export function Navbar({overlay = false } : {overlay?: boolean}) {
 
         {/* BRANDING */}
         <Link href="/" className="flex items-center gap-2 group">
-           {/* Optional: Add Logo Image here if you have one available as a file */}
-           <span className="text-2xl font-extrabold tracking-tighter">
-             EVOLVE
-           </span>
+          {/* Optional: Add Logo Image here if you have one available as a file */}
+          <span className="text-2xl font-extrabold tracking-tighter">
+            EVOLVE
+          </span>
         </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-5 font-medium text-sm">
           <Link href="/mar-2026" className="hover:opacity-70 transition-opacity">Festival</Link>
           <Link href="/workshops/2026" className="hover:opacity-70 transition-opacity">Workshops</Link>
-          {/* <Link href="/schedule/2026" className="hover:opacity-70 transition-opacity">Schedule</Link> */}
+          <Link href="/schedule/2026" className="hover:opacity-70 transition-opacity">Schedule</Link>
           <Link href="/values" className="hover:opacity-70 transition-opacity">Our Values</Link>
 
           {/* CTA Button */}
