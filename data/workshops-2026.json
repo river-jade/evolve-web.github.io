@@ -194,9 +194,17 @@
   {
     "facilitator_name": "Jimmy Strat",
     "workshop_name": "DJ Set",
-    "details": "For connection, healing, and dancefloor consciousness, there’s no better DJ than Jimmy Strat, a.k.a. James Stratfiord — Melbourne’s fastest rising techno artist.",
+    "details": "For connection, healing, and dancefloor consciousness, there’s no better DJ than Jimmy Strat, a.k.a. James Stratford — Melbourne’s fastest rising techno artist.",
     "bio": "Jimmy Strat uses electronic music as a tool for connection and recovery, blending techno, house and psychedelic influences into sets that are emotional as well as physical. Open about the role DJing played in supporting his mental health, his approach centres honesty, presence and shared experience on the dancefloor. He is part of the Shibumi Records platform — supporting artists who bring meaning, vulnerability and intent into club culture.",
     "slug": "jimmy-strat",
     "image": "jimmy-strat-f6ffed.jpg"
+  },
+  {
+    "facilitator_name": "Jayendra Birchall",
+    "workshop_name": "Live electronic music set",
+    "details": "All original music weaving live guitar with electronic textures and melodies into rhythm-driven soundscapes — a unique experience to groove to.",
+    "bio": "Formally trained as a classical guitarist and driven by a passion for electronic music, Jay composes across genres, crafting all-original music that weaves live guitar with electronic textures and melodies into rhythm-driven soundscapes — a unique experience to groove to.",
+    "slug": "jayendra-birchall",
+    "image": "jayendra-birchall-fde570.jpg"
   }
 ]
