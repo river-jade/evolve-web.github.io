@@ -44,7 +44,7 @@ const EventCard = ({
     ? `bg-stone-50 border-stone-300 text-stone-500 italic ${isMobile ? 'p-4 border-l-4' : 'h-full p-3 rounded-lg text-center justify-center min-h-[60px] text-sm'}`
     : `bg-teal-50/50 hover:bg-teal-100 hover:shadow-md transition-all ${isMobile ? 'p-4 border-l-4 border-teal-500 bg-teal-50' : 'h-full p-3 rounded-lg min-h-[120px] flex flex-col justify-between'}`
 
-  const titleClass = "font-bold text-lg text-gray-900 leading-tight mb-1 block"
+  const titleClass = "font-bold text-md text-gray-900 leading-tight mb-1 block"
 
   if (isBreak) {
     return (
