@@ -440,6 +440,46 @@
     "type": "break"
   },
   {
+    "id": "2026-Communal Space-10:00-2",
+    "day": "Sunday",
+    "venue": "Communal Space",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-Communal Space-12:30-5",
+    "day": "Sunday",
+    "venue": "Communal Space",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-Communal Space-16:00-8",
+    "day": "Sunday",
+    "venue": "Communal Space",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-Communal Space-18:30-11",
+    "day": "Sunday",
+    "venue": "Communal Space",
+    "start_time": "18:30",
+    "end_time": "20:00",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
     "id": "2026-Communal Space-20:00-12",
     "day": "Sunday",
     "venue": "Communal Space",
@@ -785,7 +825,7 @@
     "venue": "The Hall",
     "start_time": "14:00",
     "end_time": "15:00",
-    "title": "From Women to Women",
+    "title": "From Women to Women :: Video screening & discussion on International Women's Day",
     "facilitator": "Stacia Karina Beazley",
     "type": "workshop"
   },
