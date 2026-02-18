@@ -4,9 +4,8 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import type { ScheduleEvent, Workshop, FacilitatorEntry } from 'lib/data'
-import Modal from './Modal'
-
-const PLACEHOLDER_IMAGE = '/images/evolve-logo.jpg'
+import { WorkshopModal } from './WorkshopModal'
+import { FacilitatorModal } from './FacilitatorModal'
 
 type Props = {
   events: ScheduleEvent[]
@@ -272,99 +271,18 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
       </div>
 
       {/* --- MODALS --- */}
-
-      {/* Workshop Modal */}
-      <Modal
-        isOpen={!!selectedWorkshop}
+      <WorkshopModal
+        workshop={selectedWorkshop}
         onClose={() => setSelectedWorkshop(null)}
-        title={selectedWorkshop?.workshop_name}
-      >
-        {selectedWorkshop && (
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-1">Hosted by</h3>
-              <button
-                onClick={() => {
-                  setSelectedWorkshop(null)
-                  // Small timeout to allow transition if needed, or just switch immediately
-                  setTimeout(() => setSelectedFacilitator(selectedWorkshop.facilitator), 50)
-                }}
-                className="text-lg font-bold text-gray-800 hover:text-teal-700 hover:underline flex items-center gap-2"
-              >
-                <img
-                  src={selectedWorkshop.facilitator.image ? `/images/facilitator-images/${selectedWorkshop.facilitator.image}` : PLACEHOLDER_IMAGE}
-                  alt=""
-                  className="w-8 h-8 rounded-full object-cover bg-stone-100"
-                />
-                {selectedWorkshop.facilitator.name}
-              </button>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-2">About the Workshop</h3>
-              <div className="prose prose-stone leading-relaxed text-gray-700">
-                {selectedWorkshop.details}
-              </div>
-            </div>
-          </div>
-        )}
-      </Modal>
-
-      {/* Facilitator Modal */}
-      <Modal
-        isOpen={!!selectedFacilitator}
+        onFacilitatorClick={setSelectedFacilitator}
+        year={year}
+      />
+      <FacilitatorModal
+        facilitator={selectedFacilitator}
         onClose={() => setSelectedFacilitator(null)}
-        title={selectedFacilitator?.name}
-      >
-        {selectedFacilitator && (
-          <div className="space-y-6">
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-full md:w-1/3 shrink-0">
-                <img
-                  src={selectedFacilitator.image ? `/images/facilitator-images/${selectedFacilitator.image}` : PLACEHOLDER_IMAGE}
-                  alt={selectedFacilitator.name}
-                  className="w-full aspect-square object-cover rounded-xl shadow-md bg-stone-100"
-                />
-              </div>
-              <div className="flex-1">
-                {selectedFacilitator.bio ? (
-                  <div className="prose prose-stone text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">
-                    {selectedFacilitator.bio}
-                  </div>
-                ) : (
-                  <p className="text-stone-500 italic">No bio provided.</p>
-                )}
-              </div>
-            </div>
-
-            {/* Other Workshops by this person */}
-            {selectedFacilitator.workshops && selectedFacilitator.workshops.length > 0 && (
-              <div className="pt-4 border-t border-stone-100">
-                <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-3">Workshops at Evolve</h3>
-                <ul className="space-y-2">
-                  {selectedFacilitator.workshops.map(w => (
-                    <li key={w.slug}>
-                      <span className="font-medium text-gray-900 block">{w.title}</span>
-                      {/* Link to specific workshop in modal? Or just text for now? 
-                                        Let's keep it simple: text. 
-                                    */}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="pt-2 flex justify-end">
-              <Link
-                href={`/facilitators/${selectedFacilitator.slug}?year=${year}&from=schedule&day=${activeDay}`}
-                className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
-              >
-                View full profile <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </div>
-          </div>
-        )}
-      </Modal>
+        year={year}
+        activeDay={activeDay}
+      />
 
     </div>
   )
