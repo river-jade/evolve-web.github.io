@@ -40,6 +40,16 @@
     "type": "workshop"
   },
   {
+    "id": "2026-Communal Space-12:30-5",
+    "day": "Saturday",
+    "venue": "Communal Space",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
     "id": "2026-Communal Space-14:00-6",
     "day": "Saturday",
     "venue": "Communal Space",
@@ -48,6 +58,16 @@
     "title": "Dance Journey",
     "facilitator": "DJ Bronzewing",
     "type": "workshop"
+  },
+  {
+    "id": "2026-Communal Space-16:00-8",
+    "day": "Saturday",
+    "venue": "Communal Space",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
   },
   {
     "id": "2026-Communal Space-16:30-9",
@@ -80,23 +100,13 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-10:00-2",
-    "day": "Saturday",
-    "venue": "The Grove",
-    "start_time": "10:00",
-    "end_time": "10:30",
-    "title": "Break",
-    "facilitator": null,
-    "type": "break"
-  },
-  {
     "id": "2026-The Grove-10:30-3",
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "10:30",
     "end_time": "12:30",
-    "title": "Women's Pleasure Movement",
-    "facilitator": "Jordhana Clark",
+    "title": "Take action on the highest purpose of your Earth Walk",
+    "facilitator": "Ashwattha",
     "type": "workshop"
   },
   {
@@ -158,16 +168,6 @@
     "title": "Harmony & Resonance",
     "facilitator": "Ben Mooney",
     "type": "workshop"
-  },
-  {
-    "id": "2026-The Glen-10:00-2",
-    "day": "Saturday",
-    "venue": "The Glen",
-    "start_time": "10:00",
-    "end_time": "10:30",
-    "title": "Break",
-    "facilitator": null,
-    "type": "break"
   },
   {
     "id": "2026-The Glen-10:30-3",
@@ -250,16 +250,6 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-10:00-2",
-    "day": "Saturday",
-    "venue": "The Knoll",
-    "start_time": "10:00",
-    "end_time": "10:30",
-    "title": "Break",
-    "facilitator": null,
-    "type": "break"
-  },
-  {
     "id": "2026-The Knoll-10:30-3",
     "day": "Saturday",
     "venue": "The Knoll",
@@ -340,16 +330,6 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-10:00-2",
-    "day": "Saturday",
-    "venue": "The Hollow",
-    "start_time": "10:00",
-    "end_time": "10:30",
-    "title": "Break",
-    "facilitator": null,
-    "type": "break"
-  },
-  {
     "id": "2026-The Hollow-10:30-3",
     "day": "Saturday",
     "venue": "The Hollow",
@@ -406,16 +386,6 @@
     "start_time": "18:30",
     "end_time": "20:00",
     "title": "Dinner",
-    "facilitator": null,
-    "type": "break"
-  },
-  {
-    "id": "2026-The Hall-10:00-2",
-    "day": "Saturday",
-    "venue": "The Hall",
-    "start_time": "10:00",
-    "end_time": "10:30",
-    "title": "Break",
     "facilitator": null,
     "type": "break"
   },
@@ -525,8 +495,8 @@
     "venue": "The Grove",
     "start_time": "14:00",
     "end_time": "16:00",
-    "title": "Take action on the highest purpose of your Earth Walk",
-    "facilitator": "Ashwattha",
+    "title": "Women's Pleasure Movement",
+    "facilitator": "Jordhana Clark",
     "type": "workshop"
   },
   {
