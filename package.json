@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "import-workshops": "npx tsx scripts/import-workshops.ts",
-    "import-schedule": "npx tsx scripts/import-schedule.ts",
+    "import-workshops": "pnpm exec tsx scripts/import-workshops.ts",
+    "import-schedule": "pnpm exec tsx scripts/import-schedule.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -27,6 +27,7 @@
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@types/jsonp": "^0.2.3"
+    "@types/jsonp": "^0.2.3",
+    "tsx": "^4.21.0"
   }
 }
