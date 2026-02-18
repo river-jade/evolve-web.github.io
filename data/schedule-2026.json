@@ -90,6 +90,16 @@
     "type": "break"
   },
   {
+    "id": "2026-The Grove-10:30-3",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Women's Pleasure Movement",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Grove-12:30-5",
     "day": "Saturday",
     "venue": "The Grove",
@@ -98,6 +108,16 @@
     "title": "Lunch",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Grove-14:00-6",
+    "day": "Saturday",
+    "venue": "The Grove",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Reclaiming the Sacredness of Rage - For women",
+    "facilitator": "Meg Weaves",
+    "type": "workshop"
   },
   {
     "id": "2026-The Grove-16:00-8",
@@ -115,8 +135,8 @@
     "venue": "The Grove",
     "start_time": "16:30",
     "end_time": "18:30",
-    "title": "Women's Pleasure Movement",
-    "facilitator": "Jordhana Clark",
+    "title": "Grief Ritual",
+    "facilitator": "Kate Laurie, Pete Coles, Ari Amala and Chloe Ann Francis",
     "type": "workshop"
   },
   {
@@ -168,6 +188,16 @@
     "title": "Lunch",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Glen-14:00-6",
+    "day": "Saturday",
+    "venue": "The Glen",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "Singing up for Life",
+    "facilitator": "Victoria Whelan",
+    "type": "workshop"
   },
   {
     "id": "2026-The Glen-15:00-7",
@@ -230,6 +260,26 @@
     "type": "break"
   },
   {
+    "id": "2026-The Knoll-10:30-3",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "Shamanism, Power, and Politics: A Conversational Exploration",
+    "facilitator": "Sabah",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Knoll-11:30-4",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "11:30",
+    "end_time": "12:30",
+    "title": "Embodied Epistemology",
+    "facilitator": "Alexander Jenkins",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Knoll-12:30-5",
     "day": "Saturday",
     "venue": "The Knoll",
@@ -258,6 +308,16 @@
     "title": "Break",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Knoll-16:30-9",
+    "day": "Saturday",
+    "venue": "The Knoll",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Sacred Play",
+    "facilitator": "Simon Oats",
+    "type": "workshop"
   },
   {
     "id": "2026-The Knoll-18:30-11",
@@ -294,9 +354,9 @@
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "10:30",
-    "end_time": "11:30",
-    "title": "Shamanism, Power, and Politics: A Conversational Exploration",
-    "facilitator": "Sabah",
+    "end_time": "12:30",
+    "title": "Oki-do Yoga",
+    "facilitator": "Stev Fioretti",
     "type": "workshop"
   },
   {
@@ -390,6 +450,16 @@
     "type": "break"
   },
   {
+    "id": "2026-The Hall-16:30-9",
+    "day": "Saturday",
+    "venue": "The Hall",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "In The Circle of Life Documentary",
+    "facilitator": "Sabah",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Hall-18:30-11",
     "day": "Saturday",
     "venue": "The Hall",
@@ -407,6 +477,16 @@
     "end_time": "22:00",
     "title": "Open Mic",
     "facilitator": null,
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Grove-08:00-0",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "08:00",
+    "end_time": "10:00",
+    "title": "Sound activation by NectarOfSounds",
+    "facilitator": "Ali Hammoud",
     "type": "workshop"
   },
   {
@@ -440,6 +520,16 @@
     "type": "break"
   },
   {
+    "id": "2026-The Grove-14:00-6",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "14:00",
+    "end_time": "16:00",
+    "title": "Take action on the highest purpose of your Earth Walk",
+    "facilitator": "Ashwattha",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Grove-16:00-8",
     "day": "Sunday",
     "venue": "The Grove",
@@ -448,6 +538,16 @@
     "title": "Break",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Grove-16:30-9",
+    "day": "Sunday",
+    "venue": "The Grove",
+    "start_time": "16:30",
+    "end_time": "18:30",
+    "title": "Feeling in to Elderhood",
+    "facilitator": "Aisha Jakszewicz",
+    "type": "workshop"
   },
   {
     "id": "2026-The Grove-18:30-11",
@@ -550,6 +650,16 @@
     "type": "break"
   },
   {
+    "id": "2026-The Knoll-10:30-3",
+    "day": "Sunday",
+    "venue": "The Knoll",
+    "start_time": "10:30",
+    "end_time": "12:30",
+    "title": "Resilience: 5 Tools for a Regulated Nervous System",
+    "facilitator": "Chu Wung",
+    "type": "workshop"
+  },
+  {
     "id": "2026-The Knoll-12:30-5",
     "day": "Sunday",
     "venue": "The Knoll",
@@ -598,6 +708,16 @@
     "title": "Dinner",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Hollow-09:00-1",
+    "day": "Sunday",
+    "venue": "The Hollow",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Morning Yoga",
+    "facilitator": "Lisa Farinosi",
+    "type": "workshop"
   },
   {
     "id": "2026-The Hollow-10:00-2",
@@ -655,8 +775,8 @@
     "venue": "The Hollow",
     "start_time": "16:30",
     "end_time": "18:30",
-    "title": "Feeling in to Elderhood",
-    "facilitator": "Aisha Jakszewicz",
+    "title": "Sacred Play",
+    "facilitator": "Simon Oats",
     "type": "workshop"
   },
   {
@@ -688,6 +808,16 @@
     "title": "Lunch",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Hall-14:00-6",
+    "day": "Sunday",
+    "venue": "The Hall",
+    "start_time": "14:00",
+    "end_time": "15:00",
+    "title": "From Women to Women",
+    "facilitator": "Stacia Karina Beazley",
+    "type": "workshop"
   },
   {
     "id": "2026-The Hall-16:00-8",
