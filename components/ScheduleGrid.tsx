@@ -24,6 +24,7 @@ const EventCard = ({
   workshops,
   year,
   isMobile = false,
+  hideEndTime = false,
   onWorkshopClick,
   onFacilitatorClick,
   activeDay
@@ -32,6 +33,7 @@ const EventCard = ({
   workshops: Workshop[],
   year: string,
   isMobile?: boolean,
+  hideEndTime?: boolean,
   onWorkshopClick: (w: Workshop) => void
   onFacilitatorClick: (f: FacilitatorEntry) => void
   activeDay: string
@@ -100,7 +102,7 @@ const EventCard = ({
       </div>
 
       {/* End Time */}
-      {event.end_time && event.end_time !== 'Close' && (
+      {!hideEndTime && event.end_time && event.end_time !== 'Close' && (
         <div className="mt-3 text-[10px] uppercase tracking-wide text-gray-400 font-bold">
           Until {event.end_time}
         </div>
@@ -135,20 +137,49 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
   const [selectedFacilitator, setSelectedFacilitator] = useState<FacilitatorEntry | null>(null)
 
   // 2. Pre-calculate Data
-  const { venues, times, gridLookup } = useMemo(() => {
+  const { venues, times, gridLookup, spanMap, coveredCells } = useMemo(() => {
     const daily = events.filter(e => e.day === activeDay)
 
     const v = Array.from(new Set(daily.map(e => e.venue)))
       .filter(venue => isNaN(Number(venue)) && venue.trim().length > 0)
 
-    const t = Array.from(new Set(daily.map(e => e.start_time))).sort()
+    // Include both start and end times so intermediate rows show up
+    // (e.g., if all 10:30 events span to 12:30, 11:30 still appears as a row)
+    const allTimes = new Set(daily.map(e => e.start_time))
+    daily.forEach(e => {
+      if (e.end_time && e.end_time.match(/\d{1,2}:\d{2}/)) allTimes.add(e.end_time)
+    })
+    const t = Array.from(allTimes).sort()
 
     const lookup: Record<string, ScheduleEvent> = {}
     daily.forEach(e => {
       lookup[`${e.start_time}:${e.venue}`] = e
     })
 
-    return { venues: v, times: t, gridLookup: lookup }
+    // Calculate row spans: how many time rows each event covers
+    const spans: Record<string, number> = {}
+    const covered = new Set<string>()
+
+    daily.forEach(e => {
+      const startIdx = t.indexOf(e.start_time)
+      if (startIdx === -1) return
+
+      // Find how many time rows this event's end_time covers
+      let span = 1
+      for (let i = startIdx + 1; i < t.length; i++) {
+        if (t[i] < e.end_time) {
+          span++
+          covered.add(`${t[i]}:${e.venue}`)
+        } else {
+          break
+        }
+      }
+      if (span > 1) {
+        spans[`${e.start_time}:${e.venue}`] = span
+      }
+    })
+
+    return { venues: v, times: t, gridLookup: lookup, spanMap: spans, coveredCells: covered }
   }, [events, activeDay])
 
   return (
@@ -225,48 +256,73 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
         <div
           className="grid gap-0"
           style={{
-            gridTemplateColumns: `100px repeat(${venues.length}, minmax(200px, 1fr))`
+            gridTemplateColumns: `100px repeat(${venues.length}, minmax(200px, 1fr))`,
+            gridTemplateRows: `auto repeat(${times.length}, auto)`
           }}
         >
           {/* Header Row */}
-          <div className="sticky top-0 z-20 bg-teal-50/95 border-b border-teal-200 p-4 text-right font-bold text-stone-400 text-xs uppercase tracking-widest">
+          <div className="sticky top-0 z-20 bg-teal-50/95 border-b border-teal-200 p-4 text-right font-bold text-stone-400 text-xs uppercase tracking-widest"
+            style={{ gridRow: 1, gridColumn: 1 }}
+          >
             Time
           </div>
-          {venues.map(venue => (
-            <div key={venue} className="sticky top-0 z-20 bg-teal-50/95 backdrop-blur border-b border-teal-200 p-4 text-center border-l border-teal-100">
+          {venues.map((venue, vi) => (
+            <div key={venue} className="sticky top-0 z-20 bg-teal-50/95 backdrop-blur border-b border-teal-200 p-4 text-center border-l border-teal-100"
+              style={{ gridRow: 1, gridColumn: vi + 2 }}
+            >
               <h3 className="text-lg font-bold text-teal-900 leading-tight">{venue}</h3>
             </div>
           ))}
 
-          {/* Time Rows */}
-          {times.map(time => (
-            <div key={time} className="contents group">
-              {/* Time Column */}
-              <div className="text-right py-4 pr-4 font-mono font-bold text-stone-400 text-sm border-t border-stone-100 bg-stone-50/30">
+          {/* Time Cells + Venue Cells */}
+          {times.map((time, ti) => {
+            const row = ti + 2 // +2 because row 1 is the header
+
+            return [
+              // Time Column
+              <div key={`time-${time}`}
+                className="text-right py-4 pr-4 font-mono font-bold text-stone-400 text-sm border-t border-stone-200 bg-stone-50/30"
+                style={{ gridRow: row, gridColumn: 1 }}
+              >
                 {time}
-              </div>
+              </div>,
 
-              {/* Venue Cells */}
-              {venues.map(venue => {
-                const event = gridLookup[`${time}:${venue}`]
+              // Venue Cells
+              ...venues.map((venue, vi) => {
+                const cellKey = `${time}:${venue}`
 
-                if (!event) return <div key={`${time}-${venue}`} className="border-t border-l border-stone-50 bg-stone-50/10" />
+                // Skip cells covered by a spanning event from a previous row
+                if (coveredCells.has(cellKey)) return null
+
+                const event = gridLookup[cellKey]
+                const span = spanMap[cellKey] || 1
+
+                if (!event) {
+                  return <div key={`${time}-${venue}`}
+                    className="border-t border-l border-stone-200 bg-stone-50/10"
+                    style={{ gridRow: row, gridColumn: vi + 2 }}
+                  />
+                }
 
                 return (
-                  <div key={event.id} className="border-t border-l border-stone-100 p-1">
+                  <div key={event.id}
+                    className="border-t border-l border-stone-200 p-1"
+                    style={{ gridRow: `${row} / span ${span}`, gridColumn: vi + 2 }}
+                  >
                     <EventCard
                       event={event}
                       workshops={workshops}
                       year={year}
+                      hideEndTime={ti < times.length - 1}
                       onWorkshopClick={setSelectedWorkshop}
                       onFacilitatorClick={setSelectedFacilitator}
                       activeDay={activeDay}
                     />
                   </div>
                 )
-              })}
-            </div>
-          ))}
+              })
+            ]
+          })}
         </div>
       </div>
 
