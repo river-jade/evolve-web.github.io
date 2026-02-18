@@ -720,7 +720,17 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-10:00-0",
+    "id": "2026-Communal Space-09:00-0",
+    "day": "Monday",
+    "venue": "Communal Space",
+    "start_time": "09:00",
+    "end_time": "10:00",
+    "title": "Pack down campsites / personal belongings",
+    "facilitator": null,
+    "type": "workshop"
+  },
+  {
+    "id": "2026-Communal Space-10:00-1",
     "day": "Monday",
     "venue": "Communal Space",
     "start_time": "10:00",
@@ -730,17 +740,17 @@
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-11:00-1",
+    "id": "2026-Communal Space-11:00-2",
     "day": "Monday",
     "venue": "Communal Space",
     "start_time": "11:00",
     "end_time": "16:00",
-    "title": "Pack down",
+    "title": "Pack down festival and bump-out",
     "facilitator": null,
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-16:00-2",
+    "id": "2026-Communal Space-16:00-3",
     "day": "Monday",
     "venue": "Communal Space",
     "start_time": "16:00",
