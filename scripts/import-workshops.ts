@@ -5,8 +5,14 @@ import sharp from 'sharp';
 import path from 'path';
 import crypto from 'crypto';
 
-const import_file = process.argv[2];
-const year = process.argv[3];
+// --- Google Sheets Config ---
+// Map each year to a spreadsheet ID and GID for the workshops tab
+const SHEETS: Record<string, { spreadsheetId: string; gid: string }> = {
+  '2026': {
+    spreadsheetId: '1gfzsn0zmP-0JXf-s9GCAWJdGTw5f4AhnfQ0L4INUzxo',
+    gid: '2079811075',
+  }
+};
 
 type Workshop = {
   facilitator_name: string;
@@ -18,42 +24,26 @@ type Workshop = {
   _driveId?: string; // internal use only
 }
 
-const usage = "Usage: node scripts/import-workshops.js <import_file> <year>";
-if (!import_file) {
-  console.error(`❌ Error: Please provide an import file. ${usage}`);
+// Usage: npx tsx scripts/import-workshops.ts <year>
+const year = process.argv[2];
+
+if (!year || !SHEETS[year]) {
+  console.error(`❌ Usage: npx tsx scripts/import-workshops.ts <year>`);
+  console.error(`   Available years: ${Object.keys(SHEETS).join(', ')}`);
   process.exit(1);
 }
-if (!year) {
-  console.error(`❌ Error: Please provide a year. ${usage}`);
-  process.exit(1);
-}
-csv()
-  .fromFile(import_file)
-  .then(async (jsonObj) => {
-    const exportList = jsonObj
-      .filter(workshop => workshop["I'm happy for you to post my workshop / picture / bio to the Facebook event / Evolve website"] === "Yes")
-      .filter(workshop => workshop["Include in Evolve"] === "Yes")
-      .map(workshop => {
-        const photoField = workshop["Facilitator or workshop photo"]
 
-        const driveId = photoField?.match(/id=([^&]+)/)?.[1];
-        const name = workshop["Facilitator name(s)"].trim()
+const config = SHEETS[year];
 
-        return {
-          facilitator_name: name,
-          workshop_name: workshop["Workshop title"].trim(),
-          details: workshop["Description of the workshop"].trim(),
-          bio: workshop["Facilitator Bio(s)"].trim(),
-          slug: slugify(name),
-          // Temporary internal fields for the image processor
-          _driveId: driveId,
-        }
-      })
-      .filter(({ workshop_name }) => !!workshop_name)
-    await downloadAndProcessImages(exportList)
-    fs.writeFileSync(`data/workshops-${year}.json`, JSON.stringify(exportList, null, 2))
-    console.log(`✅ Successfully imported ${exportList.length} workshops for ${year} from ${import_file}`)
-  });
+const fetchSheet = async (): Promise<string> => {
+  const url = `https://docs.google.com/spreadsheets/d/${config.spreadsheetId}/export?format=csv&gid=${config.gid}`;
+  console.log(`📥 Fetching workshops for ${year} from Google Sheets...`);
+  const res = await fetch(url, { redirect: 'follow' });
+  if (!res.ok) {
+    throw new Error(`Failed to fetch sheet: ${res.status} ${res.statusText}`);
+  }
+  return res.text();
+};
 
 const downloadAndProcessImages = async (list: Workshop[]) => {
   const imageDir = path.join(process.cwd(), 'public/images/facilitator-images');
@@ -74,7 +64,7 @@ const downloadAndProcessImages = async (list: Workshop[]) => {
     const filepath = path.join(imageDir, filename);
 
     try {
-      // Check if file exists on disk to save time (optional)
+      // Check if file exists on disk to save time
       if (!fs.existsSync(filepath)) {
         const response = await fetch(`https://drive.google.com/uc?export=download&id=${item._driveId}`);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -101,3 +91,38 @@ const downloadAndProcessImages = async (list: Workshop[]) => {
   }
   console.log('\n');
 }
+
+(async () => {
+  try {
+    const csvText = await fetchSheet();
+    const jsonObj = await csv().fromString(csvText);
+
+    const exportList = jsonObj
+      .filter(workshop => workshop["I'm happy for you to post my workshop / picture / bio to the Facebook event / Evolve website"] === "Yes")
+      .filter(workshop => workshop["Include in Evolve"] === "Yes")
+      .map(workshop => {
+        const photoField = workshop["Facilitator or workshop photo"]
+
+        const driveId = photoField?.match(/id=([^&]+)/)?.[1];
+        const name = workshop["Facilitator name(s)"].trim()
+
+        return {
+          facilitator_name: name,
+          workshop_name: workshop["Workshop title"].trim(),
+          details: workshop["Description of the workshop"].trim(),
+          bio: workshop["Facilitator Bio(s)"].trim(),
+          slug: slugify(name),
+          _driveId: driveId,
+        }
+      })
+      .filter(({ workshop_name }) => !!workshop_name)
+
+    await downloadAndProcessImages(exportList)
+
+    const outputPath = `data/workshops-${year}.json`;
+    fs.writeFileSync(outputPath, JSON.stringify(exportList, null, 2))
+    console.log(`✅ Successfully imported ${exportList.length} workshops for ${year}`)
+  } catch (err) {
+    console.error("❌ Error:", err);
+  }
+})();
