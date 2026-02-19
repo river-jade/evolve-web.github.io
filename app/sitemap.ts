@@ -1,4 +1,4 @@
-import { getPageMarkdown } from 'lib/utils'
+import { getPageMarkdown } from 'lib/server_utils'
 import { baseUrl } from '@/metadata'
 export default async function sitemap() {
   let pages = getPageMarkdown().map((page) => ({

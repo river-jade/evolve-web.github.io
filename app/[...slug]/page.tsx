@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPageMarkdown } from 'lib/utils'
+import { getPageMarkdown } from 'lib/server_utils'
 import { baseUrl, authorName } from '@/metadata'
 import { cx } from 'lib/cx'
 import Banner from 'components/Banner'
@@ -94,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
       />
       <Navbar overlay={false} />
       <div className="pt-24 px-6">
-          <Banner title={page.metadata.title} />
+        <Banner title={page.metadata.title} />
       </div>
       <section
         className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}

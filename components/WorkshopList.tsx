@@ -4,10 +4,7 @@ import { useEffect, useState, useRef, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Workshop, ScheduleEvent } from 'lib/data'
-
-const slugify = (str: string) => str.toString().toLowerCase().trim()
-  .replace(/\s+/g, '-').replace(/&/g, '-and-')
-  .replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-')
+import { slugify } from 'lib/client_utils'
 
 export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: Workshop[], year: string, scheduleEvents: ScheduleEvent[] }) => {
   // Build a lookup: lowercase workshop title → day

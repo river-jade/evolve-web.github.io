@@ -4,12 +4,9 @@ import { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import type { ScheduleEvent, Workshop, FacilitatorEntry } from 'lib/data'
+import { slugify } from 'lib/client_utils'
 import { WorkshopModal } from './WorkshopModal'
 import { FacilitatorModal } from './FacilitatorModal'
-
-const slugify = (str: string) => str.toString().toLowerCase().trim()
-  .replace(/\s+/g, '-').replace(/&/g, '-and-')
-  .replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-')
 
 type Props = {
   events: ScheduleEvent[]
