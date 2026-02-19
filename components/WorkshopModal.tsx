@@ -50,7 +50,7 @@ export const WorkshopModal = ({ workshop, onClose, onFacilitatorClick, year }: P
 
                     <div className="pt-2 flex justify-end">
                         <Link
-                            href={`/workshops/${year}`}
+                            href={`/workshops/${year}#${workshop.workshop_slug}`}
                             className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
                         >
                             All workshops <span aria-hidden="true">&rarr;</span>
