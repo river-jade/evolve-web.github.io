@@ -146,7 +146,10 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
       const hash = window.location.hash.replace('#', '')
       if (hash) {
         setHighlightedSlug(hash)
-        const el = document.getElementById(hash)
+        // Find the visible element — desktop or mobile-prefixed
+        const desktop = document.getElementById(hash)
+        const mobile = document.getElementById(`mobile-${hash}`)
+        const el = (desktop?.offsetParent !== null ? desktop : null) || mobile
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
         highlightTimer.current = setTimeout(() => setHighlightedSlug(null), 500)
       }
@@ -251,18 +254,29 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
               </div>
 
               <div className="space-y-3 pl-2">
-                {eventsAtTime.map(event => (
-                  <EventCard
-                    key={event.id}
-                    event={event}
-                    workshops={workshops}
-                    year={year}
-                    isMobile={true}
-                    onWorkshopClick={setSelectedWorkshop}
-                    onFacilitatorClick={setSelectedFacilitator}
-                    activeDay={activeDay}
-                  />
-                ))}
+                {eventsAtTime.map(event => {
+                  const eventSlug = event.type !== 'break' ? slugify(event.title) : null
+                  const isHighlighted = eventSlug && eventSlug === highlightedSlug
+
+                  return (
+                    <div
+                      key={event.id}
+                      id={eventSlug ? `mobile-${eventSlug}` : undefined}
+                      className={`scroll-mt-32 rounded-lg transition-all ${isHighlighted ? 'ring-2 ring-teal-500 bg-teal-50' : ''}`}
+                      style={{ transition: isHighlighted ? 'none' : 'all 1.5s ease-out' }}
+                    >
+                      <EventCard
+                        event={event}
+                        workshops={workshops}
+                        year={year}
+                        isMobile={true}
+                        onWorkshopClick={setSelectedWorkshop}
+                        onFacilitatorClick={setSelectedFacilitator}
+                        activeDay={activeDay}
+                      />
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )
