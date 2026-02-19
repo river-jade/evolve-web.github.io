@@ -6,7 +6,7 @@ import schedule2025 from 'data/schedule-2025.json'
 import schedule2026 from 'data/schedule-2026.json'
 // Add new years here as they come
 
-import { slugify } from './utils'
+import { slugify } from './client_utils'
 
 export type ScheduleEvent = {
     id: string

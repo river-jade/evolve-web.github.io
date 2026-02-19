@@ -1,5 +1,5 @@
 import csv from 'csvtojson';
-import { slugify } from '../lib/utils.js';
+import { slugify } from '../lib/client_utils.js';
 import fs from 'fs';
 import sharp from 'sharp';
 import path from 'path';

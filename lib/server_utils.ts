@@ -1,8 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 
-import { slugify } from './client_utils'
-
 type Metadata = {
     title: string
     publishedAt: string
