@@ -1,11 +1,15 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
 import type { ScheduleEvent, Workshop, FacilitatorEntry } from 'lib/data'
 import { WorkshopModal } from './WorkshopModal'
 import { FacilitatorModal } from './FacilitatorModal'
+
+const slugify = (str: string) => str.toString().toLowerCase().trim()
+  .replace(/\s+/g, '-').replace(/&/g, '-and-')
+  .replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-')
 
 type Props = {
   events: ScheduleEvent[]
@@ -135,6 +139,23 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
   const [selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null)
   const [selectedFacilitator, setSelectedFacilitator] = useState<FacilitatorEntry | null>(null)
+
+  // Hash-based highlight
+  const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null)
+  const highlightTimer = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const hash = window.location.hash.replace('#', '')
+      if (hash) {
+        setHighlightedSlug(hash)
+        const el = document.getElementById(hash)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        highlightTimer.current = setTimeout(() => setHighlightedSlug(null), 500)
+      }
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   // 2. Pre-calculate Data
   const { venues, times, gridLookup, spanMap, coveredCells } = useMemo(() => {
@@ -304,10 +325,14 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
                   />
                 }
 
+                const eventSlug = event.type !== 'break' ? slugify(event.title) : null
+                const isHighlighted = eventSlug && eventSlug === highlightedSlug
+
                 return (
                   <div key={event.id}
-                    className="border-t border-l border-stone-200 p-1"
-                    style={{ gridRow: `${row} / span ${span}`, gridColumn: vi + 2 }}
+                    id={eventSlug || undefined}
+                    className={`border-t border-l border-stone-200 p-1 relative scroll-mt-32 rounded-lg transition-all duration-0 ${isHighlighted ? 'ring-2 ring-teal-500 bg-teal-50' : ''}`}
+                    style={{ gridRow: `${row} / span ${span}`, gridColumn: vi + 2, transition: isHighlighted ? 'none' : 'all 1.5s ease-out' }}
                   >
                     <EventCard
                       event={event}

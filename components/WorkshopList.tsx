@@ -5,6 +5,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Workshop, ScheduleEvent } from 'lib/data'
 
+const slugify = (str: string) => str.toString().toLowerCase().trim()
+  .replace(/\s+/g, '-').replace(/&/g, '-and-')
+  .replace(/[^\w\-]+/g, '').replace(/\-\-+/g, '-')
+
 export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: Workshop[], year: string, scheduleEvents: ScheduleEvent[] }) => {
   // Build a lookup: lowercase workshop title → day
   const workshopDayMap = useMemo(() => {
@@ -98,7 +102,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
               {details && <p className="m-0! whitespace-pre-wrap text-stone-600">{details}</p>}
 
               <Link
-                href={`/schedule/${year}${workshopDayMap[workshop_name.toLowerCase()] ? `?day=${workshopDayMap[workshop_name.toLowerCase()]}` : ''}`}
+                href={`/schedule/${year}${workshopDayMap[workshop_name.toLowerCase()] ? `?day=${workshopDayMap[workshop_name.toLowerCase()]}` : ''}#${slugify(workshop_name)}`}
                 className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1 mt-1"
               >
                 View in schedule <span aria-hidden="true">&rarr;</span>
