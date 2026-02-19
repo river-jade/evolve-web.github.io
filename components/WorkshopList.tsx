@@ -1,11 +1,21 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Workshop } from 'lib/data'
+import type { Workshop, ScheduleEvent } from 'lib/data'
 
-export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year: string }) => {
+export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: Workshop[], year: string, scheduleEvents: ScheduleEvent[] }) => {
+  // Build a lookup: lowercase workshop title → day
+  const workshopDayMap = useMemo(() => {
+    const map: Record<string, string> = {}
+    scheduleEvents.forEach(e => {
+      if (e.type !== 'break') {
+        map[e.title.toLowerCase()] = e.day
+      }
+    })
+    return map
+  }, [scheduleEvents])
   const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -68,6 +78,7 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
               <Link
                 href={`#${workshop_slug}`}
                 className="group active:opacity-60 transition-opacity"
+                onClick={() => triggerFlash(workshop_slug)}
               >
                 <h3 className="m-0! text-xl font-bold group-hover:text-teal-700 transition-colors">
                   {workshop_name}
@@ -85,6 +96,13 @@ export const WorkshopList = ({ workshops, year }: { workshops: Workshop[], year:
               </Link>
 
               {details && <p className="m-0! whitespace-pre-wrap text-stone-600">{details}</p>}
+
+              <Link
+                href={`/schedule/${year}${workshopDayMap[workshop_name.toLowerCase()] ? `?day=${workshopDayMap[workshop_name.toLowerCase()]}` : ''}`}
+                className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1 mt-1"
+              >
+                View in schedule <span aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
           </li>
         )

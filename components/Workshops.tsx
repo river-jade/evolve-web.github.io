@@ -1,8 +1,9 @@
-import { ALL_WORKSHOPS } from 'lib/data'
+import { ALL_WORKSHOPS, ALL_SCHEDULES } from 'lib/data'
 import { WorkshopList } from './WorkshopList'
 
 export const Workshops = ({ year }: { year: string }) => {
   const workshops = ALL_WORKSHOPS[year] || []
+  const scheduleEvents = ALL_SCHEDULES[year] || []
 
   // Organize list (Workshops with details first, etc.)
   const sortedWorkshops = [
@@ -14,7 +15,7 @@ export const Workshops = ({ year }: { year: string }) => {
     <div className="Workshops align-full my-12">
       <div className="w-full max-w-screen-xl mx-auto px-4">
         {/* Pass data to Client Component */}
-        <WorkshopList workshops={sortedWorkshops} year={year} />
+        <WorkshopList workshops={sortedWorkshops} year={year} scheduleEvents={scheduleEvents} />
       </div>
     </div>
   )
