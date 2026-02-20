@@ -63,14 +63,14 @@ export default async function Page({ params, searchParams }:
           <div className="flex flex-col gap-3 mb-8">
             {facilitator.workshops.map((w: any) => (
               <div key={w.title} className="flex items-center gap-3 text-lg">
-                <Link href={`/workshops/${w.year}#${w.slug}`} className="flex items-center">
+                <Link href={`/workshops/${w.year}#${w.slug}`} className="flex items-center group">
                   <span className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wide whitespace-nowrap shrink-0 mr-2">
                     {w.year}
                   </span>
-                  <span className="font-medium text-gray-700">
+                  <span className="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 group-hover:decoration-gray-600 transition-colors">
                     {w.title}
                   </span>
-                  <span className="ml-2 text-stone-400 md:hidden" aria-hidden="true">→</span>
+                  <span className="ml-2 text-stone-400 md:hidden group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
                 </Link>
               </div>
             ))}
