@@ -30,17 +30,17 @@
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-10:00-2",
+    "id": "2026-Communal Space-10:00-3",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "10:00",
-    "end_time": "10:30",
+    "end_time": "11:00",
     "title": "Opening circle",
     "facilitator": null,
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-12:30-5",
+    "id": "2026-Communal Space-12:30-6",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "12:30",
@@ -50,7 +50,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-14:00-6",
+    "id": "2026-Communal Space-14:00-7",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "14:00",
@@ -60,7 +60,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-16:00-8",
+    "id": "2026-Communal Space-16:00-10",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "16:00",
@@ -70,7 +70,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-16:30-9",
+    "id": "2026-Communal Space-16:30-11",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "16:30",
@@ -80,7 +80,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-20:00-12",
+    "id": "2026-Communal Space-20:00-14",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "20:00",
@@ -90,7 +90,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-Communal Space-21:30-13",
+    "id": "2026-Communal Space-21:30-15",
     "day": "Saturday",
     "venue": "Communal Space",
     "start_time": "21:30",
@@ -100,17 +100,17 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-10:30-3",
+    "id": "2026-The Grove-11:00-4",
     "day": "Saturday",
     "venue": "The Grove",
-    "start_time": "10:30",
+    "start_time": "11:00",
     "end_time": "12:30",
     "title": "Take action on the highest purpose of your Earth Walk",
     "facilitator": "Ashwattha",
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-12:30-5",
+    "id": "2026-The Grove-12:30-6",
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "12:30",
@@ -120,17 +120,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Grove-14:00-6",
+    "id": "2026-The Grove-14:00-7",
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "14:00",
-    "end_time": "16:00",
+    "end_time": "15:30",
     "title": "Reclaiming the Sacredness of Rage - For women",
     "facilitator": "Meg Weaves",
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-16:00-8",
+    "id": "2026-The Grove-16:00-10",
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "16:00",
@@ -140,7 +140,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Grove-16:30-9",
+    "id": "2026-The Grove-16:30-11",
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "16:30",
@@ -150,7 +150,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-18:30-11",
+    "id": "2026-The Grove-18:30-13",
     "day": "Saturday",
     "venue": "The Grove",
     "start_time": "18:30",
@@ -160,7 +160,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Glen-09:00-1",
+    "id": "2026-The Glen-09:00-2",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "09:00",
@@ -170,17 +170,17 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-10:30-3",
+    "id": "2026-The Glen-11:00-4",
     "day": "Saturday",
     "venue": "The Glen",
-    "start_time": "10:30",
+    "start_time": "11:00",
     "end_time": "12:30",
     "title": "Coming Home (to Self)",
     "facilitator": "Helen La Fontaine",
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-12:30-5",
+    "id": "2026-The Glen-12:30-6",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "12:30",
@@ -190,7 +190,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Glen-14:00-6",
+    "id": "2026-The Glen-14:00-7",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "14:00",
@@ -200,7 +200,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-15:00-7",
+    "id": "2026-The Glen-15:00-8",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "15:00",
@@ -210,7 +210,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-16:00-8",
+    "id": "2026-The Glen-16:00-10",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "16:00",
@@ -220,7 +220,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Glen-16:30-9",
+    "id": "2026-The Glen-16:30-11",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "16:30",
@@ -230,7 +230,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-18:30-11",
+    "id": "2026-The Glen-18:30-13",
     "day": "Saturday",
     "venue": "The Glen",
     "start_time": "18:30",
@@ -244,33 +244,23 @@
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "07:00",
-    "end_time": "10:00",
+    "end_time": "08:30",
     "title": "Morning Meditative Meander",
     "facilitator": "Johanna",
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-10:30-3",
+    "id": "2026-The Knoll-11:00-4",
     "day": "Saturday",
     "venue": "The Knoll",
-    "start_time": "10:30",
-    "end_time": "11:30",
+    "start_time": "11:00",
+    "end_time": "12:00",
     "title": "Shamanism, Power, and Politics: A Conversational Exploration",
     "facilitator": "Sabah",
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-11:30-4",
-    "day": "Saturday",
-    "venue": "The Knoll",
-    "start_time": "11:30",
-    "end_time": "12:30",
-    "title": "Embodied Epistemology",
-    "facilitator": "Alexander Jenkins",
-    "type": "workshop"
-  },
-  {
-    "id": "2026-The Knoll-12:30-5",
+    "id": "2026-The Knoll-12:30-6",
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "12:30",
@@ -280,7 +270,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Knoll-14:00-6",
+    "id": "2026-The Knoll-14:00-7",
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "14:00",
@@ -290,7 +280,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-16:00-8",
+    "id": "2026-The Knoll-16:00-10",
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "16:00",
@@ -300,7 +290,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Knoll-16:30-9",
+    "id": "2026-The Knoll-16:30-11",
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "16:30",
@@ -310,7 +300,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-18:30-11",
+    "id": "2026-The Knoll-18:30-13",
     "day": "Saturday",
     "venue": "The Knoll",
     "start_time": "18:30",
@@ -320,7 +310,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-09:00-1",
+    "id": "2026-The Hollow-09:00-2",
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "09:00",
@@ -330,17 +320,17 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-10:30-3",
+    "id": "2026-The Hollow-11:00-4",
     "day": "Saturday",
     "venue": "The Hollow",
-    "start_time": "10:30",
+    "start_time": "11:00",
     "end_time": "12:30",
     "title": "Oki-do Yoga",
     "facilitator": "Stev Fioretti",
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-12:30-5",
+    "id": "2026-The Hollow-12:30-6",
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "12:30",
@@ -350,7 +340,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-14:00-6",
+    "id": "2026-The Hollow-14:00-7",
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "14:00",
@@ -360,7 +350,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-16:00-8",
+    "id": "2026-The Hollow-16:00-10",
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "16:00",
@@ -370,17 +360,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-16:30-9",
+    "id": "2026-The Hollow-16:30-11",
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "16:30",
-    "end_time": "18:30",
+    "end_time": "18:00",
     "title": "Sound activation by NectarOfSounds",
     "facilitator": "Ali Hammoud",
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-18:30-11",
+    "id": "2026-The Hollow-18:30-13",
     "day": "Saturday",
     "venue": "The Hollow",
     "start_time": "18:30",
@@ -390,7 +380,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-12:30-5",
+    "id": "2026-The Hall-12:30-6",
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "12:30",
@@ -400,17 +390,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-14:00-6",
+    "id": "2026-The Hall-14:00-7",
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "14:00",
-    "end_time": "16:00",
+    "end_time": "15:30",
     "title": "Deep Ecology and Ecosophia documentaries",
     "facilitator": "Peter C Downey",
     "type": "workshop"
   },
   {
-    "id": "2026-The Hall-16:00-8",
+    "id": "2026-The Hall-16:00-10",
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "16:00",
@@ -420,17 +410,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-16:30-9",
+    "id": "2026-The Hall-16:30-11",
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "16:30",
-    "end_time": "18:30",
+    "end_time": "18:00",
     "title": "In The Circle of Life Documentary",
     "facilitator": "Sabah",
     "type": "workshop"
   },
   {
-    "id": "2026-The Hall-18:30-11",
+    "id": "2026-The Hall-18:30-13",
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "18:30",
@@ -440,7 +430,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-10:00-2",
+    "id": "2026-Communal Space-10:00-3",
     "day": "Sunday",
     "venue": "Communal Space",
     "start_time": "10:00",
@@ -450,7 +440,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-12:30-5",
+    "id": "2026-Communal Space-12:30-7",
     "day": "Sunday",
     "venue": "Communal Space",
     "start_time": "12:30",
@@ -460,7 +450,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-16:00-8",
+    "id": "2026-Communal Space-16:00-10",
     "day": "Sunday",
     "venue": "Communal Space",
     "start_time": "16:00",
@@ -470,7 +460,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-18:30-11",
+    "id": "2026-Communal Space-18:30-14",
     "day": "Sunday",
     "venue": "Communal Space",
     "start_time": "18:30",
@@ -480,7 +470,7 @@
     "type": "break"
   },
   {
-    "id": "2026-Communal Space-20:00-12",
+    "id": "2026-Communal Space-20:00-15",
     "day": "Sunday",
     "venue": "Communal Space",
     "start_time": "20:00",
@@ -494,13 +484,13 @@
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "08:00",
-    "end_time": "10:00",
+    "end_time": "09:30",
     "title": "Sound activation by NectarOfSounds",
     "facilitator": "Ali Hammoud",
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-10:00-2",
+    "id": "2026-The Grove-10:00-3",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "10:00",
@@ -510,7 +500,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Grove-10:30-3",
+    "id": "2026-The Grove-10:30-4",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "10:30",
@@ -520,7 +510,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-12:30-5",
+    "id": "2026-The Grove-12:30-7",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "12:30",
@@ -530,7 +520,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Grove-14:00-6",
+    "id": "2026-The Grove-14:00-8",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "14:00",
@@ -540,7 +530,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-16:00-8",
+    "id": "2026-The Grove-16:00-10",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "16:00",
@@ -550,7 +540,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Grove-16:30-9",
+    "id": "2026-The Grove-16:30-11",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "16:30",
@@ -560,7 +550,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-18:30-11",
+    "id": "2026-The Grove-18:30-14",
     "day": "Sunday",
     "venue": "The Grove",
     "start_time": "18:30",
@@ -574,13 +564,13 @@
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "08:00",
-    "end_time": "10:00",
+    "end_time": "09:30",
     "title": "Rebirthing Breathwork Mastery",
     "facilitator": "Jessica Ball",
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-10:00-2",
+    "id": "2026-The Glen-10:00-3",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "10:00",
@@ -590,17 +580,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Glen-10:30-3",
+    "id": "2026-The Glen-10:30-4",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "10:30",
-    "end_time": "12:30",
+    "end_time": "12:00",
     "title": "The Ecology of Humour",
     "facilitator": "Thomas Langley",
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-12:30-5",
+    "id": "2026-The Glen-12:30-7",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "12:30",
@@ -610,17 +600,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Glen-14:00-6",
+    "id": "2026-The Glen-14:00-8",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "14:00",
-    "end_time": "16:00",
+    "end_time": "15:30",
     "title": "Energy Healing & Meditation",
     "facilitator": "Chris Stewart",
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-16:00-8",
+    "id": "2026-The Glen-16:00-10",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "16:00",
@@ -630,7 +620,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Glen-16:30-9",
+    "id": "2026-The Glen-16:30-11",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "16:30",
@@ -640,7 +630,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Glen-18:30-11",
+    "id": "2026-The Glen-18:30-14",
     "day": "Sunday",
     "venue": "The Glen",
     "start_time": "18:30",
@@ -660,7 +650,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-10:00-2",
+    "id": "2026-The Knoll-10:00-3",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "10:00",
@@ -670,7 +660,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Knoll-10:30-3",
+    "id": "2026-The Knoll-10:30-4",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "10:30",
@@ -680,7 +670,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-12:30-5",
+    "id": "2026-The Knoll-12:30-7",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "12:30",
@@ -690,17 +680,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Knoll-14:00-6",
+    "id": "2026-The Knoll-14:00-8",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "14:00",
-    "end_time": "16:00",
+    "end_time": "15:30",
     "title": "Community, Climate & Food Security",
     "facilitator": "Chelsea MacNab",
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-16:00-8",
+    "id": "2026-The Knoll-16:00-10",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "16:00",
@@ -710,17 +700,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Knoll-16:30-9",
+    "id": "2026-The Knoll-16:30-11",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "16:30",
-    "end_time": "18:30",
+    "end_time": "18:00",
     "title": "Co-creating Communal Safety at Evolve",
     "facilitator": "Tien Sieh",
     "type": "workshop"
   },
   {
-    "id": "2026-The Knoll-18:30-11",
+    "id": "2026-The Knoll-18:30-14",
     "day": "Sunday",
     "venue": "The Knoll",
     "start_time": "18:30",
@@ -740,7 +730,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-10:00-2",
+    "id": "2026-The Hollow-10:00-3",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "10:00",
@@ -750,7 +740,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-10:30-3",
+    "id": "2026-The Hollow-10:30-4",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "10:30",
@@ -760,7 +750,17 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-12:30-5",
+    "id": "2026-The Hollow-11:30-5",
+    "day": "Sunday",
+    "venue": "The Hollow",
+    "start_time": "11:30",
+    "end_time": "12:30",
+    "title": "Embodied Epistemology",
+    "facilitator": "Alexander Jenkins",
+    "type": "workshop"
+  },
+  {
+    "id": "2026-The Hollow-12:30-7",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "12:30",
@@ -770,7 +770,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-14:00-6",
+    "id": "2026-The Hollow-14:00-8",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "14:00",
@@ -780,7 +780,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-16:00-8",
+    "id": "2026-The Hollow-16:00-10",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "16:00",
@@ -790,7 +790,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-16:30-9",
+    "id": "2026-The Hollow-16:30-11",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "16:30",
@@ -800,7 +800,7 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Hollow-18:30-11",
+    "id": "2026-The Hollow-18:30-14",
     "day": "Sunday",
     "venue": "The Hollow",
     "start_time": "18:30",
@@ -810,7 +810,7 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-10:00-2",
+    "id": "2026-The Hall-10:00-3",
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "10:00",
@@ -840,17 +840,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-14:00-6",
+    "id": "2026-The Hall-14:00-8",
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "14:00",
-    "end_time": "15:00",
+    "end_time": "16:00",
     "title": "From Women to Women :: Video screening & discussion on International Women's Day",
     "facilitator": "Stacia Karina Beazley",
     "type": "workshop"
   },
   {
-    "id": "2026-The Hall-16:00-8",
+    "id": "2026-The Hall-16:00-10",
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "16:00",
@@ -860,17 +860,17 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-16:30-9",
+    "id": "2026-The Hall-16:30-11",
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "16:30",
-    "end_time": "18:30",
+    "end_time": "18:00",
     "title": "Deep Ecology and Ecosophia documentaries",
     "facilitator": "Peter C Downey",
     "type": "workshop"
   },
   {
-    "id": "2026-The Hall-18:30-11",
+    "id": "2026-The Hall-18:30-14",
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "18:30",
