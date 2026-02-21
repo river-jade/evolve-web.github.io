@@ -40,11 +40,35 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
     return () => clearTimeout(initTimer)
   }, [])
 
+  const [expandedSlugs, setExpandedSlugs] = useState<Set<string>>(new Set())
+
+  const toggleExpand = (e: React.MouseEvent, slug: string) => {
+    e.preventDefault() // prevent any link bubbling if needed
+    setExpandedSlugs((prev) => {
+      const next = new Set(prev)
+      if (next.has(slug)) next.delete(slug)
+      else next.add(slug)
+      return next
+    })
+  }
+
+  // Only truncate if the text exceeds the threshold; truncate down to the limit
+  const TRUNCATE_THRESHOLD = 30 // minimum word count before we bother truncating
+  const TRUNCATE_LIMIT = 25 // where to actually cut the text
+
+  const getTruncatedText = (text: string) => {
+    if (!text) return { text: '', isTruncated: false }
+    const words = text.trim().split(/\s+/)
+    if (words.length <= TRUNCATE_THRESHOLD) return { text, isTruncated: false }
+    return { text: words.slice(0, TRUNCATE_LIMIT).join(' ') + '...', isTruncated: true }
+  }
+
   return (
-    <ul className="grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
+    <ul className="grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-2 xl:grid-cols-3 items-start">
       {workshops.map(({ facilitator, workshop_name, details, workshop_slug }) => {
         const isHighlighted = workshop_slug === highlightedSlug
-
+        const isExpanded = expandedSlugs.has(workshop_slug)
+        const { text: displayDetails, isTruncated } = getTruncatedText(details || '')
         return (
           <li
             key={workshop_slug}
@@ -75,7 +99,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
               </Link>
             </div>
 
-            <div className="relative z-10 flex flex-col gap-2 w-4/5">
+            <div className="relative z-10 flex flex-col gap-2 w-4/5 flex-1">
               <Link
                 href={`#${workshop_slug}`}
                 className="group active:opacity-60 transition-opacity"
@@ -96,14 +120,30 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
                 </h4>
               </Link>
 
-              {details && <p className="m-0! whitespace-pre-wrap text-stone-600">{details}</p>}
+              {details && (
+                <div className="flex flex-col flex-1">
+                  <p className="m-0! whitespace-pre-wrap text-stone-600 transition-all">
+                    {isExpanded ? details : displayDetails}
+                  </p>
+                  {isTruncated && (
+                    <button
+                      onClick={(e) => toggleExpand(e, workshop_slug)}
+                      className="text-left text-sm font-semibold text-teal-600 hover:text-teal-800 mt-2 hover:underline w-fit"
+                    >
+                      {isExpanded ? 'Show less' : 'Read more'}
+                    </button>
+                  )}
+                </div>
+              )}
 
-              <Link
-                href={`/schedule/${year}${workshopDayMap[workshop_name.toLowerCase()] ? `?day=${workshopDayMap[workshop_name.toLowerCase()]}` : ''}#${slugify(workshop_name)}`}
-                className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1 mt-1"
-              >
-                View in schedule <span aria-hidden="true">&rarr;</span>
-              </Link>
+              <div className="mt-auto pt-2">
+                <Link
+                  href={`/schedule/${year}${workshopDayMap[workshop_name.toLowerCase()] ? `?day=${workshopDayMap[workshop_name.toLowerCase()]}` : ''}#${slugify(workshop_name)}`}
+                  className="text-sm font-medium text-teal-700 hover:text-teal-900 flex items-center gap-1 w-fit group/link"
+                >
+                  View in schedule <span aria-hidden="true" className="group-hover/link:translate-x-1 transition-transform">&rarr;</span>
+                </Link>
+              </div>
             </div>
           </li>
         )
