@@ -18,12 +18,12 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 pt-16">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-2xl">
-          Come as a participant,<br />
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-2xl">
+          Come as a participant,<br className="hidden sm:inline" />{' '}
           <span className="text-teal-400">leave as a contributor.</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-stone-100 max-w-2xl font-medium drop-shadow-lg">
+        <p className="text-base sm:text-xl md:text-2xl text-stone-100 max-w-2xl font-medium drop-shadow-lg">
           Radical co-creation, self-reliance, and deep connection in nature.
         </p>
 
