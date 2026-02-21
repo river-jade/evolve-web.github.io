@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { cx } from 'lib/cx'
 
 const NAV_LINKS = [
+  { href: '/', label: 'Home', mobileOnly: true },
   { href: '/mar-2026', label: 'Festival' },
   { href: '/workshops/2026', label: 'Workshops' },
   { href: '/schedule/2026', label: 'Schedule' },
@@ -63,7 +64,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-5 font-medium text-sm">
-            {NAV_LINKS.map(({ href, label }) => (
+            {NAV_LINKS.filter(l => !l.mobileOnly).map(({ href, label }) => (
               <Link key={href} href={href} className="hover:opacity-70 transition-opacity">{label}</Link>
             ))}
             <Link
@@ -129,7 +130,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
               onClick={closeMobileMenu}
               className={cx(
                 "text-lg font-semibold py-3 px-3 rounded-xl transition-colors",
-                pathname.startsWith(href)
+                (href === '/' ? pathname === '/' : pathname.startsWith(href))
                   ? "text-teal-700 bg-teal-50"
                   : "text-stone-700 hover:bg-stone-50"
               )}
