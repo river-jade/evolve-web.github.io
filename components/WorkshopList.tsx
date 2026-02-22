@@ -105,7 +105,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
                 className="group active:opacity-60 transition-opacity"
                 onClick={() => triggerFlash(workshop_slug)}
               >
-                <h3 className="m-0! text-xl font-bold group-hover:text-teal-700 transition-colors">
+                <h3 className="!m-0 text-xl font-bold group-hover:text-teal-700 transition-colors">
                   {workshop_name}
                 </h3>
               </Link>
@@ -115,14 +115,14 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
                 href={`/facilitators/${facilitator.slug}?year=${year}`}
                 className="group active:opacity-60 transition-opacity"
               >
-                <h4 className="m-0! text-lg font-bold text-gray-900 group-hover:text-teal-600 underline decoration-teal-300 decoration-2 underline-offset-4">
+                <h4 className="!m-0 text-lg font-bold text-gray-900 group-hover:text-teal-600 underline decoration-teal-300 decoration-2 underline-offset-4">
                   {facilitator.name}
                 </h4>
               </Link>
 
               {details && (
                 <div className="flex flex-col flex-1">
-                  <p className="m-0! whitespace-pre-wrap text-stone-600 transition-all">
+                  <p className="!m-0 whitespace-pre-wrap text-stone-600 transition-all">
                     {isExpanded ? details : displayDetails}
                   </p>
                   {isTruncated && (
