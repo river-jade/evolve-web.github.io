@@ -58,3 +58,9 @@ export const getHashLinks = (headings: string[]) =>
         }),
         {} as Record<string, { name: string }>,
     ) || {}
+
+// --- Helper: Centralized Matching Logic ---
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const findWorkshop = (title: string, workshops: any[]) => {
+    return workshops.find(w => w.workshop_name.trim().toLowerCase() === title.toLowerCase())
+}
