@@ -64,7 +64,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
   }
 
   return (
-    <ul className="grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-2 xl:grid-cols-3 items-start">
+    <ul className="not-prose grid grid-cols-1 gap-4 md:gap-8 md:grid-cols-2 xl:grid-cols-3 items-start">
       {workshops.map(({ facilitator, workshop_name, details, workshop_slug }) => {
         const isHighlighted = workshop_slug === highlightedSlug
         const isExpanded = expandedSlugs.has(workshop_slug)
