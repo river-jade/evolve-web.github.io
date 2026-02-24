@@ -430,6 +430,36 @@
     "type": "break"
   },
   {
+    "id": "2026-The Clearing-12:30-6",
+    "day": "Saturday",
+    "venue": "The Clearing",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-16:00-10",
+    "day": "Saturday",
+    "venue": "The Clearing",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-18:30-13",
+    "day": "Saturday",
+    "venue": "The Clearing",
+    "start_time": "18:30",
+    "end_time": "20:00",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
     "id": "2026-Communal Space-10:00-3",
     "day": "Sunday",
     "venue": "Communal Space",
@@ -863,6 +893,46 @@
     "id": "2026-The Hall-18:30-14",
     "day": "Sunday",
     "venue": "The Hall",
+    "start_time": "18:30",
+    "end_time": "20:00",
+    "title": "Dinner",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-10:00-3",
+    "day": "Sunday",
+    "venue": "The Clearing",
+    "start_time": "10:00",
+    "end_time": "10:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-12:30-7",
+    "day": "Sunday",
+    "venue": "The Clearing",
+    "start_time": "12:30",
+    "end_time": "14:00",
+    "title": "Lunch",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-16:00-10",
+    "day": "Sunday",
+    "venue": "The Clearing",
+    "start_time": "16:00",
+    "end_time": "16:30",
+    "title": "Break",
+    "facilitator": null,
+    "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-18:30-14",
+    "day": "Sunday",
+    "venue": "The Clearing",
     "start_time": "18:30",
     "end_time": "20:00",
     "title": "Dinner",
