@@ -46,7 +46,7 @@ export function ValuesGrid() {
     },
     {
       title: "Honouring the Sacred",
-      icon: "🌌",
+      icon: "♥️",
       slug: "honouring-the-sacred",
       desc: "We acknowledge the spiritual dimensions of our work, creating space for reverence, gratitude, and connection to the sacred."
     }
