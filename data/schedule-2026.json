@@ -100,16 +100,6 @@
     "type": "workshop"
   },
   {
-    "id": "2026-The Grove-11:00-4",
-    "day": "Saturday",
-    "venue": "The Grove",
-    "start_time": "11:00",
-    "end_time": "12:30",
-    "title": "Take action on the highest purpose of your Earth Walk",
-    "facilitator": "Ashwattha",
-    "type": "workshop"
-  },
-  {
     "id": "2026-The Grove-12:30-6",
     "day": "Saturday",
     "venue": "The Grove",
@@ -360,16 +350,6 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hollow-16:30-11",
-    "day": "Saturday",
-    "venue": "The Hollow",
-    "start_time": "16:30",
-    "end_time": "18:00",
-    "title": "Sound activation by NectarOfSounds",
-    "facilitator": "Ali Hammoud",
-    "type": "workshop"
-  },
-  {
     "id": "2026-The Hollow-18:30-13",
     "day": "Saturday",
     "venue": "The Hollow",
@@ -390,16 +370,6 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-14:00-7",
-    "day": "Saturday",
-    "venue": "The Hall",
-    "start_time": "14:00",
-    "end_time": "15:30",
-    "title": "Deep Ecology and Ecosophia documentaries",
-    "facilitator": "Peter C Downey",
-    "type": "workshop"
-  },
-  {
     "id": "2026-The Hall-16:00-10",
     "day": "Saturday",
     "venue": "The Hall",
@@ -414,7 +384,7 @@
     "day": "Saturday",
     "venue": "The Hall",
     "start_time": "16:30",
-    "end_time": "18:00",
+    "end_time": "18:30",
     "title": "In The Circle of Life Documentary",
     "facilitator": "Sabah",
     "type": "workshop"
@@ -507,16 +477,6 @@
     "end_time": "22:00",
     "title": "Open Mic",
     "facilitator": null,
-    "type": "workshop"
-  },
-  {
-    "id": "2026-The Grove-08:00-0",
-    "day": "Sunday",
-    "venue": "The Grove",
-    "start_time": "08:00",
-    "end_time": "09:30",
-    "title": "Sound activation by NectarOfSounds",
-    "facilitator": "Ali Hammoud",
     "type": "workshop"
   },
   {
@@ -648,16 +608,6 @@
     "title": "Break",
     "facilitator": null,
     "type": "break"
-  },
-  {
-    "id": "2026-The Glen-16:30-11",
-    "day": "Sunday",
-    "venue": "The Glen",
-    "start_time": "16:30",
-    "end_time": "17:30",
-    "title": "Somatic Enquiry",
-    "facilitator": "Jordhana Clark",
-    "type": "workshop"
   },
   {
     "id": "2026-The Glen-18:30-14",
@@ -860,16 +810,6 @@
     "type": "break"
   },
   {
-    "id": "2026-The Hall-14:00-8",
-    "day": "Sunday",
-    "venue": "The Hall",
-    "start_time": "14:00",
-    "end_time": "16:00",
-    "title": "From Women to Women :: Video screening & discussion on International Women's Day",
-    "facilitator": "Stacia Karina Beazley",
-    "type": "workshop"
-  },
-  {
     "id": "2026-The Hall-16:00-10",
     "day": "Sunday",
     "venue": "The Hall",
@@ -884,9 +824,9 @@
     "day": "Sunday",
     "venue": "The Hall",
     "start_time": "16:30",
-    "end_time": "18:00",
-    "title": "Deep Ecology and Ecosophia documentaries",
-    "facilitator": "Peter C Downey",
+    "end_time": "18:30",
+    "title": "From Women to Women :: Video screening & discussion on International Women's Day",
+    "facilitator": "Stacia Karina Beazley",
     "type": "workshop"
   },
   {
@@ -908,6 +848,16 @@
     "title": "Break",
     "facilitator": null,
     "type": "break"
+  },
+  {
+    "id": "2026-The Clearing-10:30-4",
+    "day": "Sunday",
+    "venue": "The Clearing",
+    "start_time": "10:30",
+    "end_time": "11:30",
+    "title": "Somatic Enquiry",
+    "facilitator": "Jordhana Clark",
+    "type": "workshop"
   },
   {
     "id": "2026-The Clearing-12:30-7",
