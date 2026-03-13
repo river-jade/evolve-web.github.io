@@ -46,8 +46,8 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
+function RoundedImage({ alt = '', ...rest }: React.ComponentProps<typeof Image>) {
+  return <Image {...rest} alt={alt} className="rounded-lg" />
 }
 
 function Code({ children, ...props }) {
