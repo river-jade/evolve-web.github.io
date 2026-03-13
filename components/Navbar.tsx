@@ -7,10 +7,11 @@ import { cx } from 'lib/cx'
 
 const NAV_LINKS = [
   { href: '/', label: 'Home', mobileOnly: true },
-  { href: '/mar-2026', label: 'Festival' },
-  { href: '/workshops/2026', label: 'Workshops' },
-  { href: '/schedule/2026', label: 'Schedule' },
+  // { href: '/mar-2026', label: 'Festival' },
+  // { href: '/workshops/2026', label: 'Workshops' },
+  // { href: '/schedule/2026', label: 'Schedule' },
   { href: '/values', label: 'Our Values' },
+  { href: '/past-events', label: 'Past Events' },
 ]
 
 const TICKET_LINK = 'https://www.trybooking.com/DHISF'
@@ -67,7 +68,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
             {NAV_LINKS.filter(l => !l.mobileOnly).map(({ href, label }) => (
               <Link key={href} href={href} className="hover:opacity-70 transition-opacity">{label}</Link>
             ))}
-            <Link
+            {/* <Link
               href={TICKET_LINK}
               className={cx(
                 "px-5 py-2 rounded-full font-bold transition-all",
@@ -77,7 +78,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
               )}
             >
               Get Tickets
-            </Link>
+            </Link> */}
           </div>
 
           {/* MOBILE BURGER BUTTON */}
@@ -140,7 +141,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
           ))}
         </div>
 
-        <div className="mt-auto px-6 pb-8">
+        {/* <div className="mt-auto px-6 pb-8">
           <Link
             href={TICKET_LINK}
             onClick={closeMobileMenu}
@@ -148,7 +149,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
           >
             Get Tickets
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
   )

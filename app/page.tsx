@@ -4,18 +4,12 @@ import { Navbar } from 'components/Navbar'
 import { Hero } from 'components/Hero'
 import { ValuesGrid } from 'components/ValuesGrid'
 import ImageGallery from 'components/Gallery'
+import { PastEventsCompact } from 'components/PastEventsList'
 import Link from 'next/link'
 
 export default function Page() {
 
-  // Hardcoded past events list for the "Moments" section
-  const pastEvents = [
-    // { title: "Vision Conference", date: "October 2025", slug:"vision-conference-2025" },
-    { title: "Spring Confest Village", date: "October 2025", slug: "past-events/spring-confest-2025" },
-    { title: "Easter Confest Village", date: "April 2025", slug: "past-events/easter-confest-2025" },
-    { title: "Evolve Festival @ Bell Park", date: "March 2025", slug: "past-events/evolve-festival-bell-park-2025" },
-    { title: "Spring Confest Village", date: "October 2024", slug: "past-events/spring-confest-2024" },
-  ]
+
 
   // Images from the original homepage.mdx
   const galleryImages = [
@@ -71,7 +65,7 @@ export default function Page() {
       </section>
 
       {/* 3. UPCOMING EVENT SPOTLIGHT */}
-      <section id="events" className="py-20 px-6 bg-stone-900 text-white">
+      {/* <section id="events" className="py-20 px-6 bg-stone-900 text-white">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col items-center text-center mb-12">
             <span className="text-teal-400 font-bold tracking-widest uppercase mb-2 text-sm">Join the next gathering</span>
@@ -79,7 +73,6 @@ export default function Page() {
           </div>
 
           <div className="bg-stone-800 rounded-3xl p-8 md:p-12 border border-stone-700 hover:border-teal-500 transition-colors relative overflow-hidden group shadow-2xl">
-            {/* Background accent */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
             <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
@@ -102,7 +95,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 4. VALUES GRID */}
       <ValuesGrid />
@@ -118,17 +111,8 @@ export default function Page() {
                 Here is a glimpse of the connection, play, and beauty we create together.
               </p>
               <div className="bg-stone-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-stone-900 mb-4">Past Gatherings</h4>
-                <ul className="space-y-3">
-                  {pastEvents.map((e, i) => (
-                    <Link href={`/${e.slug}`} key={i} className="block hover:bg-stone-100 rounded-lg p-2 transition-colors">
-                      <li key={i} className="flex justify-between text-sm border-b border-stone-200 pb-2 last:border-0">
-                        <span className="font-medium text-stone-700">{e.title}</span>
-                        <span className="text-stone-500">{e.date}</span>
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
+                <h4 className="font-bold text-stone-900 mb-4">Past Events</h4>
+                <PastEventsCompact />
               </div>
             </div>
 
