@@ -1,7 +1,12 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import { contactEmail } from 'app/metadata'
 import MailingListSignup from './MailingListSignup'
 
 export default function Footer() {
+  const pathname = usePathname()
+
   return (
     <footer className="flex flex-col gap-4 max-w-xl w-full mx-auto mt-8 mb-4 pt-6 border-t border-stone-200">
 
@@ -16,8 +21,8 @@ export default function Footer() {
         </a>
       </p>
 
-      {/* Mailing List Signup */}
-      <MailingListSignup />
+      {/* Mailing List Signup — hidden on /subscribe which has its own */}
+      {pathname !== '/subscribe' && <MailingListSignup />}
 
       {/* Copyright */}
       <p className="pt-4 text-stone-500 text-xs border-t border-stone-100 mt-6 text-center">
