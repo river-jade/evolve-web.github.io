@@ -17,7 +17,7 @@ export default function PastEventsPage() {
             <span className="text-teal-600 font-bold tracking-widest uppercase text-sm">Our Journey</span>
             <h1 className="text-3xl md:text-4xl font-bold text-stone-800 mt-2 mb-4">Past Events</h1>
             <p className="text-stone-600 text-lg max-w-xl mx-auto">
-              From village gatherings at ConFest to standalone festivals — a look back at the events that have shaped our community.
+              From village gatherings at ConFest to standalone festivals. A look back at the events that have shaped our community.
             </p>
           </div>
           <PastEventsList />
