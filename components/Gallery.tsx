@@ -1,14 +1,12 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Icon } from './Icon';
 
 interface Image {
   src: string;
   alt: string;
 }
-
-// Thumbnail width plus horizontal margins (see the <img> styles below).
-const THUMB_OUTER_WIDTH = 160;
 
 function ImageGallery({
   images,
@@ -24,12 +22,14 @@ function ImageGallery({
   const [perRow, setPerRow] = useState(2);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  // Track how many thumbnails fit per row so truncation is by whole rows.
+  // Read the grid's current column count so truncation is by whole rows.
   useEffect(() => {
     const el = gridRef.current;
     if (!el || initialRows === undefined) return;
-    const update = () =>
-      setPerRow(Math.max(1, Math.floor(el.clientWidth / THUMB_OUTER_WIDTH)));
+    const update = () => {
+      const columns = getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length;
+      setPerRow(Math.max(1, columns));
+    };
     update();
     const observer = new ResizeObserver(update);
     observer.observe(el);
@@ -84,34 +84,35 @@ function ImageGallery({
     return () => window.removeEventListener('keydown', onKey);
   }, [hasSelection]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const navButton =
+    'absolute flex items-center justify-center w-11 h-11 rounded-pill border border-paper/40 text-paper hover:bg-paper/15 transition-colors';
+
   return (
     <div>
-      <div ref={gridRef} style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div ref={gridRef} className="not-prose grid grid-cols-2 sm:grid-cols-3 gap-3">
         {visibleImages.map((image, index) => (
-          <img
+          <button
             key={index}
-            src={image.src}
-            alt={image.alt}
+            type="button"
             onClick={() => openAt(index)}
-            style={{
-              width: '150px',
-              height: '100px',
-              objectFit: 'cover',
-              margin: '5px',
-              cursor: 'pointer',
-              border: selectedIndex === index ? '2px solid blue' : 'none',
-            }}
-          />
+            className={`block overflow-hidden rounded-md outline-none focus-visible:ring-2 focus-visible:ring-forest ${selectedIndex === index ? 'ring-2 ring-forest' : ''}`}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="!m-0 !rounded-none block w-full aspect-[3/2] object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </button>
         ))}
       </div>
 
       {canTruncate && (
-        <div style={{ textAlign: 'center', marginTop: '8px' }}>
+        <div className="not-prose mt-4 flex justify-center">
           <button
             type="button"
             onClick={() => setExpanded((e) => !e)}
             aria-expanded={expanded}
-            className="px-4 py-2 rounded-lg bg-white text-sm font-medium text-stone-700 hover:bg-stone-200 transition-colors"
+            className="btn border border-forest text-forest hover:bg-forest hover:text-paper"
           >
             {expanded ? 'Show fewer' : `Show all ${images.length} photos`}
           </button>
@@ -122,21 +123,12 @@ function ImageGallery({
         <div
           role="dialog"
           aria-modal="true"
-          style={{
-            position: 'fixed',
-            inset: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 1000,
-            padding: '24px',
-          }}
+          className="not-prose fixed inset-0 z-[1000] flex items-center justify-center bg-forest/90 p-6"
           onClick={close}
         >
           {/* Stop click-from-image closing the modal */}
           <div
-            style={{ position: 'relative', maxWidth: '90%', maxHeight: '90%' }}
+            className="relative max-w-[90%] max-h-[90%]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Prev button */}
@@ -144,21 +136,9 @@ function ImageGallery({
               type="button"
               onClick={prev}
               aria-label="Previous image"
-              style={{
-                position: 'absolute',
-                left: '-56px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                border: 'none',
-                background: 'rgba(255,255,255,0.15)',
-                padding: '12px 14px',
-                cursor: 'pointer',
-                fontSize: '18px',
-                borderRadius: '8px',
-                backdropFilter: 'blur(2px)',
-              }}
+              className={`${navButton} -left-14 top-1/2 -translate-y-1/2`}
             >
-              ‹
+              <Icon name="chevronLeft" size={20} />
             </button>
 
             {/* Next button */}
@@ -166,21 +146,9 @@ function ImageGallery({
               type="button"
               onClick={next}
               aria-label="Next image"
-              style={{
-                position: 'absolute',
-                right: '-56px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                border: 'none',
-                background: 'rgba(255,255,255,0.15)',
-                padding: '12px 14px',
-                cursor: 'pointer',
-                fontSize: '18px',
-                borderRadius: '8px',
-                backdropFilter: 'blur(2px)',
-              }}
+              className={`${navButton} -right-14 top-1/2 -translate-y-1/2`}
             >
-              ›
+              <Icon name="chevronRight" size={20} />
             </button>
 
             {/* Close button */}
@@ -188,33 +156,16 @@ function ImageGallery({
               type="button"
               onClick={close}
               aria-label="Close"
-              style={{
-                position: 'absolute',
-                top: '-48px',
-                right: '0',
-                border: 'none',
-                background: 'rgba(255,255,255,0.15)',
-                padding: '8px 10px',
-                cursor: 'pointer',
-                fontSize: '16px',
-                borderRadius: '8px',
-                backdropFilter: 'blur(2px)',
-              }}
+              className={`${navButton} -top-14 right-0`}
               title="Esc"
             >
-              ✕
+              <Icon name="close" size={20} />
             </button>
 
             <img
               src={current.src}
               alt={current.alt}
-              style={{
-                display: 'block',
-                maxWidth: '100%',
-                maxHeight: '80vh',
-                borderRadius: '6px',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
-              }}
+              className="!m-0 block max-w-full max-h-[80vh] rounded-md"
             />
           </div>
         </div>

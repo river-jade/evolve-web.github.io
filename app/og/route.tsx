@@ -7,12 +7,17 @@ export function GET(request: Request) {
 
   return new ImageResponse(
     (
-      <div tw="flex flex-col w-full h-full items-center justify-center bg-white">
-        <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
-          <h2 tw="flex flex-col text-4xl font-bold tracking-tight text-left">
-            {title}
-          </h2>
+      <div
+        tw="flex flex-col w-full h-full justify-center px-24"
+        style={{ backgroundColor: '#123D32', color: '#FBF6EA' }}
+      >
+        <div tw="flex text-2xl" style={{ letterSpacing: '0.3em', color: '#A7C7A0' }}>
+          EVOLVE COMMUNITY
         </div>
+        <h2 tw="flex flex-col text-7xl text-left mt-6" style={{ fontWeight: 400, lineHeight: 1.1 }}>
+          {title}
+        </h2>
+        <div tw="flex mt-10" style={{ width: 96, height: 8, borderRadius: 999, backgroundColor: '#F4A261' }} />
       </div>
     ),
     {

@@ -6,6 +6,7 @@ import { ValuesGrid } from 'components/ValuesGrid'
 import ImageGallery from 'components/Gallery'
 import { PastEventsCompact } from 'components/PastEventsList'
 import Link from 'next/link'
+import { Icon } from 'components/Icon'
 
 export default function Page() {
 
@@ -45,34 +46,34 @@ export default function Page() {
       <Hero />
 
       {/* 2. THE INTRO (The "Why") */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 mb-20">
-          <p className="text-xl md:text-2xl font-medium text-stone-800 leading-relaxed">
+      <section className="py-16 md:py-24 px-6 md:px-16 bg-sand">
+        <div className="max-w-3xl mx-auto text-center flex flex-col gap-4 mb-16">
+          <p className="font-display text-heading-2 md:text-[32px] md:leading-[1.25] text-forest">
             Evolve is a festival and a social movement, bringing people together to share knowledge, wisdom, and community to support culture change for a better world.
           </p>
-          <p className="text-lg md:text-xl text-stone-600 leading-relaxed font-light">
+          <p className="text-lg text-ink-soft">
             It is both a response to the global metacrisis, and an invitation to co-create the more beautiful world our hearts know is possible.
           </p>
         </div>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
-          <div className="flex flex-col gap-3">
-            <span className="text-4xl mb-2">🤝</span>
-            <h3 className="text-xl font-bold">Community</h3>
-            <p className="text-stone-600 leading-relaxed">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 text-center md:text-left">
+          <div className="flex flex-col gap-3 items-center md:items-start">
+            <span className="icon-disc mb-2"><Icon name="people" size={28} /></span>
+            <h3 className="font-display text-heading-2">Community</h3>
+            <p className="text-ink-soft">
               A tribe of open hearts and minds, dedicated to deep connection, safety, and mutual support.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-4xl mb-2">🌍</span>
-            <h3 className="text-xl font-bold">Culture</h3>
-            <p className="text-stone-600 leading-relaxed">
+          <div className="flex flex-col gap-3 items-center md:items-start">
+            <span className="icon-disc mb-2"><Icon name="globe" size={28} /></span>
+            <h3 className="font-display text-heading-2">Culture</h3>
+            <p className="text-ink-soft">
               Seeking truth together - integrating diverse perspectives to let collective intelligence emerge.
             </p>
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-4xl mb-2">🌱</span>
-            <h3 className="text-xl font-bold">Movement</h3>
-            <p className="text-stone-600 leading-relaxed">
+          <div className="flex flex-col gap-3 items-center md:items-start">
+            <span className="icon-disc mb-2"><Icon name="sprout" size={28} /></span>
+            <h3 className="font-display text-heading-2">Movement</h3>
+            <p className="text-ink-soft">
               Growing from a festival into a global network of changemakers co-creating a better world.
             </p>
           </div>
@@ -80,32 +81,30 @@ export default function Page() {
       </section>
 
       {/* 3. UPCOMING EVENT SPOTLIGHT */}
-      {/* <section id="events" className="py-20 px-6 bg-stone-900 text-white">
+      {/* <section id="events" className="py-20 px-6 bg-forest text-paper">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col items-center text-center mb-12">
-            <span className="text-teal-400 font-bold tracking-widest uppercase mb-2 text-sm">Join the next gathering</span>
-            <h2 className="text-3xl md:text-5xl font-bold">Evolve Festival 2026</h2>
+            <span className="label !text-leaf mb-2">Join the next gathering</span>
+            <h2 className="font-display text-heading-1 md:text-display">Evolve Festival 2026</h2>
           </div>
 
-          <div className="bg-stone-800 rounded-3xl p-8 md:p-12 border border-stone-700 hover:border-teal-500 transition-colors relative overflow-hidden group shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
-
+          <div className="rounded-md p-8 md:p-12 border border-paper/20 hover:border-paper/50 transition-colors relative overflow-hidden group">
             <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="text-center md:text-left">
-                <h3 className="text-2xl md:text-4xl font-bold mb-2">Gilwell Park, Gembrook</h3>
-                <p className="text-xl text-stone-400 mb-4">March 6th - 9th, 2026</p>
+                <h3 className="font-display text-heading-2 md:text-heading-1 mb-2">Gilwell Park, Gembrook</h3>
+                <p className="text-xl text-paper mb-4">March 6th - 9th, 2026</p>
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                  <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Camping</span>
-                  <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Workshops</span>
-                  <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Music</span>
-                  <span className="px-3 py-1 bg-stone-700 rounded-lg text-sm">Ritual</span>
+                  <span className="px-3 py-1 border border-paper/30 rounded-sm text-small">Camping</span>
+                  <span className="px-3 py-1 border border-paper/30 rounded-sm text-small">Workshops</span>
+                  <span className="px-3 py-1 border border-paper/30 rounded-sm text-small">Music</span>
+                  <span className="px-3 py-1 border border-paper/30 rounded-sm text-small">Ritual</span>
                 </div>
               </div>
               <Link
                 href="/mar-2026"
-                className="bg-white text-stone-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-teal-400 transition-colors whitespace-nowrap shadow-lg"
+                className="btn btn-sun px-8 py-4 text-lg whitespace-nowrap"
               >
-                View Event Details →
+                View Event Details
               </Link>
             </div>
           </div>
@@ -116,25 +115,25 @@ export default function Page() {
       <ValuesGrid />
 
       {/* 5. MOMENTS & HISTORY (The Gallery) */}
-      <section className="pt-24 pb-0 px-6 bg-white border-t border-stone-100">
+      <section className="pt-16 md:pt-24 pb-0 px-6 md:px-16 bg-sand">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
+          <div className="grid md:grid-cols-2 gap-10">
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-stone-800">Moments from the Movement</h2>
-              <p className="text-stone-600 mb-6 leading-relaxed">
+              <h2 className="font-display text-heading-1 mb-6 text-forest">Moments from the Movement</h2>
+              <p className="text-ink-soft mb-6">
                 Evolve has grown from small village gatherings at Confest into standalone festivals.
                 Here is a glimpse of the connection, play, and beauty we create together.
               </p>
-              <div className="bg-stone-50 p-6 rounded-2xl">
-                <h4 className="font-bold text-stone-900 mb-4">Past Events</h4>
+              <div className="card p-6">
+                <h4 className="label mb-4">Past Events</h4>
                 <PastEventsCompact />
               </div>
             </div>
 
             {/* Gallery Component */}
-            <div className="bg-stone-100 rounded-2xl p-4">
+            <div>
               <ImageGallery images={galleryImages} initialRows={5} />
-              <p className="text-center text-xs text-stone-400 mt-2">Click images to expand</p>
+              <p className="text-center text-label font-medium text-ink-soft mt-3">Click images to expand</p>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Workshop, ScheduleEvent } from 'lib/data'
 import { slugify } from 'lib/client_utils'
+import { Icon } from './Icon'
 
 export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: Workshop[], year: string, scheduleEvents: ScheduleEvent[] }) => {
   // Build a lookup: lowercase workshop title → day
@@ -73,7 +74,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
           <li
             key={workshop_slug}
             id={workshop_slug}
-            className="relative flex gap-4 p-4 rounded-2xl scroll-mt-32 transition-all duration-200 hover:bg-stone-50 hover:shadow-md overflow-hidden group/card"
+            className="relative flex gap-4 p-4 rounded-md border border-transparent scroll-mt-32 transition-colors duration-200 hover:bg-paper hover:border-line overflow-hidden group/card"
           >
             {/* --- FLASH LAYER --- 
                 This sits on top. It appears instantly, then fades out slowly (2s) when isHighlighted becomes false.
@@ -81,7 +82,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
             */}
             <div
               className={`
-                absolute inset-0 bg-teal-50 ring-2 ring-teal-500 ring-inset rounded-2xl pointer-events-none z-0
+                absolute inset-0 bg-leaf/50 ring-2 ring-sage ring-inset rounded-md pointer-events-none z-0
                 transition-opacity ease-linear
                 ${isHighlighted ? 'opacity-100 duration-0' : 'opacity-0 duration-1500'}
               `}
@@ -90,9 +91,9 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
             <div className="relative z-10 w-1/5 min-w-[80px] sm:min-w-[120px]">
               <Link href={`/facilitators/${facilitator.slug}?year=${year}`}>
                 <Image
-                  src={facilitator.image_url || (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-logo.jpg')}
+                  src={facilitator.image_url || (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-placeholder.png')}
                   alt={`${facilitator.name} - Facilitator`}
-                  className="aspect-square object-cover rounded-full overflow-hidden hover:scale-105 transition-transform shadow-sm"
+                  className="aspect-square object-cover rounded-pill overflow-hidden hover:scale-105 transition-transform"
                   width={200}
                   height={200}
                 />
@@ -105,7 +106,7 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
                 className="group active:opacity-60 transition-opacity"
                 onClick={() => triggerFlash(workshop_slug)}
               >
-                <h3 className="!m-0 text-xl font-bold group-hover:text-teal-700 transition-colors">
+                <h3 className="!m-0 font-display !text-heading-2 text-forest underline decoration-transparent decoration-2 underline-offset-4 group-hover:decoration-sage transition-colors">
                   {workshop_name}
                 </h3>
               </Link>
@@ -115,20 +116,20 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
                 href={`/facilitators/${facilitator.slug}?year=${year}`}
                 className="group active:opacity-60 transition-opacity"
               >
-                <h4 className="!m-0 text-lg font-bold text-gray-900 group-hover:text-teal-600 underline decoration-teal-300 decoration-2 underline-offset-4">
+                <h4 className="!m-0 text-body font-semibold text-forest underline decoration-sage decoration-2 underline-offset-4 group-hover:decoration-forest transition-colors">
                   {facilitator.name}
                 </h4>
               </Link>
 
               {details && (
                 <div className="flex flex-col flex-1">
-                  <p className="!m-0 whitespace-pre-wrap text-stone-600 transition-all">
+                  <p className="!m-0 whitespace-pre-wrap text-ink-soft transition-all">
                     {isExpanded ? details : displayDetails}
                   </p>
                   {isTruncated && (
                     <button
                       onClick={(e) => toggleExpand(e, workshop_slug)}
-                      className="text-left text-sm font-semibold text-teal-600 hover:text-teal-800 mt-2 hover:underline w-fit"
+                      className="text-left text-small font-semibold text-forest mt-2 underline decoration-sage decoration-2 underline-offset-4 hover:decoration-forest w-fit"
                     >
                       {isExpanded ? 'Show less' : 'Read more'}
                     </button>
@@ -139,9 +140,9 @@ export const WorkshopList = ({ workshops, year, scheduleEvents }: { workshops: W
               <div className="mt-auto pt-2">
                 <Link
                   href={`/schedule/${year}${workshopDayMap[workshop_name.toLowerCase()] ? `?day=${workshopDayMap[workshop_name.toLowerCase()]}` : ''}#${slugify(workshop_name)}`}
-                  className="text-sm font-medium text-teal-700 hover:text-teal-900 flex items-center gap-1 w-fit group/link"
+                  className="text-small font-semibold text-forest flex items-center gap-2 w-fit group/link"
                 >
-                  View in schedule <span aria-hidden="true" className="group-hover/link:translate-x-1 transition-transform">&rarr;</span>
+                  View in schedule <Icon name="arrowRight" size={16} className="group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

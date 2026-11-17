@@ -81,12 +81,12 @@ const MailchimpForm = () => {
             
             {/* First Name Field */}
             <div className='flex flex-col'>
-                <label htmlFor="FNAME" className="text-xs font-medium text-stone-600 mb-1">First Name (Optional)</label>
+                <label htmlFor="FNAME" className="text-label font-semibold text-label mb-1">First Name (Optional)</label>
                 <input
                     type="text"
                     name="FNAME"
                     id="FNAME"
-                    className="p-2 text-sm border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
+                    className="p-2 text-small bg-paper border border-line rounded-sm focus:ring-forest focus:border-forest"
                     onChange={(e) => setFirstName(e.target.value)}
                     value={firstName} // Added value binding
                 />
@@ -94,12 +94,12 @@ const MailchimpForm = () => {
             
             {/* Last Name Field */}
             <div className='flex flex-col'>
-                <label htmlFor="LNAME" className="text-xs font-medium text-stone-600 mb-1">Last Name (Optional)</label>
+                <label htmlFor="LNAME" className="text-label font-semibold text-label mb-1">Last Name (Optional)</label>
                 <input
                     type="text"
                     name="LNAME"
                     id="LNAME"
-                    className="p-2 text-sm border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500"
+                    className="p-2 text-small bg-paper border border-line rounded-sm focus:ring-forest focus:border-forest"
                     onChange={(e) => setLastName(e.target.value)}
                     value={lastName} // Added value binding
                 />
@@ -110,13 +110,13 @@ const MailchimpForm = () => {
         <div className="flex gap-3">
             {/* Email Field */}
             <div className='flex flex-col flex-grow'>
-                <label htmlFor="EMAIL" className="text-xs font-medium text-stone-600 mb-1 sr-only">Email</label>
+                <label htmlFor="EMAIL" className="text-label font-semibold text-label mb-1 sr-only">Email</label>
                 <input
                     type="email"
                     name="EMAIL"
                     id="EMAIL"
                     placeholder="Enter your email"
-                    className="p-3 text-sm border border-stone-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 w-full"
+                    className="p-3 text-small bg-paper border border-line rounded-sm focus:ring-forest focus:border-forest w-full"
                     required
                     onChange={(e) => setEmail(e.target.value)}
                     value={email} // Added value binding
@@ -127,7 +127,7 @@ const MailchimpForm = () => {
             <button 
                 type="submit" 
                 disabled={submitting || !email} 
-                className="px-6 py-3 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-700 transition-colors disabled:opacity-50 text-sm flex-shrink-0"
+                className="btn btn-primary disabled:opacity-50 text-small flex-shrink-0"
             >
               {submitting ? 'Sending...' : 'Subscribe'}
             </button>
@@ -139,14 +139,14 @@ const MailchimpForm = () => {
         className={cx(
           'success',
           status === 'success' ? '' : 'hidden',
-          'mt-4 text-stone-700 text-sm',
+          'mt-4 text-forest text-small',
         )}
       >
         <p>Thanks for subscribing! You'll receive our next update shortly.</p>
       </div>
 
       <div
-        className={cx('error', status === 'error' ? '' : 'hidden', 'mt-4 text-red-600 text-sm')}
+        className={cx('error', status === 'error' ? '' : 'hidden', 'mt-4 pl-3 border-l-4 border-coral text-forest text-small')}
       >
         <p>
           There was an error subscribing you: <span dangerouslySetInnerHTML={{ __html: error || 'Please check your email address and try again.' }} />

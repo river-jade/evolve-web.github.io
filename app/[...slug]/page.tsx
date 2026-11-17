@@ -69,7 +69,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   }
 
   return (
-    <div className="Page relative flex flex-col gap-6">
+    <div className="Page relative flex flex-col gap-6 pb-10">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -93,11 +93,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         }}
       />
       <Navbar overlay={false} />
-      <div className="pt-24 px-6">
+      <div className="pt-28 px-6">
         <Banner title={page.metadata.title} />
       </div>
       <section
-        className={cx(`prose max-w-xl mx-auto px-6`, page.metadata.className)}
+        className={cx(`prose w-full max-w-2xl mx-auto px-6`, page.metadata.className)}
       >
         <CustomMDX source={page.content} components={{ Workshops, Link, Expandable, Schedule }} />
       </section>

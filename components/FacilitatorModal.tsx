@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import type { FacilitatorEntry } from 'lib/data'
 import Modal from './Modal'
+import { Icon } from './Icon'
 
-const PLACEHOLDER_IMAGE = '/images/evolve-logo.jpg'
+const PLACEHOLDER_IMAGE = '/images/evolve-placeholder.png'
 
 type Props = {
     facilitator: FacilitatorEntry | null
@@ -27,28 +28,28 @@ export const FacilitatorModal = ({ facilitator, onClose, year, activeDay }: Prop
                             <img
                                 src={facilitator.image ? `/images/facilitator-images/${facilitator.image}` : PLACEHOLDER_IMAGE}
                                 alt={facilitator.name}
-                                className="w-full aspect-square object-cover rounded-xl shadow-md bg-stone-100"
+                                className="w-full aspect-square object-cover rounded-md bg-sand"
                             />
                         </div>
                         <div className="flex-1">
                             {facilitator.bio ? (
-                                <div className="prose prose-stone text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">
+                                <div className="prose text-small text-forest whitespace-pre-wrap">
                                     {facilitator.bio}
                                 </div>
                             ) : (
-                                <p className="text-stone-500 italic">No bio provided.</p>
+                                <p className="text-ink-soft italic">No bio provided.</p>
                             )}
                         </div>
                     </div>
 
                     {/* Other Workshops by this person */}
                     {facilitator.workshops && facilitator.workshops.length > 0 && (
-                        <div className="pt-4 border-t border-stone-100">
-                            <h3 className="text-sm font-bold text-teal-600 uppercase tracking-wide mb-3">Workshops at Evolve</h3>
+                        <div className="pt-4 border-t border-line">
+                            <h3 className="label mb-3">Workshops at Evolve</h3>
                             <ul className="space-y-2">
                                 {facilitator.workshops.map(w => (
                                     <li key={w.slug}>
-                                        <span className="font-medium text-gray-900 block">{w.title}</span>
+                                        <span className="font-medium text-forest block">{w.title}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -58,9 +59,9 @@ export const FacilitatorModal = ({ facilitator, onClose, year, activeDay }: Prop
                     <div className="pt-2 flex justify-end">
                         <Link
                             href={`/facilitators/${facilitator.slug}?year=${year}&from=schedule&day=${activeDay}`}
-                            className="text-sm font-medium text-teal-600 hover:text-teal-800 flex items-center gap-1"
+                            className="text-small font-semibold text-forest hover:underline decoration-sage decoration-2 underline-offset-4 flex items-center gap-2"
                         >
-                            View full profile <span aria-hidden="true">&rarr;</span>
+                            View full profile <Icon name="arrowRight" size={16} />
                         </Link>
                     </div>
                 </div>

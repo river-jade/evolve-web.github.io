@@ -2,60 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --primary-color: #000;
-    --secondary-color: #666;
-    --background-color: #ffffff;
-    --accent-color: #e0e0e0;
+/*
+ * Evolve brand tokens (brand/colours-type-spacing.json).
+ * Forest and sand do most of the work; coral and sun are accents,
+ * one highlight per layout and never as text on sand or paper.
+ */
+:root {
+  --forest: #123d32;
+  --sage: #5c8a6e;
+  --leaf: #a7c7a0;
+  --sand: #f5ebd7;
+  --paper: #fbf6ea;
+  --sun: #f4a261;
+  --coral: #e76f51;
+  --ink-soft: #2b4a42;
+  --label: #2f5646;
+  --line: #e5d8bc;
 
-    /* super syntax highlighting */
-    --sh-class: #2d5e9d;
-    --sh-identifier: #354150;
-    --sh-sign: #8996a3;
-    --sh-string: #007f7a;
-    --sh-keyword: #e02518;
-    --sh-comment: #a19595;
-    --sh-jsxliterals: #6266d1;
-    --sh-property: #e25a1c;
-    --sh-entity: #e25a1c;
-  }
+  --primary-color: var(--forest);
+  --secondary-color: var(--ink-soft);
+  --background-color: var(--sand);
+  --accent-color: var(--line);
+
+  /* syntax highlighting */
+  --sh-class: #2f5646;
+  --sh-identifier: #123d32;
+  --sh-sign: #5c8a6e;
+  --sh-string: #2b4a42;
+  --sh-keyword: #123d32;
+  --sh-comment: #5c8a6e;
+  --sh-jsxliterals: #2f5646;
+  --sh-property: #2b4a42;
+  --sh-entity: #2b4a42;
 }
 
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
-}
-
-:root {
-  --primary-color: #000;
-  --secondary-color: #666;
-  --background-color: #ffffff;
-  --accent-color: #e0e0e0;
-
-  /* super syntax highlighting */
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
+  background-color: var(--leaf);
+  color: var(--forest);
 }
 
 html {
-  font-size: 20px;
-  /* min-width: 360px; */
+  font-size: 16px;
 
   /* prevent content causing side-scroll on mobile */
   word-break: break-word;
 
-  /* prefer light mode */
+  /* light theme only; the brand has no dark theme yet */
   color-scheme: light;
 
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--sand);
+  color: var(--forest);
+  line-height: 1.5;
+}
+
+/* Headings are Marcellus, which has a single weight: never fake a bold. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), 'Marcellus', Georgia, serif;
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+@layer components {
+  /* 12px Manrope capitals, letter-spacing 0.3em */
+  .label {
+    @apply font-sans text-label font-semibold uppercase text-label;
+    letter-spacing: 0.3em;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 font-sans text-body font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-forest text-paper hover:bg-ink-soft;
+  }
+
+  /* The one warm highlight on a forest panel or photo */
+  .btn-sun {
+    @apply bg-sun text-forest hover:bg-paper;
+  }
+
+  .btn-on-dark {
+    @apply border border-paper/50 text-paper hover:bg-paper/10;
+  }
+
+  .card {
+    @apply rounded-md border border-line bg-paper;
+  }
+
+  .text-link {
+    @apply font-medium text-forest underline decoration-sage decoration-2 underline-offset-4 transition-colors hover:decoration-forest;
+  }
+
+  .icon-disc {
+    @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-pill bg-leaf/50 text-forest;
+  }
 }
 
 .prose .anchor {
@@ -73,11 +120,15 @@ html {
 }
 
 .prose a {
-  @apply transition-all text-blue-500 underline-offset-2 decoration-[0.1em];
+  @apply transition-colors font-medium text-forest underline decoration-sage decoration-2 underline-offset-4;
+}
+
+.prose a:hover {
+  @apply decoration-forest;
 }
 
 .prose .anchor:after {
-  @apply text-neutral-300;
+  @apply text-sage no-underline;
   content: '#';
 }
 
@@ -86,11 +137,11 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 rounded-lg overflow-x-auto border border-neutral-200 py-2 px-3 text-sm;
+  @apply bg-paper rounded-md overflow-x-auto border border-line py-2 px-3 text-sm;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply px-1 py-0.5 rounded-sm;
 }
 
 .prose pre code {
@@ -108,28 +159,33 @@ html {
   @apply m-0;
 }
 
+/* Photos fill their frame with radius-md corners */
+.prose img:not(.not-prose img) {
+  @apply rounded-md;
+}
+
 .prose p {
-  @apply my-4 text-neutral-800;
+  @apply my-4;
 }
 
 .prose h1 {
-  @apply text-4xl font-extrabold text-neutral-700 tracking-tight mt-6 mb-2 scroll-mt-32;
+  @apply font-display text-heading-1 font-normal text-forest mt-10 mb-3 scroll-mt-32;
 }
 
 .prose h2 {
-  @apply text-2xl font-extrabold text-neutral-700 tracking-tight mt-6 mb-2 scroll-mt-32;
+  @apply font-display text-heading-2 font-normal text-forest mt-10 mb-3 scroll-mt-32;
 }
 
 .prose h3 {
-  @apply text-xl font-bold text-neutral-700 tracking-tight mt-6 mb-2 scroll-mt-32;
+  @apply font-display text-xl font-normal text-forest mt-8 mb-2 scroll-mt-32;
 }
 
 .prose h4 {
-  @apply text-lg font-bold text-neutral-700 tracking-tight mt-6 mb-2 scroll-mt-32;
+  @apply font-sans text-body font-semibold text-forest mt-6 mb-2 scroll-mt-32;
 }
 
 .prose strong {
-  @apply font-extrabold;
+  @apply font-bold;
 }
 
 .prose ul {
@@ -140,6 +196,23 @@ html {
 .prose.list-none ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+/* Pebble bullets: a dot from the spiral in place of a list marker */
+.prose.list-none ul:not(.not-prose) > li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.prose.list-none ul:not(.not-prose) > li::before {
+  content: '';
+  position: absolute;
+  left: 0.25em;
+  top: 0.5em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 999px;
+  background-color: var(--sage);
 }
 
 .prose ol {
@@ -193,4 +266,58 @@ table {
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
+}
+
+/* Spiral dots as a quiet background pattern: one colour, low contrast */
+.spiral-pattern {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.08;
+}
+
+/* EmailOctopus mailing-list embed: bring its injected form onto brand */
+[data-form].inline-container,
+[data-form].inline-container .emailoctopus-form-wrapper,
+[data-form].inline-container p,
+[data-form].inline-container label {
+  font-family: var(--font-sans), 'Manrope', system-ui, Arial, sans-serif !important;
+  color: var(--forest) !important;
+}
+
+[data-form].inline-container .form-control {
+  font-family: inherit !important;
+  background-color: #fff !important;
+  color: var(--forest) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 6px !important;
+  padding: 10px 12px !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
+
+[data-form].inline-container .form-control::placeholder {
+  color: var(--ink-soft) !important;
+  opacity: 0.8;
+}
+
+[data-form].inline-container .form-control:focus {
+  border-color: var(--forest) !important;
+  outline: 2px solid var(--leaf);
+  outline-offset: 0;
+}
+
+[data-form].inline-container .btn-primary {
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  background-color: var(--forest) !important;
+  border: 1px solid var(--forest) !important;
+  color: var(--paper) !important;
+  border-radius: 999px !important;
+  padding: 10px 24px !important;
+  cursor: pointer;
+}
+
+[data-form].inline-container .btn-primary:hover {
+  background-color: var(--ink-soft) !important;
 }

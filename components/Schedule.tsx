@@ -8,7 +8,7 @@ export const Schedule = ({ year }: { year: string }) => {
   const events = ALL_SCHEDULES[year] || []
 
   return (
-    <Suspense fallback={<div className="p-12 text-center text-stone-400">Loading schedule...</div>}>
+    <Suspense fallback={<div className="p-12 text-center text-ink-soft">Loading schedule...</div>}>
       <ScheduleGrid events={events} workshops={workshops} year={year} />
     </Suspense>
   )
