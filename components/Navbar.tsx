@@ -50,31 +50,36 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
         className={cx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
           isTransparent
-            ? 'bg-transparent border-transparent text-white py-6'
-            : 'bg-white/95 backdrop-blur-md border-stone-200 text-stone-800 py-3 shadow-sm'
+            ? 'bg-transparent border-transparent text-paper py-4'
+            : 'bg-sand/95 backdrop-blur-md border-line text-forest py-2'
         )}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 flex items-center justify-between">
 
           {/* BRANDING */}
-          <Link href="/" className="flex items-center gap-2 group" onClick={closeMobileMenu}>
-            <span className="text-2xl font-extrabold tracking-tighter">
-              EVOLVE
-            </span>
+          {/* Horizontal lockup. Kept at 60px so the double spiral stays above its 48px minimum. */}
+          <Link href="/" className="flex items-center" onClick={closeMobileMenu} aria-label="Evolve home">
+            <img
+              src={isTransparent ? '/brand/evolve-lockup-horizontal-on-dark.svg' : '/brand/evolve-lockup-horizontal.svg'}
+              alt="Evolve"
+              width={220}
+              height={60}
+              className="h-[60px] w-auto"
+            />
           </Link>
 
           {/* DESKTOP NAV */}
-          <div className="hidden md:flex items-center gap-5 font-medium text-sm">
+          <div className="hidden md:flex items-center gap-8 font-medium text-small">
             {NAV_LINKS.filter(l => !l.mobileOnly).map(({ href, label }) => (
-              <Link key={href} href={href} className="hover:opacity-70 transition-opacity">{label}</Link>
+              <Link key={href} href={href} className="underline decoration-transparent decoration-2 underline-offset-8 hover:decoration-current transition-colors">{label}</Link>
             ))}
             {/* <Link
               href={TICKET_LINK}
               className={cx(
-                "px-5 py-2 rounded-full font-bold transition-all",
+                "px-5 py-2 rounded-pill font-semibold transition-colors",
                 isTransparent
-                  ? "bg-white text-stone-900 hover:bg-stone-200"
-                  : "bg-stone-900 text-white hover:bg-teal-600"
+                  ? "bg-sun text-forest hover:bg-paper"
+                  : "bg-forest text-paper hover:bg-ink-soft"
               )}
             >
               Get Tickets
@@ -90,17 +95,17 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
           >
             <span className={cx(
               "absolute w-5 h-0.5 rounded-full transition-all duration-300",
-              isTransparent ? "bg-white" : "bg-stone-800",
+              isTransparent ? "bg-paper" : "bg-forest",
               isMobileMenuOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"
             )} />
             <span className={cx(
               "absolute w-5 h-0.5 rounded-full transition-all duration-300",
-              isTransparent ? "bg-white" : "bg-stone-800",
+              isTransparent ? "bg-paper" : "bg-forest",
               isMobileMenuOpen ? "opacity-0" : "opacity-100"
             )} />
             <span className={cx(
               "absolute w-5 h-0.5 rounded-full transition-all duration-300",
-              isTransparent ? "bg-white" : "bg-stone-800",
+              isTransparent ? "bg-paper" : "bg-forest",
               isMobileMenuOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"
             )} />
           </button>
@@ -110,7 +115,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
       {/* MOBILE MENU OVERLAY */}
       <div
         className={cx(
-          "fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 md:hidden",
+          "fixed inset-0 bg-forest/70 z-40 transition-opacity duration-300 md:hidden",
           isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
         onClick={closeMobileMenu}
@@ -119,21 +124,21 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
       {/* MOBILE MENU DRAWER */}
       <div
         className={cx(
-          "fixed top-0 right-0 h-full w-72 bg-white z-40 shadow-xl transition-transform duration-300 ease-out md:hidden flex flex-col",
+          "fixed top-0 right-0 h-full w-72 bg-paper border-l border-line z-40 transition-transform duration-300 ease-out md:hidden flex flex-col",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="flex flex-col gap-1 pt-24 px-6">
+        <div className="flex flex-col gap-1 pt-28 px-6">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={closeMobileMenu}
               className={cx(
-                "text-lg font-semibold py-3 px-3 rounded-xl transition-colors",
+                "text-lg font-medium py-3 px-4 rounded-md transition-colors",
                 (href === '/' ? pathname === '/' : pathname.startsWith(href))
-                  ? "text-teal-700 bg-teal-50"
-                  : "text-stone-700 hover:bg-stone-50"
+                  ? "text-forest bg-leaf/50"
+                  : "text-forest hover:bg-sand"
               )}
             >
               {label}
@@ -145,7 +150,7 @@ export function Navbar({ overlay = false }: { overlay?: boolean }) {
           <Link
             href={TICKET_LINK}
             onClick={closeMobileMenu}
-            className="block w-full text-center px-5 py-3 rounded-full font-bold bg-stone-900 text-white hover:bg-teal-600 transition-all text-lg"
+            className="block w-full text-center px-5 py-3 rounded-pill font-semibold bg-forest text-paper hover:bg-ink-soft transition-colors text-lg"
           >
             Get Tickets
           </Link>

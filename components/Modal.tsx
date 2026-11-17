@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { Icon } from './Icon'
 
 type ModalProps = {
     isOpen: boolean
@@ -48,7 +49,7 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
         <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
             {/* Backdrop */}
             <div
-                className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity"
+                className="absolute inset-0 bg-forest/70 backdrop-blur-sm transition-opacity"
                 onClick={handleBackdropClick}
                 aria-hidden="true"
             />
@@ -58,25 +59,25 @@ export default function Modal({ isOpen, onClose, children, title }: ModalProps) 
                 ref={modalRef}
                 className="
                 relative w-full md:w-auto md:min-w-[500px] md:max-w-2xl max-h-[85vh] 
-                bg-white shadow-2xl overflow-hidden flex flex-col
-                rounded-t-2xl md:rounded-2xl
+                bg-paper text-forest overflow-hidden flex flex-col
+                rounded-t-md md:rounded-md
                 animate-in slide-in-from-bottom-10 fade-in duration-300
             "
             >
                 {/* Header */}
-                <div className="flex items-center justify-between p-4 border-b border-stone-100 bg-stone-50/50">
-                    <h2 className="font-bold text-lg text-stone-800 line-clamp-1">{title}</h2>
+                <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-line bg-sand">
+                    <h2 className="font-display text-heading-2 text-forest line-clamp-1">{title}</h2>
                     <button
                         onClick={onClose}
-                        className="p-2 -mr-2 text-stone-400 hover:text-stone-600 rounded-full hover:bg-stone-200/50 transition-colors"
+                        className="p-2 -mr-2 text-forest rounded-pill hover:bg-leaf/50 transition-colors"
                         aria-label="Close"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <Icon name="close" size={20} />
                     </button>
                 </div>
 
                 {/* Scrollable Body */}
-                <div className="overflow-y-auto p-4 md:p-6 overscroll-contain">
+                <div className="overflow-y-auto p-6 overscroll-contain">
                     {children}
                 </div>
             </div>

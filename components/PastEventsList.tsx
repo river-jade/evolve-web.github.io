@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Icon } from './Icon'
 
 export type PastEvent = {
   title: string
@@ -52,10 +53,10 @@ export function PastEventsCompact() {
   return (
     <ul className="space-y-3">
       {pastEvents.map((e, i) => (
-        <Link href={`/${e.slug}`} key={i} className="block hover:bg-stone-100 rounded-lg p-2 transition-colors">
-          <li className="flex justify-between text-sm border-b border-stone-200 pb-2 last:border-0">
-            <span className="font-medium text-stone-700">{e.title}</span>
-            <span className="text-stone-500">{e.date}</span>
+        <Link href={`/${e.slug}`} key={i} className="block hover:bg-sand rounded-sm p-2 transition-colors">
+          <li className="flex justify-between gap-4 text-small border-b border-line pb-2 last:border-0">
+            <span className="font-medium text-forest">{e.title}</span>
+            <span className="text-ink-soft whitespace-nowrap">{e.date}</span>
           </li>
         </Link>
       ))}
@@ -71,7 +72,7 @@ export default function PastEventsList() {
         <Link
           href={`/${event.slug}`}
           key={i}
-          className="group block bg-white rounded-2xl border border-stone-200 overflow-hidden hover:border-teal-400 hover:shadow-lg transition-all duration-300"
+          className="group block card overflow-hidden hover:border-sage transition-colors duration-300"
         >
           <div className="flex flex-col sm:flex-row">
             {event.image && (
@@ -85,13 +86,14 @@ export default function PastEventsList() {
               </div>
             )}
             <div className="flex flex-col justify-center p-6 gap-2">
-              <span className="text-xs font-semibold text-teal-600 uppercase tracking-wider">{event.date}</span>
-              <h3 className="text-lg font-bold text-stone-800 group-hover:text-teal-700 transition-colors">
+              <span className="label">{event.date}</span>
+              <h3 className="font-display text-heading-2 text-forest">
                 {event.title}
               </h3>
-              <p className="text-sm text-stone-500 leading-relaxed">{event.summary}</p>
-              <span className="text-sm font-medium text-teal-600 mt-1 group-hover:translate-x-1 transition-transform inline-block">
-                View details →
+              <p className="text-small text-ink-soft">{event.summary}</p>
+              <span className="text-small font-semibold text-forest mt-1 inline-flex items-center gap-2">
+                View details
+                <Icon name="arrowRight" size={16} className="group-hover:translate-x-1 transition-transform" />
               </span>
             </div>
           </div>

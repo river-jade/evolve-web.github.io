@@ -2,6 +2,7 @@ import { getAllFacilitators, getFacilitatorBySlug } from 'lib/data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Icon } from 'components/Icon'
 
 export async function generateStaticParams() {
   const facilitators = getAllFacilitators()
@@ -20,7 +21,7 @@ export default async function Page({ params, searchParams }:
   if (!facilitator) return notFound()
 
   const imageSrc = facilitator.image_url ||
-    (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-logo.jpg')
+    (facilitator.image ? `/images/facilitator-images/${facilitator.image}` : '/images/evolve-placeholder.png')
 
   const returnYear = resolvedSearchParams.year || facilitator.workshops.at(-1)?.year || '2025'
 
@@ -32,18 +33,19 @@ export default async function Page({ params, searchParams }:
     backLink += `?day=${dayParam}`
   }
 
-  const backText = fromSchedule ? `← Back to ${returnYear} Schedule` : `← Back to ${returnYear} Workshops`
+  const backText = fromSchedule ? `Back to ${returnYear} Schedule` : `Back to ${returnYear} Workshops`
 
   return (
-    <main className="max-w-5xl mx-auto px-6 py-12">
+    <main className="w-full max-w-5xl mx-auto px-6 py-12">
       <Link
         href={backLink}
-        className="inline-block text-sm font-bold tracking-wider text-gray-500 hover:text-teal-600 mb-10 transition-colors uppercase"
+        className="label inline-flex items-center gap-2 mb-10 underline decoration-transparent decoration-2 underline-offset-4 hover:decoration-sage transition-colors"
       >
+        <Icon name="arrowLeft" size={16} />
         {backText}
       </Link>
       <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
-        <div className="w-full md:w-96 shrink-0 bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
+        <div className="w-full md:w-96 shrink-0 bg-paper border border-line rounded-md overflow-hidden">
           <Image
             src={imageSrc}
             alt={facilitator.name}
@@ -56,7 +58,7 @@ export default async function Page({ params, searchParams }:
         </div>
 
         <div className="flex-1 min-w-0">
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4">
+          <h1 className="font-display text-heading-1 md:text-display text-forest mb-6">
             {facilitator.name}
           </h1>
 
@@ -64,20 +66,20 @@ export default async function Page({ params, searchParams }:
             {facilitator.workshops.map((w: any) => (
               <div key={w.title} className="flex items-center gap-3 text-lg">
                 <Link href={`/workshops/${w.year}#${w.slug}`} className="flex items-center group">
-                  <span className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-md font-bold uppercase tracking-wide whitespace-nowrap shrink-0 mr-2">
+                  <span className="bg-leaf/50 text-forest text-label px-2 py-1 rounded-sm font-semibold uppercase tracking-wider whitespace-nowrap shrink-0 mr-3">
                     {w.year}
                   </span>
-                  <span className="font-medium text-gray-900 underline decoration-gray-300 underline-offset-4 group-hover:decoration-gray-600 transition-colors">
+                  <span className="font-medium text-forest underline decoration-sage decoration-2 underline-offset-4 group-hover:decoration-forest transition-colors">
                     {w.title}
                   </span>
-                  <span className="ml-2 text-stone-400 md:hidden group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                  <Icon name="arrowRight" size={16} className="ml-2 shrink-0 text-sage md:hidden group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             ))}
           </div>
 
-          <div className="prose prose-lg text-gray-700 leading-relaxed whitespace-pre-wrap">
-            {facilitator.bio || <p className="italic text-gray-500">No bio provided.</p>}
+          <div className="prose max-w-none text-forest whitespace-pre-wrap">
+            {facilitator.bio || <p className="italic text-ink-soft">No bio provided.</p>}
           </div>
         </div>
       </div>

@@ -8,15 +8,15 @@ export const metadata = {
 
 export default function PastEventsPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col flex-1">
       <Navbar overlay={false} />
 
-      <section className="flex-1 px-6 pt-28 pb-16">
+      <section className="flex-1 px-6 pt-32 pb-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-teal-600 font-bold tracking-widest uppercase text-sm">Our Journey</span>
-            <h1 className="text-3xl md:text-4xl font-bold text-stone-800 mt-2 mb-4">Past Events</h1>
-            <p className="text-stone-600 text-lg max-w-xl mx-auto">
+            <span className="label">Our Journey</span>
+            <h1 className="font-display text-heading-1 md:text-display text-forest mt-3 mb-4">Past Events</h1>
+            <p className="text-ink-soft text-lg max-w-xl mx-auto">
               From village gatherings at ConFest to standalone festivals. A look back at the events that have shaped our community.
             </p>
           </div>

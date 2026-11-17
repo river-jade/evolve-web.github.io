@@ -9,7 +9,7 @@ import { WorkshopModal } from './WorkshopModal'
 import { FacilitatorModal } from './FacilitatorModal'
 import { EventCard } from './EventCard'
 
-const PLACEHOLDER_IMAGE = '/images/evolve-logo.jpg'
+const PLACEHOLDER_IMAGE = '/images/evolve-placeholder.png'
 
 type Props = {
   events: ScheduleEvent[]
@@ -19,7 +19,7 @@ type Props = {
 
 export const ScheduleGrid = ({ events, workshops, year }: Props) => {
   if (!events.length) {
-    return <div className="p-12 text-center bg-stone-50 rounded-xl text-stone-500">Schedule coming soon.</div>
+    return <div className="p-12 text-center card text-ink-soft">Schedule coming soon.</div>
   }
 
   // 1. Setup State
@@ -118,9 +118,9 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
             <button
               key={day}
               onClick={() => setActiveDay(day)}
-              className={`px-6 py-2 rounded-full font-bold transition-all ${activeDay === day
-                ? 'bg-teal-600 text-white shadow-md transform scale-105'
-                : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              className={`px-6 py-2 rounded-pill font-semibold border transition-colors ${activeDay === day
+                ? 'bg-forest border-forest text-paper'
+                : 'bg-paper border-line text-forest hover:bg-leaf/40'
                 }`}
             >
               {day}
@@ -144,16 +144,16 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
           if (isCommonBreak) {
             return (
-              <div key={time} className="bg-stone-100 p-4 rounded-xl text-center text-stone-500 italic border border-stone-200">
-                <span className="font-bold not-italic text-stone-700">{time}</span> — {uniqueTitles[0]}
+              <div key={time} className="card p-4 text-center text-ink-soft italic">
+                <span className="font-semibold not-italic text-forest">{time}</span> — {uniqueTitles[0]}
               </div>
             )
           }
 
           return (
             <div key={time} className="relative">
-              <div className="sticky top-0 z-10 py-2 bg-white/95 backdrop-blur-sm border-b border-teal-100 mb-3">
-                <span className="inline-block bg-teal-600 text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm">
+              <div className="sticky top-0 z-10 py-2 bg-sand/95 backdrop-blur-sm border-b border-line mb-3">
+                <span className="inline-block bg-forest text-paper text-small font-semibold px-3 py-1 rounded-pill">
                   {time}
                 </span>
               </div>
@@ -167,7 +167,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
                     <div
                       key={event.id}
                       id={eventSlug ? `mobile-${eventSlug}` : undefined}
-                      className={`scroll-mt-32 rounded-lg transition-all ${isHighlighted ? 'ring-2 ring-teal-500 bg-teal-50' : ''}`}
+                      className={`scroll-mt-32 rounded-sm transition-all ${isHighlighted ? 'ring-2 ring-sage bg-leaf/50' : ''}`}
                       style={{ transition: isHighlighted ? 'none' : 'all 1.5s ease-out' }}
                     >
                       <EventCard
@@ -189,7 +189,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
       </div>
 
       {/* --- DESKTOP VIEW (Horizontal Grid) --- */}
-      <div className="hidden md:block overflow-x-auto pb-12 border border-stone-100 rounded-xl shadow-sm bg-white">
+      <div className="hidden md:block overflow-x-auto pb-12 border border-line rounded-md bg-paper">
         <div
           className="grid gap-0"
           style={{
@@ -198,16 +198,16 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
           }}
         >
           {/* Header Row */}
-          <div className="sticky top-0 z-20 bg-teal-50/95 border-b border-teal-200 p-4 text-right font-bold text-stone-400 text-xs uppercase tracking-widest"
+          <div className="sticky top-0 z-20 bg-forest p-4 text-right font-semibold text-leaf text-label uppercase tracking-[0.3em]"
             style={{ gridRow: 1, gridColumn: 1 }}
           >
             Time
           </div>
           {venues.map((venue, vi) => (
-            <div key={venue} className="sticky top-0 z-20 bg-teal-50/95 backdrop-blur border-b border-teal-200 p-4 text-center border-l border-teal-100"
+            <div key={venue} className="sticky top-0 z-20 bg-forest p-4 text-center border-l border-paper/20"
               style={{ gridRow: 1, gridColumn: vi + 2 }}
             >
-              <h3 className="text-lg font-bold text-teal-900 leading-tight">{venue}</h3>
+              <h3 className="!m-0 font-display text-xl !text-paper leading-tight">{venue}</h3>
             </div>
           ))}
 
@@ -218,7 +218,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
             return [
               // Time Column
               <div key={`time-${time}`}
-                className="text-right py-4 pr-4 font-mono font-bold text-stone-400 text-sm border-t border-stone-200 bg-stone-50/30"
+                className="text-right py-4 pr-4 tabular-nums font-semibold text-label text-small border-t border-line bg-sand/50"
                 style={{ gridRow: row, gridColumn: 1 }}
               >
                 {time}
@@ -236,7 +236,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
 
                 if (!event) {
                   return <div key={`${time}-${venue}`}
-                    className="border-t border-l border-stone-200 bg-stone-50/10"
+                    className="border-t border-l border-line"
                     style={{ gridRow: row, gridColumn: vi + 2 }}
                   />
                 }
@@ -247,7 +247,7 @@ export const ScheduleGrid = ({ events, workshops, year }: Props) => {
                 return (
                   <div key={event.id}
                     id={eventSlug || undefined}
-                    className={`border-t border-l border-stone-200 p-1 relative scroll-mt-32 rounded-lg transition-all duration-0 ${isHighlighted ? 'ring-2 ring-teal-500 bg-teal-50' : ''}`}
+                    className={`border-t border-l border-line p-1 relative scroll-mt-32 transition-all duration-0 ${isHighlighted ? 'ring-2 ring-sage bg-leaf/50' : ''}`}
                     style={{ gridRow: `${row} / span ${span}`, gridColumn: vi + 2, transition: isHighlighted ? 'none' : 'all 1.5s ease-out' }}
                   >
                     <EventCard
