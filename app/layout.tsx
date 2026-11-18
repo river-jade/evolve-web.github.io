@@ -1,5 +1,5 @@
 import './global.css'
-import { Marcellus, Manrope } from 'next/font/google'
+import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from 'components/Footer'
@@ -9,15 +9,17 @@ import { metadata as _metadata } from './metadata'
 // Brand type: Marcellus for headings (one weight only), Manrope for everything else.
 // https://fonts.google.com/specimen/Marcellus
 // https://fonts.google.com/specimen/Manrope
-const displayFont = Marcellus({
-  subsets: ['latin'],
+// Self-hosted (latin subset, SIL Open Font License) so builds don't depend on
+// Google Fonts: it sometimes returns `l/font?kit=` URLs that break the build.
+const displayFont = localFont({
+  src: './fonts/Marcellus-latin-400.woff2',
   weight: '400',
   variable: '--font-display',
   display: 'swap',
 })
-const sansFont = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const sansFont = localFont({
+  src: './fonts/Manrope-latin-variable.woff2',
+  weight: '400 700',
   variable: '--font-sans',
   display: 'swap',
 })
