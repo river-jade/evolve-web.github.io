@@ -18,12 +18,10 @@
     "csvtojson": "^2.0.14",
     "jsonp": "^0.2.1",
     "next": "^16.1.6",
-    "next-mdx-remote": "^6.0.0",
     "postcss": "^8.4.35",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "sharp": "^0.34.5",
-    "sugar-high": "^0.6.0",
     "tailwindcss": "^3.4.1",
     "typescript": "5.3.3"
   },

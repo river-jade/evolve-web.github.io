@@ -1,51 +1,27 @@
 # Evolve Website
 
-To build a new JSON file for workshops, run:
-pnpm run import-workshops <path_to_csv> <year>
-pnpm run import-schedule 2025 "data/sat.csv" "data/sun.csv" ...
+A Next.js site, deployed on Vercel.
 
-With the appropriate csv file and year provided.
+## Editing pages
 
+Each page lives in its own folder under `app/`, and the folder path is the URL. For example, `/values` is `app/values/page.tsx`. To change a page's text, edit that file.
 
-## Boilerplate
+Text pages use the `ContentPage` layout from `components/ContentPage.tsx`. At the top of each page file, `page` sets the title and the summary shown in search results and link previews. Links go in `<A href="...">`: pages on this site open in place, and other websites open in a new tab.
 
-This is a portfolio site template complete with a blog. Includes:
+The sitemap picks up new pages automatically.
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+## Workshops and schedule
 
-## Demo
-
-https://portfolio-blog-starter.vercel.app
-
-## How to Use
-
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
+Workshop and schedule data come from Google Sheets. To rebuild the JSON files, run:
 
 ```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
+pnpm run import-workshops <year>
+pnpm run import-schedule <year>
 ```
 
-Then, run Next.js in development mode:
+## Running locally
 
 ```bash
+pnpm install
 pnpm dev
 ```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
