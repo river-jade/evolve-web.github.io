@@ -132,7 +132,7 @@ export default function Page() {
 
             {/* Gallery Component */}
             <div>
-              <ImageGallery images={galleryImages} initialRows={5} />
+              <ImageGallery images={galleryImages} initialRows={4} />
               <p className="text-center text-label font-medium text-ink-soft mt-3">Click images to expand</p>
             </div>
           </div>
