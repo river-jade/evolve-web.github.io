@@ -1,14 +1,44 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 interface Image {
   src: string;
   alt: string;
 }
 
-function ImageGallery({ images }: { images: Image[] }) {
+// Thumbnail width plus horizontal margins (see the <img> styles below).
+const THUMB_OUTER_WIDTH = 160;
+
+function ImageGallery({
+  images,
+  initialRows,
+}: {
+  images: Image[];
+  // If set, only this many rows of thumbnails show until "Show all" is clicked.
+  // The lightbox still steps through every image.
+  initialRows?: number;
+}) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [perRow, setPerRow] = useState(2);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  // Track how many thumbnails fit per row so truncation is by whole rows.
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el || initialRows === undefined) return;
+    const update = () =>
+      setPerRow(Math.max(1, Math.floor(el.clientWidth / THUMB_OUTER_WIDTH)));
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [initialRows]);
+
+  const initialCount = initialRows === undefined ? undefined : initialRows * perRow;
+  const canTruncate = initialCount !== undefined && images.length > initialCount;
+  const visibleImages = canTruncate && !expanded ? images.slice(0, initialCount) : images;
 
   const hasSelection = selectedIndex !== null;
   const current = useMemo(
@@ -56,8 +86,8 @@ function ImageGallery({ images }: { images: Image[] }) {
 
   return (
     <div>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {images.map((image, index) => (
+      <div ref={gridRef} style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {visibleImages.map((image, index) => (
           <img
             key={index}
             src={image.src}
@@ -74,6 +104,19 @@ function ImageGallery({ images }: { images: Image[] }) {
           />
         ))}
       </div>
+
+      {canTruncate && (
+        <div style={{ textAlign: 'center', marginTop: '8px' }}>
+          <button
+            type="button"
+            onClick={() => setExpanded((e) => !e)}
+            aria-expanded={expanded}
+            className="px-4 py-2 rounded-lg bg-white text-sm font-medium text-stone-700 hover:bg-stone-200 transition-colors"
+          >
+            {expanded ? 'Show fewer' : `Show all ${images.length} photos`}
+          </button>
+        </div>
+      )}
 
       {hasSelection && current && (
         <div

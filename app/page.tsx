@@ -13,6 +13,21 @@ export default function Page() {
 
   // Images from the original homepage.mdx
   const galleryImages = [
+    { src: '/images/gilwell-park-2026/opening-ceremony.jpeg', alt: 'Opening ceremony at Gilwell Park 2026' },
+    { src: '/images/gilwell-park-2026/opening-ceremony-spiral-1.jpeg', alt: 'Opening ceremony spiral' },
+    { src: '/images/gilwell-park-2026/opening-ceremony-spiral-2.jpeg', alt: 'Opening ceremony spiral' },
+    { src: '/images/gilwell-park-2026/opening-ceremony-spiral-3.jpeg', alt: 'Opening ceremony spiral' },
+    { src: '/images/gilwell-park-2026/workshop.jpg', alt: 'Workshop at Gilwell Park' },
+    { src: '/images/gilwell-park-2026/mandala-whole.jpeg', alt: 'Mandala' },
+    { src: '/images/gilwell-park-2026/mandala-close-up.jpeg', alt: 'Mandala close up' },
+    { src: '/images/gilwell-park-2026/bridge-in-forest.JPG', alt: 'Bridge in the forest' },
+    { src: '/images/gilwell-park-2026/lounge-tent.JPG', alt: 'Lounge tent' },
+    { src: '/images/gilwell-park-2026/lounge-at-dusk.JPG', alt: 'Lounge at dusk' },
+    { src: '/images/gilwell-park-2026/pot-luck.JPG', alt: 'Pot luck' },
+    { src: '/images/gilwell-park-2026/open-mic.jpg', alt: 'Open mic' },
+    { src: '/images/gilwell-park-2026/open-mic-melody-moon.JPG', alt: 'Melody Moon at the open mic' },
+    { src: '/images/gilwell-park-2026/festival-at-night.JPG', alt: 'Festival at night' },
+    { src: '/images/gilwell-park-2026/closing-ceremony.jpg', alt: 'Closing ceremony' },
     { src: '/images/spring-confest-2024/image-1.jpg', alt: 'Community gathering' },
     { src: '/images/spring-confest-2024/image-2.jpg', alt: 'Workshops in nature' },
     { src: '/images/spring-confest-2024/image-3.jpg', alt: 'Connection' },
@@ -118,7 +133,7 @@ export default function Page() {
 
             {/* Gallery Component */}
             <div className="bg-stone-100 rounded-2xl p-4">
-              <ImageGallery images={galleryImages} />
+              <ImageGallery images={galleryImages} initialRows={5} />
               <p className="text-center text-xs text-stone-400 mt-2">Click images to expand</p>
             </div>
           </div>
