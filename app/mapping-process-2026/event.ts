@@ -5,7 +5,7 @@
  * MEET_URL: paste the Google Meet link here once the calendar event exists.
  * While it is empty the page says "link to come" and no join button shows.
  */
-export const MEET_URL: string = ''
+export const MEET_URL: string = 'https://meet.google.com/wwk-vrqv-jch'
 
 /*
  * Sunday 6 December 2026, 3pm to 5pm Melbourne time (AEDT, UTC+11).
