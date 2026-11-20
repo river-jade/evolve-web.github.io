@@ -3,16 +3,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Icon } from './Icon'
+import { LightboxOverlay } from './ImageLightbox'
 
 export type Slide = { src: string; alt: string }
 
 /**
  * Self-paced slide viewer: swipe or scroll the track, or use the arrow
- * buttons / arrow keys. One slide fills the frame at a time.
+ * buttons / arrow keys. One slide fills the frame at a time. Clicking a
+ * slide opens it enlarged; closing returns to whichever slide was last shown.
  */
 export function SlideCarousel({ slides, label }: { slides: Slide[]; label: string }) {
   const trackRef = useRef<HTMLUListElement>(null)
   const [index, setIndex] = useState(0)
+  const [enlarged, setEnlarged] = useState<number | null>(null)
 
   const goTo = useCallback(
     (i: number) => {
@@ -38,6 +41,15 @@ export function SlideCarousel({ slides, label }: { slides: Slide[]; label: strin
       track.removeEventListener('scroll', onScroll)
     }
   }, [])
+
+  const closeEnlarged = () => {
+    const track = trackRef.current
+    if (track && enlarged !== null) {
+      track.scrollTo({ left: enlarged * track.clientWidth, behavior: 'instant' })
+      setIndex(enlarged)
+    }
+    setEnlarged(null)
+  }
 
   return (
     <div role="region" aria-roledescription="carousel" aria-label={label} className="flex flex-col gap-3">
@@ -65,13 +77,20 @@ export function SlideCarousel({ slides, label }: { slides: Slide[]; label: strin
             aria-label={`${i + 1} of ${slides.length}`}
             className="relative w-full shrink-0 snap-center aspect-video"
           >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              sizes="(min-width: 768px) 560px, 92vw"
-              className="object-contain"
-            />
+            <button
+              type="button"
+              onClick={() => setEnlarged(i)}
+              aria-label={`Enlarge slide ${i + 1}`}
+              className="absolute inset-0 cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-leaf"
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                sizes="(min-width: 768px) 560px, 92vw"
+                className="object-contain"
+              />
+            </button>
           </li>
         ))}
       </ul>
@@ -98,6 +117,9 @@ export function SlideCarousel({ slides, label }: { slides: Slide[]; label: strin
           <Icon name="chevronRight" size={18} />
         </button>
       </div>
+      {enlarged !== null && (
+        <LightboxOverlay images={slides} index={enlarged} onIndexChange={setEnlarged} onClose={closeEnlarged} />
+      )}
     </div>
   )
 }
