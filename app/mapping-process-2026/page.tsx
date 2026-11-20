@@ -29,7 +29,7 @@ const REGISTRATION_URL = ''
 const KAZ_EMAIL = 'Kaz@activatewellbeing.com'
 const SLIDES_PDF = '/files/evolve-moora-moora-slides.pdf'
 
-/* Calendar: Sunday 6 December 2026, 3pm AEDT (UTC+11), 90 minutes */
+/* Calendar: Sunday 6 December 2026, 3pm AEDT (UTC+11), 120 minutes */
 const event = {
   title: 'Evolve 2027: An Online Gathering',
   description:
@@ -37,7 +37,7 @@ const event = {
     (REGISTRATION_URL ? `\n\nRegister: ${REGISTRATION_URL}` : ''),
   location: 'Zoom',
   start: '20261206T040000Z',
-  end: '20261206T053000Z',
+  end: '20261206T060000Z',
 }
 
 const googleCalendarUrl =
@@ -196,9 +196,9 @@ export default function Page() {
           <p className="text-lg text-paper/90 max-w-2xl">{summary}</p>
           <ul className="w-full max-w-xl rounded-md border border-paper/25 px-6 py-5 flex flex-col gap-2 text-left">
             <li><strong className="font-semibold">Sunday 6 December 2026, 3pm AEDT</strong></li>
-            <li>90 minutes on Zoom</li>
+            <li>120 minutes on Zoom</li>
             <li>Hosted by the Evolve Vision Council: River, Chloe, Craig and Kate</li>
-            <li>Facilitated by Kaz T. Anderson</li>
+            <li>With supportive facilitation on the day from Kaz T. Anderson and Zoe</li>
           </ul>
           <RegisterButton className="btn btn-sun px-8" />
           <p className="text-small text-paper/80">
@@ -313,7 +313,7 @@ export default function Page() {
               <h3 className="font-display text-xl mt-2">Why you might value coming</h3>
               <PebbleList
                 items={[
-                  'You help choose the words for the mission before they are settled.',
+                  'You can help shape the words for the mission, and come into alignment around them, before they are settled.',
                   'You get to say what a successful Evolve would mean to you.',
                   'A chance to reconnect with friends you have shared Evolve with before.',
                 ]}
@@ -378,12 +378,6 @@ export default function Page() {
               Roles won&apos;t be the focus of our gathering on the 6th, though there&apos;s potential to dive into
               this discussion when we next gather in person.
             </p>
-            <p>
-              In the meantime, our friend Kaz has drafted the beginnings of her &lsquo;collaborator role&rsquo;
-              below, as one example of &lsquo;designing a relationship&rsquo; with Evolve. She benefits and we do
-              too. Kaz is inspiring us to be curious about the many life-serving ways of growing together as an
-              Evolve community. We&apos;d love to see you on the 6th and explore more of what&apos;s possible :-)
-            </p>
             <p className="font-display text-xl text-forest">River, Chloe, Craig and Kate</p>
           </div>
         </div>
@@ -391,64 +385,8 @@ export default function Page() {
 
       {/* PART TWO: FROM KAZ */}
       <div className="pt-8 md:pt-12">
-        <PartLabel>From Kaz T. Anderson, collaborator and facilitator</PartLabel>
+        <PartLabel>From Kaz T. Anderson</PartLabel>
       </div>
-
-      {/* My role with Evolve */}
-      <section className="py-12 md:py-16 px-6 md:px-16" aria-labelledby="kaz-role-heading">
-        <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-[3fr_2fr] md:items-start">
-          <div className="flex flex-col gap-4 text-ink-soft">
-            <h2 id="kaz-role-heading" className="font-display text-heading-1 text-forest">My role with Evolve</h2>
-            <p>
-              I&apos;ve been attending Evolve as a participant over recent years, and found the energy and community
-              spirit was genuinely like nothing else. I attended the Moora Moora in-person recently to share more
-              about the community development roles I&apos;ve held in the past and how that experience might offer
-              something towards Evolve&apos;s vision being further materialised. I love holding space while a
-              community works out its direction forward and how it wants to get there together.
-            </p>
-            <p>
-              I&apos;ve offered Evolve my willingness as a facilitator, and what I&apos;m bringing with me are a
-              couple of frameworks that I imagine this community might enjoy to know more about: The Community Canvas
-              and Wellbeing Teams, both of which support community relationships as well as how we can organise to
-              live the mission and purpose with more shared clarity.
-            </p>
-            <p>
-              I&apos;m inspired for the opportunity to contribute and also learn together whether Wellbeing Teams (my
-              own framework) supports our enjoyment and wellbeing as we contribute. More energy of feeling valued,
-              that generates more gratitude, generosity, compassion and dignity as we learn to work together for our
-              mutual wellbeing. I imagine piloting my involvement in 2027 and then reflecting by the end of next year
-              about what&apos;s alive next, I&apos;m trusting that will become clear as we experiment together.
-              I&apos;m also asking that we co-create a media project - maybe a podcast - to share our journey as a
-              case study that other communities might value too. If you have media/social media experience and would
-              like to talk to us about supporting this idea, please reach out 🙏😊
-            </p>
-            <p>
-              I&apos;m grateful to Evolve and all of you for the opportunity to practice &lsquo;community
-              development&rsquo; together 💕🙏
-            </p>
-          </div>
-          <div className="flex flex-col gap-6">
-            <figure className="card overflow-hidden">
-              <Image
-                src="/images/evolve-2027/kaz.png"
-                width={894}
-                height={926}
-                sizes="(min-width: 768px) 360px, 92vw"
-                className="w-full h-auto"
-                alt="Kaz T. Anderson smiling in a dark beret and denim jacket, beside the Activate Wellbeing logo, with the name kaz.t.anderson, Activate Wellbeing and kaz@activatewellbeing.com"
-              />
-            </figure>
-            <figure className="rounded-md bg-forest text-paper p-6 md:p-8 flex flex-col gap-4">
-              <blockquote className="font-display text-xl leading-snug">
-                &ldquo;We need collective solutions now. They need to be agile and responsive to purpose, with mutual
-                wellbeing built in: not mired in decision paralysis, and not so transactional that we lose connection
-                with each other.&rdquo;
-              </blockquote>
-              <figcaption className="label !text-leaf">Kaz T. Anderson</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
 
       {/* Wellbeing Teams quotes and resources */}
       <section className="py-12 md:py-16 px-6 md:px-16" aria-label="Wellbeing Teams and resources">
@@ -477,6 +415,29 @@ export default function Page() {
                 A well-used map that helps a community get clear on its identity, the experience it offers and the
                 structure that holds it. I brought it to Moora Moora as a way to see the whole of Evolve at once.
               </p>
+              <figure className="flex flex-col gap-2">
+                <a href="https://community-canvas.org/" target="_blank" rel="noopener" className="block">
+                  <Image
+                    src="/images/evolve-2027/community-canvas.webp"
+                    width={801}
+                    height={687}
+                    sizes="(min-width: 768px) 360px, 92vw"
+                    className="w-full h-auto"
+                    alt="The Community Canvas. Identity sits at the centre (purpose, identity, values, brand and success definition). Around it is Experience: selection, rituals, shared experiences, content, rules, roles and transition. Below is Structure: organisation, governance, financing, channels and platforms, and data management."
+                  />
+                </a>
+                <figcaption className="text-label text-ink-soft">
+                  The Community Canvas by community-canvas.org,{' '}
+                  <a
+                    className="underline decoration-sage underline-offset-2 hover:decoration-forest"
+                    href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    CC BY-NC-SA 4.0
+                  </a>
+                </figcaption>
+              </figure>
               <a className="text-link self-start" href="https://community-canvas.org/" target="_blank" rel="noopener">
                 Explore the Community Canvas
               </a>
@@ -502,14 +463,15 @@ export default function Page() {
             {[
               ['When', 'Sunday 6 December 2026, 3pm AEDT'],
               ['Where', 'Zoom'],
-              ['How long', '90 minutes'],
-              ['Hosts', 'The Evolve Vision Council, with facilitation from Kaz T. Anderson'],
+              ['How long', '120 minutes'],
+              ['Hosts', 'The Evolve Vision Council'],
+              ['Facilitators', 'Kaz T. Anderson and Zoe, supporting us on the day'],
               [
                 'Recording',
                 'We intend to record. The session is as much about connection as content, so please come live if you can.',
               ],
             ].map(([dt, dd]) => (
-              <div key={dt} className="grid sm:grid-cols-[7rem_1fr] gap-1 sm:gap-4 border-b border-paper/15 pb-3 last:border-0">
+              <div key={dt} className="grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-4 border-b border-paper/15 pb-3 last:border-0">
                 <dt className="label !text-leaf sm:pt-1">{dt}</dt>
                 <dd>{dd}</dd>
               </div>
