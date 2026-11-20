@@ -5,6 +5,7 @@ import { Navbar } from 'components/Navbar'
 import Expandable from 'components/Expandable'
 import { SlideCarousel, type Slide } from 'components/SlideCarousel'
 import { contactEmail } from 'app/metadata'
+import { MEET_URL, ICS_PATH, googleCalendarUrl } from './event'
 
 const title = 'Evolve 2027: An Online Gathering, Sunday 6 December'
 const summary =
@@ -20,61 +21,8 @@ export const metadata: Metadata = {
   },
 }
 
-/*
- * Links still to supply. Leave as '' until ready.
- * While REGISTRATION_URL is empty, every "Register" button jumps to the
- * Join section, which shows "Registration link coming soon".
- */
-const REGISTRATION_URL = ''
 const KAZ_EMAIL = 'Kaz@activatewellbeing.com'
 const SLIDES_PDF = '/files/evolve-moora-moora-slides.pdf'
-
-/* Calendar: Sunday 6 December 2026, 3pm AEDT (UTC+11), 120 minutes */
-const event = {
-  title: 'Evolve 2027: An Online Gathering',
-  description:
-    'An online gathering hosted by the Evolve Vision Council, for everyone who has been part of Evolve, to help put the Evolve 2027 mission into words.' +
-    (REGISTRATION_URL ? `\n\nRegister: ${REGISTRATION_URL}` : ''),
-  location: 'Zoom',
-  start: '20261206T040000Z',
-  end: '20261206T060000Z',
-}
-
-const googleCalendarUrl =
-  'https://calendar.google.com/calendar/render?action=TEMPLATE' +
-  `&text=${encodeURIComponent(event.title)}` +
-  `&dates=${event.start}/${event.end}` +
-  `&details=${encodeURIComponent(event.description)}` +
-  `&location=${encodeURIComponent(event.location)}` +
-  '&ctz=Australia/Melbourne'
-
-const icsEscape = (s: string) =>
-  s.replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;')
-
-const icsUrl =
-  'data:text/calendar;charset=utf-8,' +
-  encodeURIComponent(
-    [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Evolve 2027//Online Gathering//EN',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      'UID:evolve-2027-online-gathering-20261206@evolvecommunity.world',
-      'DTSTAMP:20261118T000000Z',
-      `DTSTART:${event.start}`,
-      `DTEND:${event.end}`,
-      `SUMMARY:${icsEscape(event.title)}`,
-      `DESCRIPTION:${icsEscape(event.description)}`,
-      `LOCATION:${icsEscape(event.location)}`,
-      REGISTRATION_URL ? `URL:${REGISTRATION_URL}` : null,
-      'END:VEVENT',
-      'END:VCALENDAR',
-    ]
-      .filter(Boolean)
-      .join('\r\n'),
-  )
 
 const slides: Slide[] = [
   'Martin Luther King Jr. quote printed on the back of a hoodie: Those who love peace must learn to organize as effectively as those who love war.',
@@ -126,18 +74,6 @@ const runningOrder = [
   'Checkout Round - all voices',
   'Next steps',
 ]
-
-function RegisterButton({ className = 'btn btn-primary' }: { className?: string }) {
-  return REGISTRATION_URL ? (
-    <a className={className} href={REGISTRATION_URL} target="_blank" rel="noopener">
-      Register for 6 December
-    </a>
-  ) : (
-    <a className={className} href="#join">
-      Register for 6 December
-    </a>
-  )
-}
 
 /* Sage pebble bullets, as used across the restyled site */
 function PebbleList({ items, className = '' }: { items: React.ReactNode[]; className?: string }) {
@@ -196,11 +132,13 @@ export default function Page() {
           <p className="text-lg text-paper/90 max-w-2xl">{summary}</p>
           <ul className="w-full max-w-xl rounded-md border border-paper/25 px-6 py-5 flex flex-col gap-2 text-left">
             <li><strong className="font-semibold">Sunday 6 December 2026, 3pm AEDT</strong></li>
-            <li>120 minutes on Zoom</li>
+            <li>120 minutes on Google Meet</li>
             <li>Hosted by the Evolve Vision Council: River, Chloe, Craig and Kate</li>
             <li>With supportive facilitation on the day from Kaz T. Anderson and Zoe</li>
           </ul>
-          <RegisterButton className="btn btn-sun px-8" />
+          <a className="btn btn-sun px-8" href="#join">
+            Save the date
+          </a>
           <p className="text-small text-paper/80">
             There is nothing to commit to by coming. Come, connect and have your say.
           </p>
@@ -462,7 +400,21 @@ export default function Page() {
           <dl className="relative w-full max-w-xl grid gap-3 text-left">
             {[
               ['When', 'Sunday 6 December 2026, 3pm AEDT'],
-              ['Where', 'Zoom'],
+              [
+                'Where',
+                MEET_URL ? (
+                  <a
+                    href={MEET_URL}
+                    target="_blank"
+                    rel="noopener"
+                    className="underline decoration-leaf decoration-2 underline-offset-4 hover:decoration-paper"
+                  >
+                    Google Meet
+                  </a>
+                ) : (
+                  'Google Meet (link to come)'
+                ),
+              ],
               ['How long', '120 minutes'],
               ['Hosts', 'The Evolve Vision Council'],
               ['Facilitators', 'Kaz T. Anderson and Zoe, supporting us on the day'],
@@ -471,19 +423,17 @@ export default function Page() {
                 'We intend to record. The session is as much about connection as content, so please come live if you can.',
               ],
             ].map(([dt, dd]) => (
-              <div key={dt} className="grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-4 border-b border-paper/15 pb-3 last:border-0">
+              <div key={String(dt)}className="grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-4 border-b border-paper/15 pb-3 last:border-0">
                 <dt className="label !text-leaf sm:pt-1">{dt}</dt>
                 <dd>{dd}</dd>
               </div>
             ))}
           </dl>
           <div className="relative flex flex-col items-center gap-3">
-            {REGISTRATION_URL ? (
-              <RegisterButton className="btn btn-sun px-8" />
-            ) : (
-              <span className="btn btn-on-dark px-8 cursor-default" aria-disabled="true">
-                Registration link coming soon
-              </span>
+            {MEET_URL && (
+              <a className="btn btn-sun px-8" href={MEET_URL} target="_blank" rel="noopener">
+                Join on Google Meet
+              </a>
             )}
             <p className="text-small text-paper/80">
               Save the date:{' '}
@@ -497,8 +447,7 @@ export default function Page() {
               </a>{' '}
               /{' '}
               <a
-                href={icsUrl}
-                download="evolve-2027-online-gathering.ics"
+                href={ICS_PATH}
                 className="underline decoration-leaf decoration-2 underline-offset-4 hover:decoration-paper"
               >
                 Apple or Outlook (.ics)
