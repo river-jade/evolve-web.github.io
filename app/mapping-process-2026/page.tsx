@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Navbar } from 'components/Navbar'
 import Expandable from 'components/Expandable'
 import { SlideCarousel, type Slide } from 'components/SlideCarousel'
+import { ImageLightbox } from 'components/ImageLightbox'
 import { contactEmail } from 'app/metadata'
 import { MEET_URL, ICS_PATH, googleCalendarUrl } from './event'
 
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
 
 const KAZ_EMAIL = 'Kaz@activatewellbeing.com'
 const SLIDES_PDF = '/files/evolve-moora-moora-slides.pdf'
+const CANVAS_SRC = '/images/evolve-2027/community-canvas.webp'
+const CANVAS_ALT =
+  'The Community Canvas. Identity sits at the centre (purpose, identity, values, brand and success definition). Around it is Experience: selection, rituals, shared experiences, content, rules, roles and transition. Below is Structure: organisation, governance, financing, channels and platforms, and data management.'
 
 const slides: Slide[] = [
   'Martin Luther King Jr. quote printed on the back of a hoodie: Those who love peace must learn to organize as effectively as those who love war.',
@@ -354,16 +358,16 @@ export default function Page() {
                 structure that holds it. I brought it to Moora Moora as a way to see the whole of Evolve at once.
               </p>
               <figure className="flex flex-col gap-2">
-                <a href="https://community-canvas.org/" target="_blank" rel="noopener" className="block">
+                <ImageLightbox src={CANVAS_SRC} alt={CANVAS_ALT}>
                   <Image
-                    src="/images/evolve-2027/community-canvas.webp"
+                    src={CANVAS_SRC}
                     width={801}
                     height={687}
                     sizes="(min-width: 768px) 360px, 92vw"
                     className="w-full h-auto"
-                    alt="The Community Canvas. Identity sits at the centre (purpose, identity, values, brand and success definition). Around it is Experience: selection, rituals, shared experiences, content, rules, roles and transition. Below is Structure: organisation, governance, financing, channels and platforms, and data management."
+                    alt={CANVAS_ALT}
                   />
-                </a>
+                </ImageLightbox>
                 <figcaption className="text-label text-ink-soft">
                   The Community Canvas by community-canvas.org,{' '}
                   <a
