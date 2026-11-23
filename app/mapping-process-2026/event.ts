@@ -8,7 +8,7 @@
 export const MEET_URL: string = 'https://us06web.zoom.us/j/82115928126?pwd=1vdkpEXaoToQ2aoiAdzZGJjNn6JVWV.1'
 
 /*
- * Sunday 6 December 2026, 3pm to 5pm Melbourne time (AEDT, UTC+11).
+ * Sunday 6 December 2026, 12pm to 2pm Melbourne time (AEDT, UTC+11).
  * Times are local to TIMEZONE so calendars save it as a Melbourne event,
  * shown in each person's own time.
  */
@@ -21,8 +21,8 @@ export const event = {
     (MEET_URL ? `\n\nJoin on Zoom: ${MEET_URL}` : '') +
     '\n\nhttps://evolvecommunity.world/mapping-process-2026',
   location: MEET_URL || 'Zoom',
-  start: '20261206T150000',
-  end: '20261206T170000',
+  start: '20261206T120000',
+  end: '20261206T140000',
 }
 
 /** Published path of the .ics file (see ./evolve-2027.ics/route.ts) */
@@ -82,7 +82,9 @@ export function buildIcs() {
       'END:VTIMEZONE',
       'BEGIN:VEVENT',
       'UID:evolve-2027-online-gathering-20261206@evolvecommunity.world',
-      'DTSTAMP:20261120T000000Z',
+      'DTSTAMP:20261123T000000Z',
+      // Bumped when the time changed, so calendars that already saved it update
+      'SEQUENCE:1',
       `DTSTART;TZID=${TIMEZONE}:${event.start}`,
       `DTEND;TZID=${TIMEZONE}:${event.end}`,
       `SUMMARY:${icsEscape(event.title)}`,
