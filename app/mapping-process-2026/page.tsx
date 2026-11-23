@@ -136,7 +136,7 @@ export default function Page() {
           <p className="text-lg text-paper/90 max-w-2xl">{summary}</p>
           <ul className="w-full max-w-xl rounded-md border border-paper/25 px-6 py-5 flex flex-col gap-2 text-left">
             <li><strong className="font-semibold">Sunday 6 December 2026, 3pm AEDT</strong></li>
-            <li>120 minutes on Google Meet</li>
+            <li>120 minutes on Zoom</li>
             <li>Hosted by the Evolve Vision Council: River, Chloe, Craig and Kate</li>
             <li>With supportive facilitation on the day from Kaz T. Anderson and Zoe Enticott</li>
           </ul>
@@ -413,10 +413,10 @@ export default function Page() {
                     rel="noopener"
                     className="underline decoration-leaf decoration-2 underline-offset-4 hover:decoration-paper"
                   >
-                    Google Meet
+                    Zoom
                   </a>
                 ) : (
-                  'Google Meet (link to come)'
+                  'Zoom (link to come)'
                 ),
               ],
               ['How long', '120 minutes'],
@@ -436,7 +436,7 @@ export default function Page() {
           <div className="relative flex flex-col items-center gap-3">
             {MEET_URL && (
               <a className="btn btn-sun px-8" href={MEET_URL} target="_blank" rel="noopener">
-                Join on Google Meet
+                Join on Zoom
               </a>
             )}
             <p className="text-small text-paper/80">
