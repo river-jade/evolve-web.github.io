@@ -138,7 +138,7 @@ export default function Page() {
             <li><strong className="font-semibold">Sunday 6 December 2026, 3pm AEDT</strong></li>
             <li>120 minutes on Google Meet</li>
             <li>Hosted by the Evolve Vision Council: River, Chloe, Craig and Kate</li>
-            <li>With supportive facilitation on the day from Kaz T. Anderson and Zoe</li>
+            <li>With supportive facilitation on the day from Kaz T. Anderson and Zoe Enticott</li>
           </ul>
           <a className="btn btn-sun px-8" href="#join">
             Save the date
@@ -421,7 +421,7 @@ export default function Page() {
               ],
               ['How long', '120 minutes'],
               ['Hosts', 'The Evolve Vision Council'],
-              ['Facilitators', 'Kaz T. Anderson and Zoe, supporting us on the day'],
+              ['Facilitators', 'Kaz T. Anderson and Zoe Enticott, supporting us on the day'],
               [
                 'Recording',
                 'We intend to record. The session is as much about connection as content, so please come live if you can.',
