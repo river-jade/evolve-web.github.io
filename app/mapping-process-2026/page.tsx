@@ -22,9 +22,6 @@ export const metadata: Metadata = {
 }
 
 const KAZ_EMAIL = 'Kaz@activatewellbeing.com'
-const VPM_SRC = '/images/evolve-2027/vision-purpose-mission.jpg'
-const VPM_ALT =
-  "Evolve's Vision, Purpose and Mission, for the Evolve Festival in November 2027. Vision: becoming the people and generating the culture to avert crisis and usher in the more beautiful world our hearts know is possible. Purpose: our aim is to avert crisis by taking our energy out of the systems that aren't life-serving and instead manifest a beautiful world by living Evolve's values as we co-create the Evolve Festival for November 2027. Mission: practicing Evolve's values as we organise ourselves as a 'Community of Co-Hosts' to create the Evolve Festival in November 2027."
 const CANVAS_SRC = '/images/evolve-2027/community-canvas.webp'
 const CANVAS_ALT =
   'The Community Canvas. Identity sits at the centre (purpose, identity, values, brand and success definition). Around it is Experience: selection, rituals, shared experiences, content, rules, roles and transition. Below is Structure: organisation, governance, financing, channels and platforms, and data management.'
@@ -354,22 +351,7 @@ export default function Page() {
             </ul>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-[3fr_2fr] md:items-start">
-            <article className="card p-6 md:p-8 flex flex-col gap-4">
-              <h3 className="font-display text-heading-2">Evolve&apos;s Vision, Purpose &amp; Mission</h3>
-              <figure>
-                <ImageLightbox src={VPM_SRC} alt={VPM_ALT}>
-                  <Image
-                    src={VPM_SRC}
-                    width={1600}
-                    height={900}
-                    sizes="(min-width: 1024px) 540px, (min-width: 768px) 55vw, 92vw"
-                    className="w-full h-auto rounded-sm"
-                    alt={VPM_ALT}
-                  />
-                </ImageLightbox>
-              </figure>
-            </article>
+          <div className="max-w-2xl mx-auto w-full">
             <article className="card p-6 md:p-8 flex flex-col gap-4">
               <h3 className="font-display text-heading-2">The Community Canvas</h3>
               <p className="text-ink-soft">
@@ -382,7 +364,7 @@ export default function Page() {
                     src={CANVAS_SRC}
                     width={801}
                     height={687}
-                    sizes="(min-width: 768px) 360px, 92vw"
+                    sizes="(min-width: 768px) 608px, 92vw"
                     className="w-full h-auto"
                     alt={CANVAS_ALT}
                   />
