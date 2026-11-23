@@ -135,7 +135,7 @@ export default function Page() {
           </h1>
           <p className="text-lg text-paper/90 max-w-2xl">{summary}</p>
           <ul className="w-full max-w-xl rounded-md border border-paper/25 px-6 py-5 flex flex-col gap-2 text-left">
-            <li><strong className="font-semibold">Sunday 6 December 2026, 3pm AEDT</strong></li>
+            <li><strong className="font-semibold">Sunday 6 December 2026, 12pm AEDT</strong></li>
             <li>120 minutes on Zoom</li>
             <li>Hosted by the Evolve Vision Council: River, Chloe, Craig and Kate</li>
             <li>With supportive facilitation on the day from Kaz T. Anderson and Zoe Enticott</li>
@@ -403,7 +403,7 @@ export default function Page() {
           </p>
           <dl className="relative w-full max-w-xl grid gap-3 text-left">
             {[
-              ['When', 'Sunday 6 December 2026, 3pm AEDT'],
+              ['When', 'Sunday 6 December 2026, 12pm AEDT'],
               [
                 'Where',
                 MEET_URL ? (
