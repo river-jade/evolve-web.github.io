@@ -17,7 +17,7 @@ export const TIMEZONE = 'Australia/Melbourne'
 export const event = {
   title: 'Evolve 2027: An Online Gathering',
   description:
-    'An online gathering hosted by the Evolve Vision Council, for everyone who has been part of Evolve, to help put the Evolve 2027 mission into words.' +
+    'An online gathering hosted by the Evolve Vision Council, for everyone who has been part of Evolve, to share an understanding of the Evolve 2027 mission, vision and purpose, and to explore what success means to us.' +
     (MEET_URL ? `\n\nJoin on Zoom: ${MEET_URL}` : '') +
     '\n\nhttps://evolvecommunity.world/mapping-process-2026',
   location: MEET_URL || 'Zoom',
@@ -82,9 +82,9 @@ export function buildIcs() {
       'END:VTIMEZONE',
       'BEGIN:VEVENT',
       'UID:evolve-2027-online-gathering-20261206@evolvecommunity.world',
-      'DTSTAMP:20261123T000000Z',
-      // Bumped when the time changed, so calendars that already saved it update
-      'SEQUENCE:1',
+      'DTSTAMP:20261123T120000Z',
+      // Bumped on each change (time, then description), so calendars that already saved it update
+      'SEQUENCE:2',
       `DTSTART;TZID=${TIMEZONE}:${event.start}`,
       `DTEND;TZID=${TIMEZONE}:${event.end}`,
       `SUMMARY:${icsEscape(event.title)}`,

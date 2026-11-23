@@ -3,14 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Navbar } from 'components/Navbar'
 import Expandable from 'components/Expandable'
-import { SlideCarousel, type Slide } from 'components/SlideCarousel'
 import { ImageLightbox } from 'components/ImageLightbox'
 import { contactEmail } from 'app/metadata'
 import { MEET_URL, ICS_PATH, googleCalendarUrl } from './event'
 
 const title = 'Evolve 2027: An Online Gathering, Sunday 6 December'
 const summary =
-  'Join us online to put the Evolve 2027 mission into words, and to explore what success means to us as a community.'
+  'Visioning into the future of Evolve - what does success look like?'
 
 export const metadata: Metadata = {
   title,
@@ -23,28 +22,9 @@ export const metadata: Metadata = {
 }
 
 const KAZ_EMAIL = 'Kaz@activatewellbeing.com'
-const SLIDES_PDF = '/files/evolve-moora-moora-slides.pdf'
 const CANVAS_SRC = '/images/evolve-2027/community-canvas.webp'
 const CANVAS_ALT =
   'The Community Canvas. Identity sits at the centre (purpose, identity, values, brand and success definition). Around it is Experience: selection, rituals, shared experiences, content, rules, roles and transition. Below is Structure: organisation, governance, financing, channels and platforms, and data management.'
-
-const slides: Slide[] = [
-  'Martin Luther King Jr. quote printed on the back of a hoodie: Those who love peace must learn to organize as effectively as those who love war.',
-  "Vision: a wonderful and specific picture of what you're coming together to create. The more beautiful world our hearts know is possible: learning, growing and evolving together in community.",
-  "Purpose: the way you'll live towards your vision. Becoming the people and generating the culture needed to avert crisis, by taking energy out of systems that aren't life-serving and meeting power over and power under with power with, and to usher in a more beautiful world, by hosting festivals and gatherings, growing a social movement and network of changemakers, and enjoying quality living within our capacity.",
-  'The Community Canvas, with three sections: Identity at the centre (purpose, values, brand, success definition), Experience around it (selection, rituals, shared experiences, content, rules, roles, transition) and Structure below (organisation, governance, financing, channels and platforms, data management).',
-  'Identity: who we are and who we serve. A collective of Evolve changemakers. We welcome and grow together with community changemakers who are willing to contribute as workshop hosts, onsite coordinators, and volunteer organisers before, during and after. Also listed: holistic and alternative practitioners, social entrepreneurs, alternative economy advocates, other festival organisers, social change activists and new earth creatives.',
-  "Success definition: what are three outcomes that will define success? Define a successful Evolve Festival 2027 and Evolve Network of Changemakers 2027. Beforehand: what's the mission exactly?",
-  "Mission: the specific strategies you're aiming for to achieve your vision in the time period you set, 2027 to 2030. Co-host three yearly festivals sustainably, demonstrating Evolve's values, and facilitate an active network of participants becoming contributors, co-hosting and evolving our experiments for living the more beautiful world.",
-  "Success definition questions: How many contributors become changemakers in Evolve's network in 2027? How do we define successful communication with the existing changemaker network, past hosts and others, to tend relationships with care? What is it that we'd most want these changemakers to understand and do in 2027?",
-  'Three teams mapped onto the three sections of the Community Canvas: identity, experience and structure.',
-  'Designing Systems for Thriving Together. Wellbeing Teams: The Business of our Mutual Thriving, an NVC Community Research Project, by kaz.t.anderson of Activate Wellbeing.',
-  "A collage of community and research references, including Researching a modern Moai, meeting for mutual wellbeing, and The Common Good Economy. Communities' technology and business models for thriving, and longevity and wellbeing related research.",
-  'A social media post by Kaz T. Anderson quoting Indy Johar: one of the greatest resources in building anything is the energy required to keep its meaning alive between people.',
-].map((alt, i) => ({
-  src: `/images/evolve-2027/slides/slide-${String(i + 1).padStart(2, '0')}.jpg`,
-  alt,
-}))
 
 /* href links to the event's page under /past-events, where one exists */
 const timeline: { label: string; href?: string }[] = [
@@ -73,7 +53,7 @@ const wellbeingQuotes = [
 const runningOrder = [
   'Landing & Welcome',
   "Why we're here",
-  'Mission - facilitated discussion',
+  'Vision & Identity',
   'Success Criteria - what success means activity',
   'Checkout Round - all voices',
   'Next steps',
@@ -220,7 +200,10 @@ export default function Page() {
             <h3 className="font-display text-heading-2 mb-6">The path from here</h3>
             <ol className="grid gap-6 md:grid-cols-3">
               {[
-                ['Sunday 6 December 2026', "Purpose of crafting Evolve 2027 mission into words, and exploring 'Definitions of Success'."],
+                [
+                  'Sunday 6 December 2026',
+                  "Purpose of sharing an understanding of the Evolve 2027 mission, vision and purpose and exploring 'Definitions of Success'.",
+                ],
                 ['Australia Day long weekend, January 2027', 'A residential to go deeper in person.'],
                 ['November 2027', 'The Evolve Festival.'],
               ].map(([when, what], i) => (
@@ -249,14 +232,13 @@ export default function Page() {
             <div className="flex flex-col gap-4">
               <h2 id="gathering-heading" className="font-display text-heading-1">Why join on December 6</h2>
               <p className="text-ink-soft">
-                This session is to help us say clearly what Evolve is setting out to do in 2027, and to explore which
-                definitions of success ring most true for this community.
+                This session is to support shared voices and shared understanding in creating the Evolve Festival
+                2027, and to explore which definitions of success ring most true to us.
               </p>
               <h3 className="font-display text-xl mt-2">Why you might value coming</h3>
               <PebbleList
                 items={[
-                  'You can help shape the words for the mission, and come into alignment around them, before they are settled.',
-                  'You get to say what a successful Evolve would mean to you.',
+                  'You get to say what a successful Evolve would mean for you.',
                   'A chance to reconnect with friends you have shared Evolve with before.',
                 ]}
               />
@@ -317,8 +299,9 @@ export default function Page() {
           </ul>
           <div className="flex flex-col gap-4 text-center text-ink-soft">
             <p>
-              Roles won&apos;t be the focus of our gathering on the 6th, though there&apos;s potential to dive into
-              this discussion when we next gather in person.
+              Roles won&apos;t be the focus of our gathering on the 6th, we&apos;ll aim to explore roles in person
+              in January. We&apos;re looking forward to sitting in circle together online on the 6th to map what
+              success looks like first, and appreciate Kaz and Zoe&apos;s support to facilitate. See you there.
             </p>
             <p className="font-display text-xl text-forest">River, Chloe, Craig and Kate</p>
           </div>
@@ -333,24 +316,42 @@ export default function Page() {
       {/* Wellbeing Teams quotes and resources */}
       <section className="py-12 md:py-16 px-6 md:px-16" aria-label="Wellbeing Teams and resources">
         <div className="max-w-5xl mx-auto flex flex-col gap-12">
-          <div className="flex flex-col gap-6">
-            <h3 className="font-display text-heading-2 text-center">Why Wellbeing Teams excite me</h3>
-            <QuoteGrid quotes={wellbeingQuotes} />
+          <div className="max-w-2xl mx-auto flex flex-col gap-4 text-ink-soft">
+            <p>
+              Zoe and I are looking forward to seeing everyone online on the 6th. We&apos;re supporting the
+              facilitation of this conversation for Evolve so that we can explore what matters to us all. We&apos;ve
+              been especially inspired by the Community Canvas as a guide to the sorts of questions we can ask
+              together as a community. There&apos;s a link to learn more about the Community Canvas below.
+            </p>
+            <p>
+              What particularly inspires me is the idea of creating Wellbeing Teams, so that if you&apos;re working
+              to support the festival you also feel like others you&apos;re working alongside &lsquo;have your
+              back&rsquo; and you have theirs. We&apos;re all tired of the culture of competition and self-interest,
+              and practicing the Evolve values together in explicit ways is one way we can counter-act the
+              extractive nature of &lsquo;capitalist-style&rsquo; relating.
+            </p>
+            <p>
+              I&apos;m currently hosting a Wellbeing Team&apos;s Research Project inside the Australian NVC
+              community and am happy to bring what I&apos;m learning to share with the Evolve community. It&apos;s
+              not something we&apos;ll go deeply into on the 6th but perhaps something we can explore at the
+              residential in January. I&apos;m looking forward to being online together to get the ball rolling
+              :-)
+            </p>
+            <p className="font-display text-xl text-forest">Warmly, Kaz</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-[3fr_2fr] md:items-start">
-            <article className="card p-6 md:p-8 flex flex-col gap-4">
-              <h3 className="font-display text-heading-2">The Slides I shared at Moora Moora</h3>
-              <p className="text-ink-soft">
-                These slides raised my own questions about Evolve&apos;s purpose, identity, mission and success
-                (these aren&apos;t necessarily reflective or accurate to Evolve&apos;s truth). That&apos;s part of
-                what we can continue to explore on 6 December:-)
-              </p>
-              <SlideCarousel slides={slides} label="Moora Moora slides" />
-              <a className="text-link self-start" href={SLIDES_PDF} target="_blank" rel="noopener">
-                View the slides (PDF)
-              </a>
-            </article>
+          <div className="max-w-2xl mx-auto w-full flex flex-col gap-4">
+            <h3 className="font-display text-heading-2 text-center">Why Wellbeing Teams inspire me</h3>
+            <ul className="rounded-md border border-line bg-leaf/15 px-6 md:px-8 py-2 divide-y divide-line">
+              {wellbeingQuotes.map((q) => (
+                <li key={q} className="py-4">
+                  <blockquote className="italic text-ink-soft">&ldquo;{q}&rdquo;</blockquote>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="max-w-2xl mx-auto w-full">
             <article className="card p-6 md:p-8 flex flex-col gap-4">
               <h3 className="font-display text-heading-2">The Community Canvas</h3>
               <p className="text-ink-soft">
@@ -363,7 +364,7 @@ export default function Page() {
                     src={CANVAS_SRC}
                     width={801}
                     height={687}
-                    sizes="(min-width: 768px) 360px, 92vw"
+                    sizes="(min-width: 768px) 608px, 92vw"
                     className="w-full h-auto"
                     alt={CANVAS_ALT}
                   />
@@ -421,7 +422,7 @@ export default function Page() {
               ],
               ['How long', '120 minutes'],
               ['Hosts', 'The Evolve Vision Council'],
-              ['Facilitators', 'Kaz T. Anderson and Zoe Enticott, supporting us on the day'],
+              ['Facilitators', 'Kaz and Zoe, supporting us on the day'],
               [
                 'Recording',
                 'We intend to record. The session is as much about connection as content, so please come live if you can.',
