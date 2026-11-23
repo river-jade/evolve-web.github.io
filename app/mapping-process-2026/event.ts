@@ -2,10 +2,10 @@
  * The 6 December gathering: one place for the details used by the page,
  * the Google Calendar link and the .ics file.
  *
- * MEET_URL: paste the Google Meet link here once the calendar event exists.
+ * MEET_URL: paste the Zoom link here once the calendar event exists.
  * While it is empty the page says "link to come" and no join button shows.
  */
-export const MEET_URL: string = 'https://meet.google.com/wwk-vrqv-jch'
+export const MEET_URL: string = 'https://us06web.zoom.us/j/82115928126?pwd=1vdkpEXaoToQ2aoiAdzZGJjNn6JVWV.1'
 
 /*
  * Sunday 6 December 2026, 3pm to 5pm Melbourne time (AEDT, UTC+11).
@@ -18,9 +18,9 @@ export const event = {
   title: 'Evolve 2027: An Online Gathering',
   description:
     'An online gathering hosted by the Evolve Vision Council, for everyone who has been part of Evolve, to help put the Evolve 2027 mission into words.' +
-    (MEET_URL ? `\n\nJoin on Google Meet: ${MEET_URL}` : '') +
+    (MEET_URL ? `\n\nJoin on Zoom: ${MEET_URL}` : '') +
     '\n\nhttps://evolvecommunity.world/mapping-process-2026',
-  location: MEET_URL || 'Google Meet',
+  location: MEET_URL || 'Zoom',
   start: '20261206T150000',
   end: '20261206T170000',
 }
