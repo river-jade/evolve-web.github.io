@@ -3,8 +3,8 @@ const nextConfig = {
     return [
       {
         source: '/qr',
-        destination: 'https://linktr.ee/evolve.community',
-        permanent: true,
+        destination: '/',
+        permanent: false,
       },
       {
         source: '/principles',
