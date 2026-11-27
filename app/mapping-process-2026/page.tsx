@@ -335,9 +335,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PART TWO: FROM KAZ */}
+      {/* PART TWO: FROM KAZ AND ZOE */}
       <div className="pt-8 md:pt-12">
-        <PartLabel>From Kaz T. Anderson</PartLabel>
+        <PartLabel>From Kaz and Zoe</PartLabel>
       </div>
 
       {/* Wellbeing Teams quotes and resources */}
@@ -370,7 +370,7 @@ export default function Page() {
                 evaluation to influence equitable outcomes for people, communities and the planet.
               </p>
               <p className="text-ink-soft">
-                Collaboratively defining what success look like and how it can be measured is our bread and butter, so
+                Collaboratively defining what success looks like and how it can be measured is our bread and butter, so
                 I look forward to co-creating pathways with you that will support Evolve to articulate and capture
                 meaningful success criteria that align with our shared vision and values 😊
               </p>
