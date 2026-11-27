@@ -85,6 +85,33 @@ function QuoteGrid({ quotes }: { quotes: string[] }) {
   )
 }
 
+/* Brand glyphs for LinkedIn and Substack, filled with the current text colour */
+const socialIcons = {
+  linkedin: (
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+  ),
+  substack: (
+    <path d="M22.54 8.25H1.46V5.42h21.08v2.83zM1.46 10.81V24L12 18.11 22.54 24V10.81H1.46zM22.54 0H1.46v2.84h21.08V0z" />
+  ),
+}
+
+function SocialLink({ href, label, icon }: { href: string; label: string; icon: keyof typeof socialIcons }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener"
+      aria-label={label}
+      title={label}
+      className="flex h-10 w-10 items-center justify-center rounded-pill border border-line text-forest hover:border-sage hover:bg-leaf/20 transition-colors"
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+        {socialIcons[icon]}
+      </svg>
+    </a>
+  )
+}
+
 function PartLabel({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-4 max-w-5xl mx-auto px-6 md:px-16 w-full">
@@ -308,9 +335,9 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PART TWO: FROM KAZ */}
+      {/* PART TWO: FROM KAZ AND ZOE */}
       <div className="pt-8 md:pt-12">
-        <PartLabel>From Kaz T. Anderson</PartLabel>
+        <PartLabel>From Kaz and Zoe</PartLabel>
       </div>
 
       {/* Wellbeing Teams quotes and resources */}
@@ -323,21 +350,64 @@ export default function Page() {
               been especially inspired by the Community Canvas as a guide to the sorts of questions we can ask
               together as a community. There&apos;s a link to learn more about the Community Canvas below.
             </p>
-            <p>
-              What particularly inspires me is the idea of creating Wellbeing Teams, so that if you&apos;re working
-              to support the festival you also feel like others you&apos;re working alongside &lsquo;have your
-              back&rsquo; and you have theirs. We&apos;re all tired of the culture of competition and self-interest,
-              and practicing the Evolve values together in explicit ways is one way we can counter-act the
-              extractive nature of &lsquo;capitalist-style&rsquo; relating.
-            </p>
-            <p>
-              I&apos;m currently hosting a Wellbeing Team&apos;s Research Project inside the Australian NVC
-              community and am happy to bring what I&apos;m learning to share with the Evolve community. It&apos;s
-              not something we&apos;ll go deeply into on the 6th but perhaps something we can explore at the
-              residential in January. I&apos;m looking forward to being online together to get the ball rolling
-              :-)
-            </p>
-            <p className="font-display text-xl text-forest">Warmly, Kaz</p>
+          </div>
+
+          <div className="max-w-5xl mx-auto w-full grid gap-6 md:grid-cols-2">
+            <article className="card p-6 md:p-8 flex flex-col gap-4">
+              <h3 className="font-display text-heading-2">About Zoe</h3>
+              <p className="text-ink-soft">
+                Zoe is Principal Consultant &ndash; Social Impact for{' '}
+                <a
+                  className="text-link !font-normal"
+                  href="https://www.clearhorizon.com.au/team-members/zoe-enticott"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Clear Horizon
+                </a>
+                , a values-led company striving for social justice and environmental sustainability. We&rsquo;ve been
+                around for twenty years and specialise in collective learning in strategy, impact measurement and
+                evaluation to influence equitable outcomes for people, communities and the planet.
+              </p>
+              <p className="text-ink-soft">
+                Collaboratively defining what success looks like and how it can be measured is our bread and butter, so
+                I look forward to co-creating pathways with you that will support Evolve to articulate and capture
+                meaningful success criteria that align with our shared vision and values 😊
+              </p>
+              <ul className="mt-auto flex gap-3">
+                <li>
+                  <SocialLink
+                    href="https://www.linkedin.com/pulse/colleague-spotlight-zoe-enticott-clear-horizon-consulting-gcbbc/"
+                    label="Zoe on LinkedIn"
+                    icon="linkedin"
+                  />
+                </li>
+              </ul>
+            </article>
+
+            <article className="card p-6 md:p-8 flex flex-col gap-4">
+              <h3 className="font-display text-heading-2">About Kaz</h3>
+              <p className="text-ink-soft">
+                Kaz works with social impact leaders &amp; for-purpose businesses to implement Wellbeing Teams, so that
+                teams can support each other as human beings as well as purpose-companions. Her work intersects
+                community development, nonviolent communication and power dynamics for evolutionary social impact and
+                mutual thriving.
+              </p>
+              <p className="text-ink-soft">
+                Kaz founded Activate Wellbeing in 2016 as a consultant and coach, and is past national community
+                development lead at NVC Australia. Kaz is currently hosting a Wellbeing Team&apos;s Research Project
+                inside the Australian NVC community and is delighted to be bringing what she&rsquo;s learning to share
+                with the Evolve community.
+              </p>
+              <ul className="mt-auto flex gap-3">
+                <li>
+                  <SocialLink href="https://www.linkedin.com/in/kaz-t-anderson/" label="Kaz on LinkedIn" icon="linkedin" />
+                </li>
+                <li>
+                  <SocialLink href="https://kazthompsonanderson.substack.com" label="Kaz on Substack" icon="substack" />
+                </li>
+              </ul>
+            </article>
           </div>
 
           <div className="max-w-2xl mx-auto w-full flex flex-col gap-4">
